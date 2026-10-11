@@ -47,6 +47,7 @@
       if (show) shown += 1;
     });
     empty.hidden = shown !== 0;
+    grid.hidden = shown === 0;
     layout();
   });
   layout();
