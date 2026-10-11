@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.social {
+  display: flex;
+  gap: 0.5rem;
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: $green-900;
+    color: $white;
+    transition: background-color $dur-fast $ease, transform $dur-fast $ease;
+
+    &:hover {
+      background: $green-800;
+      color: $white;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    &--wa {
+      background: #1f7a46;
+    }
+  }
+}

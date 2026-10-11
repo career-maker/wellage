@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
+
+@function bp($name) {
+  @return map.get($breakpoints, $name);
+}
+
+// Fluid size (rem numbers) interpolated between 360px and 1440px viewports.
+@function fluid($min, $max) {
+  $slope: math.div($max - $min, 90 - 22.5);
+  $base: $min - $slope * 22.5;
+  @return clamp(#{$min * 1rem}, #{$base * 1rem} + #{$slope * 100}vw, #{$max * 1rem});
+}

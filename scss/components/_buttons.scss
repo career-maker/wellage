@@ -1,0 +1,149 @@
+@use "../abstracts" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid transparent;
+  border-radius: 0.6rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $dur-fast $ease, color $dur-fast $ease, border-color $dur-fast $ease,
+    transform $dur-fast $ease;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &__icon {
+    width: 1.15em;
+    height: 1.15em;
+    flex: none;
+    transition: transform $dur-base $ease;
+  }
+
+  &:hover &__icon--arrow {
+    transform: translateX(4px);
+  }
+
+  &--primary {
+    background: $green-800;
+    color: $white;
+
+    &:hover {
+      background: $green-900;
+    }
+  }
+
+  &--gold {
+    background: $gold-400;
+    color: $green-900;
+
+    &:hover {
+      background: #e6bb74;
+    }
+  }
+
+  &--sand {
+    background: #ead9bd;
+    color: $green-900;
+
+    &:hover {
+      background: #dfc9a5;
+    }
+  }
+
+  &--ghost {
+    border-color: rgba($green-900, 0.2);
+    background: rgba($white, 0.75);
+    color: $green-900;
+
+    &:hover {
+      background: $white;
+      border-color: $green-900;
+    }
+  }
+
+  &--ghost-light {
+    border-color: rgba($white, 0.55);
+    background: rgba($white, 0.08);
+    color: $white;
+
+    &:hover {
+      background: $white;
+      color: $green-900;
+    }
+  }
+
+  &--warm {
+    background: $terra-500;
+    color: $white;
+
+    &:hover {
+      background: $terra-600;
+    }
+  }
+
+  &--outline {
+    border-color: currentColor;
+    background: transparent;
+    color: $green-900;
+
+    &:hover {
+      background: $green-900;
+      border-color: $green-900;
+      color: $white;
+    }
+  }
+
+  &--outline-light {
+    border-color: rgba($white, 0.7);
+    background: transparent;
+    color: $white;
+
+    &:hover {
+      background: $white;
+      border-color: $white;
+      color: $forest-900;
+    }
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--sm {
+    min-height: 2.75rem;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  &[disabled],
+  &[aria-disabled="true"] {
+    opacity: 0.65;
+    cursor: progress;
+  }
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: $teal-700;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.15rem;
+
+  &:hover {
+    color: $forest-900;
+  }
+}

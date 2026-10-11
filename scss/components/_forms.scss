@@ -1,0 +1,286 @@
+@use "../abstracts" as *;
+
+$field-bg: #fbf9f5;
+$field-border: rgba($green-900, 0.2);
+
+.form {
+  display: grid;
+  gap: 1rem;
+
+  &__row {
+    display: grid;
+    gap: 1rem;
+
+    @include up(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__status {
+    display: none;
+    padding: 0.9rem 1rem;
+    border-radius: 0.65rem;
+    border: 1px solid $line;
+    background: $cream-100;
+    color: $ink-900;
+    font-size: 0.9375rem;
+
+    &.is-visible {
+      display: block;
+    }
+
+    &--error {
+      border-color: $terra-500;
+      background: #fbeee9;
+    }
+
+    &--info {
+      border-color: $green-800;
+      background: #eaf3ef;
+    }
+
+    a {
+      font-weight: 600;
+    }
+  }
+
+  &__fallback {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+  }
+
+  &__note {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: $ink-500;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $green-800;
+
+    abbr {
+      color: $terra-600;
+      text-decoration: none;
+    }
+  }
+
+  &__control {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.7rem 0.95rem;
+    border: 1.5px solid $field-border;
+    border-radius: 0.7rem;
+    background: $field-bg;
+    color: $ink-900;
+    font-size: 0.9375rem;
+    transition: border-color $dur-fast $ease, box-shadow $dur-fast $ease, background-color $dur-fast $ease;
+
+    &::placeholder {
+      color: #5c6762;
+      opacity: 1;
+    }
+
+    &:hover {
+      border-color: rgba($green-900, 0.45);
+      background: $white;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border-color: $green-800;
+      background: $white;
+      box-shadow: 0 0 0 4px rgba($gold-400, 0.35);
+    }
+
+    &[aria-invalid="true"] {
+      border-color: $terra-600;
+      background: #fffaf8;
+      box-shadow: 0 0 0 3px rgba($terra-500, 0.15);
+    }
+  }
+
+  textarea.field__control {
+    min-height: 5.5rem;
+    resize: vertical;
+    line-height: 1.5;
+  }
+
+  input[type="date"].field__control {
+    min-height: 3rem;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &::-webkit-calendar-picker-indicator {
+      width: 1.1rem;
+      height: 1.1rem;
+      opacity: 0.65;
+      cursor: pointer;
+    }
+
+    &::-webkit-datetime-edit {
+      padding: 0;
+    }
+  }
+
+  &__error {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: $terra-600;
+
+    &:empty {
+      display: none;
+    }
+
+    &::before {
+      content: "!";
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: $terra-600;
+      color: $white;
+      font-size: 0.6875rem;
+      font-weight: 700;
+    }
+  }
+}
+
+// ---- Styled dropdown (enhances native <select>) ----
+.select {
+  position: relative;
+
+  &__native {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // no-JS fallback: native select still looks consistent
+  select.field__control:not(.select__native) {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2312302a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    background-size: 1.1rem;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.is-placeholder &__value {
+    color: #5c6762;
+  }
+
+  &__chevron {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: $green-800;
+    transition: transform $dur-fast $ease;
+  }
+
+  &.is-open &__chevron {
+    transform: rotate(180deg);
+  }
+
+  &.is-open &__btn {
+    border-color: $green-800;
+    background: $white;
+    box-shadow: 0 0 0 4px rgba($gold-400, 0.35);
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    max-height: 15rem;
+    margin: 0;
+    padding: 0.35rem;
+    overflow-y: auto;
+    border: 1px solid $line;
+    border-radius: 0.8rem;
+    background: $white;
+    box-shadow: 0 18px 40px -16px rgba($green-900, 0.45);
+    list-style: none;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__option {
+    position: relative;
+    padding: 0.7rem 2.25rem 0.7rem 0.8rem;
+    border-radius: 0.55rem;
+    font-size: 0.9375rem;
+    color: $ink-900;
+    cursor: pointer;
+
+    &.is-active {
+      background: $sand-100;
+    }
+
+    &[aria-selected="true"] {
+      font-weight: 700;
+      color: $green-800;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0.9rem;
+        top: 50%;
+        width: 0.7rem;
+        height: 0.4rem;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateY(-70%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

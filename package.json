@@ -1,0 +1,14 @@
+{
+  "name": "wellage-praana",
+  "version": "1.0.0",
+  "description": "Wellage Praana landing page",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "serve": "node tools/serve.mjs"
+  },
+  "type": "module",
+  "devDependencies": {
+    "sass": "^1.105.1"
+  },
+  "private": true
+}

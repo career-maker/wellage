@@ -1,0 +1,120 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  background: $white;
+  border-top: 1px solid $line;
+  color: $ink-700;
+  // leave room for the mobile action bar
+  padding-bottom: 4.5rem;
+
+  @include up(xl) {
+    padding-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $green-800;
+      text-decoration: underline;
+    }
+  }
+
+  &__bar {
+    display: grid;
+    gap: 1.25rem;
+    align-items: center;
+    padding-block: 1.5rem;
+
+    @include up(lg) {
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+    }
+  }
+
+  &__logo {
+    width: 8.5rem;
+    height: auto;
+  }
+
+  &__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    @include up(lg) {
+      justify-content: center;
+    }
+  }
+
+  &__nav a {
+    display: inline-block;
+    padding: 0.3rem 0;
+  }
+
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: $green-900;
+  }
+
+  &__info {
+    padding-bottom: 1.25rem;
+    font-size: 0.8125rem;
+    color: $ink-500;
+    overflow-wrap: anywhere;
+
+    address {
+      font-style: normal;
+    }
+  }
+
+  // dark bar: the approved InterSmart logo is designed for a dark background
+  &__legal {
+    background: $green-900;
+    color: rgba($white, 0.86);
+    font-size: 0.875rem;
+
+    a:hover {
+      color: $white;
+    }
+  }
+
+  &__legal-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    padding-block: 1rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    img {
+      display: block;
+      width: 7.3rem;
+      height: auto;
+    }
+  }
+}

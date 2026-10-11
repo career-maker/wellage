@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.container {
+  width: 100%;
+  max-width: calc(#{$container-width} + #{$gutter} * 2);
+  margin-inline: auto;
+  padding-inline: $gutter;
+}
+
+.icon {
+  width: 1.375rem;
+  height: 1.375rem;
+  flex: none;
+}
+
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}

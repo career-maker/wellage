@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.section {
+  padding-block: clamp(3.5rem, 7vw, 7rem);
+  background: $cream-50;
+  position: relative;
+
+  &--cream {
+    background: $cream-100;
+  }
+
+  &--sand {
+    background: $cream-200;
+  }
+
+  &--dark {
+    background: $forest-900;
+    color: rgba($white, 0.88);
+  }
+
+  > .container > .section-heading + * {
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+  }
+}
+
+main > section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+// Skip layout/paint of off-screen sections until they approach the viewport (big win for mobile main-thread time).
+main > section:not(.hero),
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 60rem;
+}

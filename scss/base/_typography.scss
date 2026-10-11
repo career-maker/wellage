@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/CormorantGaramond-var.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: $ink-700;
+}
+
+.display {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: $ink-900;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: fluid(1.0625, 1.25);
+  line-height: 1.65;
+  color: $ink-700;
+  max-width: 38em;
+}
+
+.text-small {
+  font-size: 0.9375rem;
+}

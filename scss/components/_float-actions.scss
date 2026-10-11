@@ -1,0 +1,103 @@
+@use "../abstracts" as *;
+
+// Mobile: bottom action bar. Desktop: slim rail on the right edge (labels reveal on hover/focus).
+.float-actions {
+  position: fixed;
+  z-index: $z-float;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $forest-900;
+  box-shadow: 0 -6px 20px rgba($forest-900, 0.2);
+  padding-bottom: env(safe-area-inset-bottom);
+  transition: transform $dur-base $ease;
+
+  &.is-hidden {
+    transform: translateY(110%);
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    gap: 0.15rem;
+    padding: 0.55rem 0.15rem;
+    color: $white;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    text-decoration: none;
+    min-height: 3.5rem;
+    align-content: center;
+
+    &--wa {
+      background: #1f7a46;
+    }
+
+    &--visit {
+      background: $teal-600;
+    }
+  }
+
+  @include up(xl) {
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 64%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    transform: translateY(-50%);
+
+    &.is-hidden {
+      transform: translateY(-50%);
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.75rem;
+      min-height: 3.25rem;
+      padding: 0 0.875rem;
+      border-radius: 999px 0 0 999px;
+      background: $forest-900;
+      font-size: 0.8125rem;
+      box-shadow: 0 8px 20px rgba($forest-900, 0.22);
+      // collapsed: only the icon shows, label slides out
+      width: 3.25rem;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: auto;
+      transition: width $dur-base $ease, background-color $dur-fast $ease;
+
+      &:hover,
+      &:focus-visible {
+        width: 13rem;
+      }
+    }
+
+    &__label {
+      opacity: 0;
+      transition: opacity $dur-fast $ease;
+    }
+
+    &__item:hover &__label,
+    &__item:focus-visible &__label {
+      opacity: 1;
+    }
+  }
+}
+
+@include reduced-motion {
+  .float-actions,
+  .float-actions__item {
+    transition: none;
+  }
+}

@@ -1,0 +1,63 @@
+@use "../abstracts" as *;
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  background: $cream-50;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: $teal-600;
+  color: $white;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: $z-modal;
+  padding: 0.75rem 1.25rem;
+  background: $forest-900;
+  color: $white;
+  border-radius: $radius-sm;
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
+.sr-only {
+  @include visually-hidden;
+}
+
+// Scroll reveal — only hidden when scripting is available (content stays visible otherwise).
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity $dur-slow $ease, transform $dur-slow $ease;
+    transition-delay: calc(var(--i, 0) * 90ms);
+
+    &.is-in {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@include reduced-motion {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

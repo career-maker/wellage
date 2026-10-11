@@ -1,0 +1,1472 @@
+@use "../abstracts" as *;
+
+// Left edge of the .container, used where a section bleeds to the viewport edge.
+$bleed-start: max(#{$gutter}, calc((100vw - #{$container-width}) / 2));
+
+// ============ HERO ============
+.hero {
+  position: relative;
+  isolation: isolate;
+  background: $cream-50;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba($cream-50, 0.97) 0%, rgba($cream-50, 0.9) 34%, rgba($cream-50, 0.35) 62%, rgba($cream-50, 0) 85%),
+        linear-gradient(0deg, rgba($cream-50, 0.9) 0%, rgba($cream-50, 0) 22%);
+
+      @include down(lg) {
+        background: linear-gradient(0deg, rgba($cream-50, 0.97) 0%, rgba($cream-50, 0.88) 55%, rgba($cream-50, 0.7) 100%);
+      }
+    }
+  }
+
+  &__bg-image {
+    @include cover;
+    object-position: 70% 40%;
+  }
+
+  &__inner {
+    position: relative;
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: center;
+    padding-block: clamp(2rem, 5vw, 4.5rem) 0;
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 1fr) 22.5rem;
+      padding-bottom: clamp(2rem, 4vw, 3.5rem);
+    }
+  }
+
+  &__copy {
+    display: grid;
+    max-width: 33rem;
+
+    @include down(lg) {
+      max-width: none;
+    }
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(2.5rem, 1.5rem + 3.4vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    color: $green-900;
+    text-wrap: balance;
+  }
+
+  &__sub {
+    margin-top: 1rem;
+    font-family: $font-display;
+    font-size: fluid(1.375, 1.75);
+    font-weight: 600;
+    color: $green-900;
+  }
+
+  &__lede {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: $ink-700;
+  }
+
+  &__highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 1rem;
+    margin-top: 1.5rem;
+
+    @include up(sm) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: $green-900;
+    }
+
+    .icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      padding: 0.45rem;
+      border: 1.5px solid rgba($gold-500, 0.55);
+      border-radius: 50%;
+      color: $gold-500;
+      background: rgba($white, 0.7);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  &__slot {
+    display: none;
+
+    @include up(lg) {
+      display: block;
+    }
+  }
+
+  &__couple {
+    justify-self: end;
+    width: min(70%, 22rem);
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: -1px;
+
+    @include up(lg) {
+      position: absolute;
+      right: calc(22.5rem + clamp(1.5rem, 3vw, 3rem) + 1rem);
+      bottom: 0;
+      width: clamp(16rem, 24vw, 24rem);
+      margin: 0;
+    }
+  }
+}
+
+// ============ OVERVIEW ============
+.overview {
+  background: $white;
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+
+  &__grid {
+    display: grid;
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: stretch;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 0.75rem;
+    align-content: center;
+    padding: clamp(2rem, 5vw, 4rem) $gutter;
+
+    @include up(lg) {
+      padding-left: $bleed-start;
+      padding-right: clamp(2rem, 4vw, 4rem);
+    }
+  }
+
+  &__sub {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $gold-500;
+  }
+
+  &__media {
+    position: relative;
+    min-height: 16rem;
+  }
+
+  &__image {
+    @include cover;
+    position: absolute;
+    inset: 0;
+    object-position: center 60%;
+  }
+
+  &__play {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: rgba($white, 0.92);
+    color: $green-900;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform $dur-base $ease;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .icon {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  &__rera {
+    margin-top: 0.75rem;
+    color: $ink-500;
+    text-align: center;
+  }
+}
+
+.facts {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background: $white;
+  box-shadow: 0 18px 40px -22px rgba($green-900, 0.4);
+  border: 1px solid $line;
+
+  @include up(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include up(lg) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    margin-top: -2.75rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 0.9rem;
+
+    @include up(lg) {
+      border-left: 1px solid $line;
+
+      &:first-child {
+        border-left: 0;
+      }
+    }
+  }
+
+  &__icon {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    color: $gold-500;
+  }
+
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    color: $ink-700;
+  }
+
+  strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: $green-900;
+  }
+}
+
+// ============ WHY ============
+.why {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+  background: $cream-100;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba($cream-50, 0.96) 0%, rgba($cream-50, 0.85) 38%, rgba($cream-50, 0.2) 100%);
+
+      @include down(lg) {
+        background: rgba($cream-50, 0.9);
+      }
+    }
+  }
+
+  &__bg-image {
+    @include cover;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+  }
+
+  &__copy {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+    max-width: 32rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: fluid(1.75, 2.25);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $green-900;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 1rem;
+    background: rgba($white, 0.92);
+    box-shadow: 0 20px 44px -26px rgba($green-900, 0.45);
+    overflow: hidden;
+
+    @include up(md) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+.why-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 0 solid $line;
+  border-width: 0 1px 1px 0;
+
+  &__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.55rem;
+    border: 1.5px solid rgba($gold-500, 0.55);
+    border-radius: 50%;
+    color: $gold-500;
+  }
+
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: $green-900;
+  }
+
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: $ink-700;
+  }
+}
+
+// ============ RESIDENCES ============
+.residences {
+  background: $sand-100;
+
+  &__grid {
+    display: grid;
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
+    }
+  }
+
+  &__photo {
+    min-height: 14rem;
+    position: relative;
+
+    @include up(lg) {
+      min-height: 100%;
+    }
+  }
+
+  &__photo-image {
+    @include cover;
+    position: absolute;
+    inset: 0;
+    object-position: 30% 40%;
+  }
+
+  &__panel {
+    display: grid;
+    gap: 1.5rem;
+    padding: clamp(2rem, 5vw, 4rem) $gutter;
+    align-content: start;
+
+    @include up(lg) {
+      padding-right: $bleed-start;
+      padding-left: clamp(2rem, 4vw, 4rem);
+    }
+  }
+}
+
+.tabs {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  &__tab {
+    padding: 0.6rem 1.15rem;
+    border: 1.5px solid rgba($green-900, 0.2);
+    border-radius: 0.5rem;
+    background: rgba($white, 0.6);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $green-900;
+    transition: background-color $dur-fast $ease, color $dur-fast $ease;
+
+    &:hover {
+      background: $white;
+    }
+
+    &.is-active {
+      background: $green-800;
+      border-color: $green-800;
+      color: $white;
+    }
+  }
+
+  &__panel {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+
+    @include up(md) {
+      grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+      align-items: start;
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+}
+
+.room-list {
+  display: grid;
+  gap: 0.6rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.5rem;
+    background: rgba($white, 0.75);
+    font-weight: 600;
+    color: $green-900;
+
+    &::before {
+      content: "";
+      flex: none;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: $gold-400;
+    }
+  }
+}
+
+.room-figure {
+  &__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 0.75rem;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: $ink-500;
+  }
+}
+
+.room-note {
+  align-self: center;
+  padding: 1.25rem;
+  border: 1px dashed rgba($gold-500, 0.6);
+  border-radius: 0.75rem;
+  background: rgba($white, 0.5);
+  color: $ink-700;
+}
+
+// ============ AMENITIES ============
+.amenities {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $white;
+}
+
+.amenity-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+
+  @include up(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.amenity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+  border-radius: 0.75rem;
+  background: $white;
+  box-shadow: 0 10px 30px -18px rgba($green-900, 0.4);
+  border: 1px solid $line;
+  overflow: hidden;
+
+  &__media {
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 1s $ease;
+  }
+
+  &:hover &__image {
+    transform: scale(1.04);
+  }
+
+  &__title {
+    padding-inline: 1.1rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: $green-900;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.3rem;
+    padding-inline: 1.1rem;
+    font-size: 0.875rem;
+
+    li {
+      position: relative;
+      padding-left: 0.9rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 50%;
+        background: $gold-500;
+      }
+    }
+  }
+}
+
+// ============ LIFE AT PRAANA ============
+.life {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+  background: $green-900;
+  color: $white;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba($green-900, 0.92) 0%, rgba($green-900, 0.7) 50%, rgba($green-900, 0.35) 100%);
+    }
+  }
+
+  &__bg-image {
+    @include cover;
+  }
+
+  &__inner {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+
+    @include up(md) {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+
+  &__copy {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+  }
+
+  &__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $gold-300;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: fluid(2, 3.25);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+
+  &__themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0;
+    font-size: 0.9375rem;
+
+    li {
+      padding-right: 0.9rem;
+      margin-right: 0.9rem;
+      border-right: 1px solid rgba($white, 0.35);
+
+      &:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+      }
+    }
+  }
+
+  &__play {
+    display: grid;
+    place-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background: rgba($white, 0.92);
+    color: $green-900;
+    transition: transform $dur-base $ease;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    @include up(md) {
+      margin-right: clamp(1rem, 8vw, 8rem);
+    }
+  }
+}
+
+// ============ FLOOR PLANS + LOCATION ============
+.duo {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $white;
+
+  &__grid {
+    display: grid;
+    gap: clamp(2.5rem, 5vw, 4rem);
+
+    @include up(xl) {
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    }
+  }
+}
+
+.plans {
+  &__grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    @include up(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include up(xl) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+
+.plan {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+  padding: 1.25rem;
+  border: 1px solid $line;
+  border-radius: 0.75rem;
+  background: $white;
+  box-shadow: 0 10px 30px -20px rgba($green-900, 0.45);
+
+  &__type {
+    font-family: $font-display;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    color: $green-900;
+  }
+
+  &__specs div {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    font-size: 0.875rem;
+  }
+
+  &__specs dd {
+    margin: 0;
+    font-weight: 700;
+    color: $green-900;
+  }
+
+  &__bars {
+    display: grid;
+    gap: 0.4rem;
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    background: $sand-100;
+  }
+
+  &__legend {
+    margin-top: -0.4rem;
+    font-size: 0.75rem;
+    color: $ink-500;
+  }
+
+  &__bar {
+    display: block;
+    height: 0.6rem;
+    border-radius: 0.3rem;
+    background: rgba($green-900, 0.08);
+
+    i {
+      display: block;
+      height: 100%;
+      width: calc(var(--pct, 0) * 1%);
+      border-radius: inherit;
+      background: $gold-500;
+    }
+
+    &:nth-child(2) i {
+      background: $green-800;
+    }
+
+    &:nth-child(3) i {
+      background: $teal-600;
+    }
+  }
+}
+
+.location {
+  &__body {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+
+    @include up(md) {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: start;
+    }
+  }
+
+  &__note {
+    margin-top: 1rem;
+    color: $ink-500;
+  }
+}
+
+.routes {
+  border: 1px solid $line;
+  border-radius: 0.75rem;
+  background: $white;
+  box-shadow: 0 10px 30px -20px rgba($green-900, 0.45);
+}
+
+.route {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid $line;
+  font-size: 0.875rem;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &__num {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: $green-800;
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  &--care &__num {
+    background: $terra-500;
+  }
+
+  &__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $gold-500;
+  }
+
+  &__name {
+    font-weight: 600;
+    color: $green-900;
+  }
+
+  &__meta {
+    white-space: nowrap;
+    font-size: 0.8125rem;
+    color: $ink-700;
+  }
+
+  @include down(sm) {
+    grid-template-columns: auto auto minmax(0, 1fr);
+
+    &__meta {
+      grid-column: 3;
+    }
+  }
+}
+
+.radar {
+  svg {
+    width: 100%;
+    height: auto;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    color: $ink-500;
+  }
+
+  &__ring {
+    fill: none;
+    stroke: rgba($green-900, 0.18);
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+  }
+
+  &__label {
+    font-size: 7px;
+    text-anchor: middle;
+    fill: $ink-500;
+  }
+
+  &__dots circle {
+    fill: $green-800;
+
+    &.is-care {
+      fill: $terra-500;
+    }
+  }
+
+  &__dots text {
+    font-size: 10px;
+    font-weight: 700;
+    text-anchor: middle;
+    fill: $white;
+  }
+
+  &__home circle {
+    fill: $gold-400;
+    stroke: $white;
+    stroke-width: 2;
+  }
+
+  &__home use {
+    color: $green-900;
+  }
+}
+
+// ============ RETIREMENT, REIMAGINED ============
+.reimagined {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $cream-100;
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      gap: 3rem;
+    }
+  }
+
+  &__copy {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: fluid(1.875, 2.5);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: $green-900;
+  }
+}
+
+.ideas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+
+  @include up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.idea {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding-bottom: 1rem;
+  border-radius: 0.75rem;
+  background: $white;
+  box-shadow: 0 10px 28px -20px rgba($green-900, 0.5);
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  &__title,
+  p {
+    padding-inline: 0.9rem;
+  }
+
+  &__title {
+    margin-top: 0.4rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: $green-900;
+  }
+
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+}
+
+// ============ VISIT ============
+.visit {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $green-900;
+  color: $white;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba($green-900, 0.9) 0%, rgba($green-900, 0.65) 55%, rgba($green-900, 0.45) 100%);
+    }
+  }
+
+  &__bg-image {
+    @include cover;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 3rem;
+    }
+  }
+
+  &__copy {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  &__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $gold-300;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: fluid(1.75, 2.5);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.12;
+  }
+}
+
+.visit-card {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: 1rem;
+  background: $white;
+  color: $ink-700;
+  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.55);
+}
+
+.form--visit {
+  @include up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 1rem;
+
+    .btn {
+      align-self: end;
+      min-height: 2.75rem;
+    }
+
+    .form__status,
+    .form__note {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .field__control {
+    min-height: 2.75rem;
+  }
+}
+
+// ============ TESTIMONIALS ============
+.testimonials {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $white;
+}
+
+.carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+
+  &__btn {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid $line;
+    border-radius: 50%;
+    background: $white;
+    color: $green-900;
+    box-shadow: 0 6px 16px -8px rgba($green-900, 0.4);
+
+    &:first-child .icon {
+      transform: scaleX(-1);
+    }
+
+    &:hover {
+      background: $green-800;
+      color: $white;
+    }
+
+    @include down(md) {
+      display: none;
+    }
+  }
+
+  &__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(21rem, 85%);
+    gap: 1rem;
+    overflow-x: auto;
+    padding-block: 0.5rem 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+
+    > li {
+      scroll-snap-align: start;
+    }
+
+    @include up(lg) {
+      grid-auto-columns: calc((100% - 2rem) / 3);
+    }
+  }
+
+  @include down(md) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// ============ VARMA ============
+.varma {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $cream-100;
+
+  &__grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+
+    @include up(lg) {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  &__stat {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-block: 1rem;
+    border-block: 1px solid $line;
+  }
+
+  &__stat-num {
+    font-family: $font-display;
+    font-size: clamp(3rem, 2.5rem + 3vw, 5rem);
+    font-weight: 700;
+    line-height: 0.9;
+    color: $gold-500;
+  }
+
+  &__stat-text {
+    max-width: 16rem;
+    font-weight: 600;
+    color: $green-900;
+  }
+
+  &__brands {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 2.5rem;
+  }
+
+  &__logo {
+    width: auto;
+    height: 3.25rem;
+    max-width: 100%;
+  }
+
+  &__people {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+  }
+}
+
+// ============ GALLERY ============
+.chip {
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba($green-900, 0.2);
+  border-radius: 0.5rem;
+  background: $white;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $green-900;
+  transition: background-color $dur-fast $ease, color $dur-fast $ease;
+
+  &:hover {
+    border-color: $green-900;
+  }
+
+  &.is-active {
+    background: $green-800;
+    border-color: $green-800;
+    color: $white;
+  }
+}
+
+.gallery {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $white;
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__all {
+    border: 0;
+    border-bottom: 2px solid currentColor;
+    background: none;
+    color: $green-800;
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1.25rem 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+
+    @include up(md) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include up(lg) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    aspect-ratio: 4 / 3;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__grid.is-collapsed &__item.is-extra {
+    display: none;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: $cream-200;
+
+    img {
+      @include cover;
+      transition: transform 0.8s $ease;
+    }
+
+    &:hover img {
+      transform: scale(1.06);
+    }
+  }
+
+  &__empty {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    padding: 2rem;
+    border: 1px dashed rgba($ink-900, 0.4);
+    border-radius: 0.75rem;
+    background: $cream-50;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__note {
+    margin-top: 1rem;
+    color: $ink-500;
+  }
+}
+
+// ============ FAQ ============
+.faq {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: $cream-50;
+
+  .accordion {
+    display: grid;
+    gap: 0.6rem 1.25rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    border-top: 0;
+    align-items: start;
+
+    @include up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(5, auto);
+      grid-auto-flow: column;
+    }
+  }
+
+  .accordion__item {
+    border: 1px solid $line;
+    border-radius: 0.6rem;
+    background: $white;
+    padding-inline: 1rem;
+  }
+
+  .accordion__trigger {
+    padding: 0.95rem 0;
+    font-family: $font-body;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .accordion__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0;
+
+    &::before,
+    &::after {
+      width: 0.75rem;
+    }
+  }
+
+  .accordion__trigger[aria-expanded="true"] .accordion__icon {
+    background: none;
+    color: $green-800;
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+  }
+
+  .accordion__panel-inner > div {
+    padding-bottom: 1rem;
+    font-size: 0.9375rem;
+  }
+}
+
+// ============ FINAL CTA ============
+.final-cta {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  background: $green-900;
+  color: $white;
+  text-align: center;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: clamp(10rem, 22vw, 18rem);
+    aspect-ratio: 1;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d9b573' stroke-width='.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 19C5 10 10 5 20 4c0 10-5 15-14 15Z'/%3E%3Cpath d='M5 19 14 10'/%3E%3C/svg%3E") center / contain no-repeat;
+    opacity: 0.18;
+  }
+
+  &::before {
+    left: -3rem;
+    bottom: -3rem;
+  }
+
+  &::after {
+    right: -2rem;
+    top: -3rem;
+    transform: scaleX(-1) rotate(20deg);
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: fluid(1.75, 2.75);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  &__text {
+    max-width: 40rem;
+    margin: 0.9rem auto 0;
+    color: rgba($white, 0.9);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+}
+
+// ============ LEGAL PAGES ============
+.legal {
+  &__body {
+    display: grid;
+    gap: 1rem;
+    max-width: 48rem;
+  }
+
+  &__h {
+    margin-top: 1rem;
+    font-family: $font-display;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $ink-900;
+  }
+
+  &__note {
+    padding: 1rem;
+    border: 1px dashed $gold-500;
+    border-radius: $radius-md;
+    font-size: 0.9375rem;
+  }
+}

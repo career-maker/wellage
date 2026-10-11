@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.section-heading {
+  display: grid;
+  gap: 1rem;
+  max-width: 46rem;
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $gold-500;
+
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: fluid(1.75, 2.5);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $ink-900;
+    text-wrap: balance;
+  }
+
+  &__text {
+    max-width: 38em;
+    color: $ink-700;
+  }
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+
+    .section-heading__eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading__text {
+      margin-inline: auto;
+    }
+  }
+
+  &--light {
+    .section-heading__eyebrow {
+      color: $gold-300;
+    }
+
+    .section-heading__title {
+      color: $white;
+    }
+
+    .section-heading__text {
+      color: rgba($white, 0.86);
+    }
+  }
+}

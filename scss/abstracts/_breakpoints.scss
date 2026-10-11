@@ -1,0 +1,14 @@
+@use "functions" as *;
+
+// Mobile-first: @include up(md) { … }
+@mixin up($name) {
+  @media (min-width: bp($name)) {
+    @content;
+  }
+}
+
+@mixin down($name) {
+  @media (max-width: calc(#{bp($name)} - 0.02px)) {
+    @content;
+  }
+}

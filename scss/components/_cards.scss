@@ -1,0 +1,78 @@
+@use "../abstracts" as *;
+
+.quote-card {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $radius-md;
+
+  &__mark {
+    font-family: $font-display;
+    font-size: 4rem;
+    line-height: 0.6;
+    color: $gold-500;
+  }
+
+  &__text {
+    font-family: $font-display;
+    font-size: fluid(1.25, 1.5);
+    font-weight: 500;
+    line-height: 1.4;
+    color: $ink-900;
+  }
+
+  &__cite {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    color: $ink-700;
+
+    small {
+      display: block;
+      font-weight: 400;
+      color: $ink-500;
+    }
+  }
+
+  &--pending {
+    background: $cream-100;
+    border-style: dashed;
+    border-color: rgba($gold-500, 0.6);
+  }
+}
+
+.person-card {
+  display: grid;
+  gap: 1rem;
+
+  &__photo {
+    aspect-ratio: 4 / 5;
+    border-radius: $radius-md;
+    overflow: hidden;
+    background: $cream-200;
+
+    img {
+      @include cover;
+      object-position: center 25%;
+    }
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.625rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: $ink-900;
+  }
+
+  &__role {
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $teal-700;
+    font-weight: 600;
+  }
+}
