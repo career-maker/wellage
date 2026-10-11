@@ -8942,3 +8942,7 @@ main section .film__title.film__title {
 @media (prefers-reduced-motion: reduce) {
   .expert, .expert__avatar::before, .expert__avatar::after, .expert__icon { animation: none; }
 }
+.expert__avatar { background: #fff; }
+.expert__avatar::before, .expert__avatar::after { border-color: rgba(37, 211, 102, 0.75); }
+.expert__icon { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.expert__btn img { width: 1.5rem; height: 1.5rem; object-fit: contain; flex: none; }
