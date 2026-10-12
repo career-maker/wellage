@@ -1378,9 +1378,45 @@ window.PRAANA_CONFIG = {
     if (dist && d) {
       var dx = Number(d.getAttribute("data-x"));
       var dy = Number(d.getAttribute("data-y"));
-      var k = (Math.sqrt(dx * dx + dy * dy) - 30) / 2;
       var len = Math.sqrt(dx * dx + dy * dy) || 1;
-      dist.setAttribute("transform", "translate(" + ((dx / len) * (k + 30)).toFixed(1) + " " + ((dy / len) * (k + 30)).toFixed(1) + ")");
+      var ux = dx / len;
+      var uy = dy / len;
+      var CHIP_W = 62;
+      var CHIP_H = 24;
+      function clash(cx, cy) {
+        var hit = false;
+        function circle(ox, oy, r) {
+          var nx = Math.max(cx - CHIP_W / 2, Math.min(ox, cx + CHIP_W / 2));
+          var ny = Math.max(cy - CHIP_H / 2, Math.min(oy, cy + CHIP_H / 2));
+          if ((nx - ox) * (nx - ox) + (ny - oy) * (ny - oy) < r * r) hit = true;
+        }
+        function box(bx, by, bw, bh) {
+          if (cx - CHIP_W / 2 < bx + bw && cx + CHIP_W / 2 > bx && cy - CHIP_H / 2 < by + bh && cy + CHIP_H / 2 > by) hit = true;
+        }
+        circle(0, 0, 36);
+        dots.forEach(function (o) {
+          circle(Number(o.getAttribute("data-x")), Number(o.getAttribute("data-y")), o === d ? 28 : 19);
+        });
+        [-184, -140, -93, -49].forEach(function (py) { box(-30, py - 12, 60, 24); });
+        return hit;
+      }
+      // try just outside the marker first, then around it, and keep the first spot that covers nothing
+      var gap = 30;
+      var tries = [[ux, uy], [-uy, ux], [uy, -ux], [-ux, -uy], [ux + -uy, uy + ux], [ux + uy, uy - ux]];
+      var pos = null;
+      for (var n = 0; n < tries.length && !pos; n += 1) {
+        var vx = tries[n][0];
+        var vy = tries[n][1];
+        var vl = Math.sqrt(vx * vx + vy * vy) || 1;
+        vx /= vl;
+        vy /= vl;
+        var off = gap + (CHIP_W / 2) * Math.abs(vx) + (CHIP_H / 2) * Math.abs(vy);
+        var px = dx + vx * off;
+        var py2 = dy + vy * off;
+        if (!clash(px, py2)) pos = [px, py2];
+      }
+      if (!pos) pos = [dx + ux * (gap + 31), dy + uy * (gap + 12)];
+      dist.setAttribute("transform", "translate(" + pos[0].toFixed(1) + " " + pos[1].toFixed(1) + ")");
       dist.querySelector("text").textContent = row.getAttribute("data-km") + " km";
     }
     if (status) status.textContent = row.querySelector(".conn__name").textContent.replace(/\s+/g, " ") + ": " +
