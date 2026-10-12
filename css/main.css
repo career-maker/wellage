@@ -9910,3 +9910,19 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 64rem) {
   .page-v2 main section .way__title { font-size: min(var(--t-title), 3.9vw) !important; }
 }
+
+/* version 2: partner logo beside the brand in the header */
+.page-v2 .site-header__divider { flex: none; width: 1px; height: 2.25rem; background: rgba(31, 38, 36, 0.22); margin-inline: clamp(0.5rem, 1.2vw, 1.1rem) 0; }
+.page-v2 .site-header__logo--partner { flex: none; width: auto; height: 2.5rem; margin-left: clamp(0.5rem, 1.2vw, 1.1rem); margin-right: auto; }
+@media (max-width: 40rem) {
+  .page-v2 .site-header__logo--partner { height: 1.9rem; margin-left: 0.5rem; }
+  .page-v2 .site-header__divider { height: 1.75rem; margin-inline: 0.5rem 0; }
+}
+
+/* header: Varma Homes partner logo beside the brand (both versions) */
+.site-header__divider { flex: none; width: 1px; height: 2.25rem; background: rgba(31, 38, 36, 0.22); margin-left: clamp(0.5rem, 1.2vw, 1.1rem); }
+.site-header__logo--partner { flex: none; width: auto; height: 2.5rem; margin-left: clamp(0.5rem, 1.2vw, 1.1rem); margin-right: auto; }
+@media (max-width: 40rem) {
+  .site-header__logo--partner { height: 1.9rem; margin-left: 0.5rem; }
+  .site-header__divider { height: 1.75rem; margin-left: 0.5rem; }
+}
