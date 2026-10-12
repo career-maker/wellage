@@ -10329,3 +10329,18 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .overview__media { width: 100%; min-height: 0; aspect-ratio: 16 / 10; }
   .overview__play { top: 46%; left: 50%; }
 }
+
+/* amenities: every card the same height, every photo the same size (both versions) */
+.amen__grid { align-items: stretch !important; }
+.amen__item, .amen__item--wellness, .amen__item--food, .amen__item--rec, .amen__item--outdoor,
+.amen__item:nth-child(odd), .amen__item:nth-child(even) { margin-top: 0 !important; height: 100%; }
+.amen__item .amen__media { width: 100%; flex: none; aspect-ratio: 16 / 10 !important; height: auto !important; }
+.amen__item .amen__body { flex: 1 1 auto; display: flex; flex-direction: column; }
+@media (min-width: 64rem) {
+  .amen__item .amen__media { aspect-ratio: auto !important; height: clamp(6.5rem, 21dvh, 14rem) !important; }
+  .amen__item .amen__list { margin-top: 0.5rem; }
+}
+@media (max-width: 39.99rem) {
+  .amen__item .amen__body { min-height: 17.5rem; }
+}
+@media (max-width: 39.99rem) { .amen__item .amen__body { min-height: 21.75rem; } }
