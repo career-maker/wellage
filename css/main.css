@@ -9943,3 +9943,18 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .duo .plans__head .plans__lede { max-width: 34rem; font-size: var(--t-lede); }
   .duo .plans__head .section-heading__title { line-height: 1.05; margin: 0; }
 }
+
+/* version 2: gold wave + rings frame; cards sit below the wave */
+@media (min-width: 75rem) {
+  .page-v2 .conn__places { top: calc(700 * var(--u)); }
+  .page-v2 .conn__place img { width: calc(112 * var(--u)); margin-block: calc(3 * var(--u)); }
+  .page-v2 .conn__place { gap: calc(6 * var(--u)); }
+  .page-v2 .conn__place-name { min-height: 0; font-size: calc(var(--t-small) * 0.92); }
+}
+@media (min-width: 75rem) {
+  .page-v2 main > section.conn { aspect-ratio: 1672 / 1030; background: #fbf6e9; }
+  .page-v2 .conn__photos, .page-v2 .conn__shade { bottom: auto; height: calc(941 * var(--u)); }
+  .page-v2 .conn__frame { bottom: auto; height: auto; aspect-ratio: 1669 / 942; }
+  .page-v2 .conn__places { top: calc(715 * var(--u)); }
+  .page-v2 .conn__place img { width: calc(120 * var(--u)); }
+}
