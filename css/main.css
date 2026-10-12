@@ -10357,3 +10357,9 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 64rem) {
   .page-v2 .amen__head { margin-bottom: clamp(2.5rem, 6dvh, 4rem); }
 }
+
+/* desktop hero: no extra white plate behind the description */
+@media (min-width: 64rem) {
+  .page-v2 .hero__lede > span { background: none; box-shadow: none; padding: 0; }
+}
+@media (min-width: 64rem) { .page-v2 .hero__lede { max-width: 20.5em; } }
