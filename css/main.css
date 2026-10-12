@@ -8968,3 +8968,22 @@ main section .rm__item {
   .varma .person-card:hover .person-card__photo { box-shadow: 0 24px 40px -24px rgba(18, 48, 42, 0.55); }
 }
 .routes, .duo .routes { overflow: hidden; }
+
+/* Hero lede: feathered cream wash so the paragraph stays readable over the photo */
+.hero__lede {
+  position: relative;
+  color: #1a2220;
+  font-weight: 500;
+  background: rgba(251, 248, 242, 0.88);
+  box-shadow: 0 0 1.1rem 1rem rgba(251, 248, 242, 0.88);
+  border-radius: 0.5rem;
+}
+@media (max-width: calc(64rem - 0.02px)) {
+  .hero__overlay {
+    background: linear-gradient(180deg,
+      rgba(251, 248, 242, 0.97) 0%,
+      rgba(251, 248, 242, 0.94) 60%,
+      rgba(251, 248, 242, 0.75) 100%);
+  }
+}
+@media (min-width: 64rem) { .hero__lede { max-width: 29em; } }
