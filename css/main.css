@@ -10273,3 +10273,12 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .hero__bg { top: 0; bottom: auto; height: 100%; }
   .page-v2 .hero__bg-image { height: 108%; width: 100%; object-position: 78% top; }
 }
+
+/* mobile: Why Senior Living heading on one line, description spans the full width */
+@media (max-width: 63.99rem) {
+  main section .reimagined__title { white-space: nowrap; font-size: min(var(--t-title), 9.2vw) !important; }
+  .reimagined__title em { display: inline; }
+  .reimagined__copy { justify-items: stretch; }
+  .reimagined__lede { max-width: none; width: 100%; }
+  .reimagined__copy > .btn { justify-self: start; }
+}
