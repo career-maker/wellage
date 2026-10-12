@@ -10129,3 +10129,22 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 80rem) {
   .page-v2 .hero { height: min(calc(100dvh - 4.75rem), calc(100vw * 0.5625)); min-height: 34rem; }
 }
+
+/* ============ Mobile hero: description hidden, copy anchored bottom-left over the photo ============ */
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__lede { display: none; }
+  .page-v2 .hero { display: flex; align-items: flex-end; min-height: calc(100dvh - 4.25rem); }
+  .page-v2 .hero__inner { align-self: flex-end; width: 100%; padding-top: 0; padding-bottom: 5.25rem; }
+  .page-v2 .hero__copy { justify-items: start; text-align: left; max-width: 22rem; }
+  .page-v2 .hero__sub { margin-top: 0.4rem; }
+  .page-v2 .hero__actions { margin-top: 0.9rem; }
+  .page-v2 .hero__bg-image { object-position: 62% center; }
+  /* strong wash only at the bottom, where the text now sits; the couple stays clear above it */
+  .page-v2 .hero__overlay {
+    background: linear-gradient(0deg, rgba(251, 248, 242, 0.96) 0%, rgba(251, 248, 242, 0.9) 34%, rgba(251, 248, 242, 0.55) 52%, rgba(251, 248, 242, 0) 72%);
+  }
+}
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__inner { align-items: flex-end; }
+}
+@media (max-width: 63.99rem) { .page-v2 .hero__inner { padding-bottom: 6.25rem; } }
