@@ -9851,3 +9851,4 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (max-width: 67.99rem) {
   .float-actions__item--ver .float-actions__label { font-size: 0.6875rem; }
 }
+.float-actions__item--ver, .float-actions__item--ver .float-actions__label { color: #fff !important; }
