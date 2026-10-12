@@ -54,6 +54,15 @@
     ).observe(hero);
     if (wide.matches) setOpen(true, true, true);
   }
+  // optional: open on its own after a delay (data-open-delay, ms) unless the visitor already used it
+  var delay = Number(drawer.getAttribute("data-open-delay"));
+  if (delay > 0) {
+    window.setTimeout(function () {
+      if (userChose || drawer.classList.contains("is-open")) return;
+      userChose = true; // keep it open until the visitor closes it
+      setOpen(true, true, true);
+    }, delay);
+  }
   backdrop.addEventListener("click", function () {
     setOpen(false);
   });
