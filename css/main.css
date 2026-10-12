@@ -10176,3 +10176,34 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
     filter: blur(11px);
   }
 }
+
+/* the header must not become a containing block for the fixed mobile menu (will-change/transform did that) */
+.page-v2 .site-header, .site-header { will-change: auto; }
+.page-home .site-header { will-change: auto; }
+.site-header.is-menu-open { transform: none !important; }
+
+/* ============ Mobile hero (matches the supplied layout): copy top-left, couple lower-right ============ */
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__inner { align-items: flex-start; padding-top: clamp(4rem, 17dvh, 9rem); padding-bottom: 0; }
+  .page-v2 .hero__copy { max-width: 20rem; }
+  .page-v2 .hero__copy::before {
+    inset: -3rem -4.5rem -3rem -2rem;
+    border-radius: 0;
+    filter: none;
+    background: radial-gradient(ellipse closest-side at 46% 50%, rgba(251, 248, 242, 0.92) 0%, rgba(251, 248, 242, 0.86) 58%, rgba(251, 248, 242, 0.5) 82%, rgba(251, 248, 242, 0) 100%);
+  }
+  .page-v2 .hero__overlay { background: none; }
+  .page-v2 .hero__bg-image { object-position: 78% 50%; }
+  .page-v2 .hero__title-main { font-size: clamp(3rem, 14vw, 4.4rem); }
+  .page-v2 .hero__sub { font-size: clamp(1.15rem, 5.4vw, 1.6rem); }
+}
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__inner { padding-top: clamp(1.75rem, 5dvh, 3.25rem); }
+  .page-v2 .hero__bg { top: auto; bottom: 0; height: 112%; }
+  .page-v2 .hero__bg-image { height: 100%; }
+  .page-v2 .hero { overflow: hidden; }
+  .page-v2 .hero__actions { gap: 0.5rem 1rem; margin-top: 0.7rem; }
+}
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__copy::before { inset: -2.5rem -4rem -2.25rem -2.5rem; background: radial-gradient(ellipse closest-side at 44% 50%, rgba(251, 248, 242, 0.95) 0%, rgba(251, 248, 242, 0.9) 66%, rgba(251, 248, 242, 0.55) 86%, rgba(251, 248, 242, 0) 100%); }
+}
