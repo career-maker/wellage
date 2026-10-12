@@ -9627,3 +9627,10 @@ main section .overview__title .overview__title-accent,
 @media (min-width: 64rem) {
   main section .overview__title { font-size: min(var(--t-title), 3.25vw) !important; }
 }
+
+/* testimonials: hidden arrows really hide; hover lift + ring are no longer clipped by the scroll track */
+.carousel__btn[hidden] { display: none !important; }
+.testimonials .carousel__track { padding-top: 14px; margin-top: -14px; padding-bottom: 22px; margin-bottom: -22px; }
+@media (min-width: 64rem) {
+  .testimonials .carousel__track { padding-top: calc(16 * var(--u)); margin-top: calc(-16 * var(--u)); padding-bottom: calc(26 * var(--u)); margin-bottom: calc(-26 * var(--u)); padding-inline: calc(4 * var(--u)); margin-left: calc(123 * var(--u)); width: calc(1427 * var(--u)); }
+}

@@ -8,11 +8,25 @@
       var first = track.firstElementChild;
       return first ? first.getBoundingClientRect().width + 16 : 300;
     };
-    root.querySelector("[data-carousel-prev]").addEventListener("click", function () {
+    var prev = root.querySelector("[data-carousel-prev]");
+    var next = root.querySelector("[data-carousel-next]");
+    prev.addEventListener("click", function () {
       track.scrollBy({ left: -step(), behavior: "smooth" });
     });
-    root.querySelector("[data-carousel-next]").addEventListener("click", function () {
+    next.addEventListener("click", function () {
       track.scrollBy({ left: step(), behavior: "smooth" });
     });
+
+    // arrows only exist when there is something to scroll to in that direction
+    function sync() {
+      var max = track.scrollWidth - track.clientWidth;
+      var scrollable = max > 2;
+      prev.hidden = !scrollable || track.scrollLeft <= 2;
+      next.hidden = !scrollable || track.scrollLeft >= max - 2;
+    }
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    if ("ResizeObserver" in window) new ResizeObserver(sync).observe(track);
+    sync();
   });
 })();
