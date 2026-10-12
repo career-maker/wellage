@@ -9815,3 +9815,10 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   main > section.amen { min-height: 0; }
   .amen__item .amen__media { height: clamp(7rem, 24vh, 15rem); }
 }
+
+/* version switch (V1 / V2) in the quick-action dock */
+.float-actions { grid-template-columns: repeat(5, 1fr); }
+.float-actions__item--ver { background: #3a2a52; }
+@media (min-width: 68rem) {
+  .float-actions__item--ver { background: #3a2a52; }
+}
