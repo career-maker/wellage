@@ -10344,3 +10344,11 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .amen__item .amen__body { min-height: 17.5rem; }
 }
 @media (max-width: 39.99rem) { .amen__item .amen__body { min-height: 21.75rem; } }
+
+/* Life at Praana: wider centre photo */
+@media (min-width: 64rem) {
+  .way__inner { grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.25fr) minmax(0, 0.9fr) !important; column-gap: clamp(1.25rem, 2.6vw, 3.5rem); }
+  main section .way__title { white-space: normal; }
+  .way__col--a { padding-left: clamp(0.5rem, 2vw, 3rem) !important; }
+  .way__figure { min-height: 0; }
+}
