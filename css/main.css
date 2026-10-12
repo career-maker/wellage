@@ -10148,3 +10148,31 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .hero__inner { align-items: flex-end; }
 }
 @media (max-width: 63.99rem) { .page-v2 .hero__inner { padding-bottom: 6.25rem; } }
+
+/* mobile hero: the cream wash is attached to the text block itself (follows its size), instead of a page-height gradient */
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__overlay { background: linear-gradient(0deg, rgba(251, 248, 242, 0.55) 0%, rgba(251, 248, 242, 0) 38%); }
+  .page-v2 .hero__copy { position: relative; isolation: isolate; }
+  .page-v2 .hero__copy::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -2.25rem -3.25rem -1.75rem -1.5rem;
+    background: radial-gradient(ellipse closest-side at 42% 52%, rgba(251, 248, 242, 0.95) 0%, rgba(251, 248, 242, 0.9) 55%, rgba(251, 248, 242, 0.5) 82%, rgba(251, 248, 242, 0) 100%);
+    pointer-events: none;
+  }
+}
+@media (max-width: 63.99rem) { .page-v2 .hero__copy::before { inset: -2.75rem -3.75rem -2.25rem -2.25rem; } }
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__copy::before {
+    background: radial-gradient(ellipse closest-side at 44% 52%, rgba(251, 248, 242, 0.96) 0%, rgba(251, 248, 242, 0.94) 68%, rgba(251, 248, 242, 0.62) 88%, rgba(251, 248, 242, 0) 100%);
+  }
+}
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__copy::before {
+    inset: -1.1rem -1.75rem -1.1rem -1rem;
+    background: rgba(251, 248, 242, 0.93);
+    border-radius: 1.75rem;
+    filter: blur(11px);
+  }
+}
