@@ -10103,3 +10103,9 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .float-actions__item { min-height: 2.35rem; width: 2.35rem; }
   .float-actions { gap: 0.2rem; bottom: 0.5rem; }
 }
+
+/* amenities: more room under the (hover-enlarged, slanted) cards before the section edge */
+@media (min-width: 64rem) {
+  .page-v2 main > section.amen { padding-bottom: clamp(4rem, 9dvh, 7rem) !important; }
+  .page-v2 .amen__grid { padding-bottom: clamp(0.5rem, 2dvh, 1.5rem); }
+}
