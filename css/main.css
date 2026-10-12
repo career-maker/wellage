@@ -9261,3 +9261,30 @@ main > section.conn {
   .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) { transform: scale(1.45); }
   .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) circle { fill: #c9964a; stroke: #fff; }
 }
+
+/* ============ Connectivity rows: hover = gold sweep, filled number, icon pop ============ */
+.conn__route { position: relative; }
+.conn__route::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #c9964a, rgba(201, 150, 74, 0));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+.conn__num, .conn__icon { transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }
+.conn__name, .conn__meta { transition: color 0.3s ease, transform 0.5s cubic-bezier(0.22, 0.8, 0.3, 1); }
+@media (hover: hover) {
+  .conn__route { transition: background-color 0.4s ease; }
+  .conn__route:hover { background: linear-gradient(90deg, rgba(232, 196, 122, 0.2), rgba(232, 196, 122, 0) 85%); }
+  .conn__route:hover::after { transform: scaleX(1); }
+  .conn__route:hover .conn__num { background: #c9964a; color: #0b2a2c; box-shadow: 0 0 0 4px rgba(232, 196, 122, 0.28); transform: scale(1.1); }
+  .conn__route--care:hover .conn__num { background: #e0603f; color: #fff; box-shadow: 0 0 0 4px rgba(224, 96, 63, 0.3); }
+  .conn__route:hover .conn__icon { color: #fff; transform: scale(1.18) rotate(-8deg); }
+  .conn__route:hover .conn__name { color: var(--gold-l); transform: translateX(4px); }
+  .conn__route:hover .conn__meta { color: #fff; }
+}
