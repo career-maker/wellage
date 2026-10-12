@@ -10114,3 +10114,18 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .page-v2 .float-actions { grid-template-columns: repeat(4, 1fr); }
 .drawer-tab { top: clamp(6.25rem, 15dvh, 11rem); }
 @media (min-width: 68rem) and (max-height: 40rem) { .drawer-tab { top: 5.75rem; } }
+
+/* hero banner stays fully visible on smaller desktops: the hero is at least as tall as the image's 16:9 shape, so nothing is cropped at the sides */
+@media (min-width: 64rem) {
+  .page-v2 .hero { min-height: max(calc(100dvh - 4.25rem), calc(100vw * 0.5625)); }
+  .page-v2 .hero__bg-image { width: 100%; max-width: none; object-fit: cover; object-position: center center; }
+}
+@media (min-width: 80rem) {
+  .page-v2 .hero { min-height: max(calc(100dvh - 4.75rem), calc(100vw * 0.5625)); }
+}
+@media (min-width: 64rem) {
+  .page-v2 .hero { height: min(calc(100dvh - 4.25rem), calc(100vw * 0.5625)); min-height: 34rem; }
+}
+@media (min-width: 80rem) {
+  .page-v2 .hero { height: min(calc(100dvh - 4.75rem), calc(100vw * 0.5625)); min-height: 34rem; }
+}
