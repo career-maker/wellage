@@ -9834,3 +9834,20 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .conn__top { grid-template-columns: minmax(0, 1fr); }
   .conn__radar { grid-column: 1; justify-self: center; margin: 0 auto; width: min(26rem, calc(100% - 2 * var(--pad))); }
 }
+.float-actions__ver-badge {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2px solid #fff;
+  border-radius: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+@media (max-width: 67.99rem) {
+  .float-actions__item--ver .float-actions__label { font-size: 0.6875rem; }
+}
