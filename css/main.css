@@ -9408,3 +9408,45 @@ main > section.conn {
   border-radius: 0.35rem;
   line-height: 1.9;
 }
+
+/* ============ Header at the top of the page: liquid-glass pill (solid bar returns once scrolled) ============ */
+.page-home .site-header:not(.is-scrolled):not(.is-menu-open) { background: none; }
+.page-home .site-header .site-header__bar {
+  position: relative;
+  transition: margin 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), padding 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), border-radius 0.4s ease, background-color 0.3s ease, box-shadow 0.4s ease;
+}
+.page-home .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__bar {
+  width: min(100% - 1.5rem, 96rem);
+  max-width: none;
+  margin: 0.75rem auto 0;
+  min-height: 4rem;
+  padding-inline: clamp(1rem, 2.2vw, 2rem);
+  border-radius: 999px;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.2) 38%, rgba(255, 255, 255, 0.14) 62%, rgba(255, 255, 255, 0.46) 100%);
+  -webkit-backdrop-filter: blur(16px) saturate(1.9) brightness(1.06);
+  backdrop-filter: blur(16px) saturate(1.9) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 0 rgba(255, 255, 255, 0.35),
+    inset 0 0 22px rgba(255, 255, 255, 0.28),
+    0 14px 34px -14px rgba(15, 47, 45, 0.4),
+    0 2px 6px rgba(15, 47, 45, 0.08);
+}
+/* specular streak across the glass */
+.page-home .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.55) 12%, transparent 26%, transparent 70%, rgba(255, 255, 255, 0.35) 86%, transparent 100%);
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
+}
+.page-home .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brand { margin-top: 0; }
+.page-home .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo { max-height: 3rem; width: auto; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .page-home .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__bar { background: rgba(255, 255, 255, 0.82); }
+}
