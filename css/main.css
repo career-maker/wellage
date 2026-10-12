@@ -9987,3 +9987,8 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .duo .plans__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.9rem, 1.6vw, 1.6rem); }
   .page-v2 .duo .plan__photo img { aspect-ratio: 4 / 3; }
 }
+/* version 2 hero: lighter wash on phones so the couple stays visible under the copy */
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__overlay { background: linear-gradient(180deg, rgba(251, 248, 242, 0.9) 0%, rgba(251, 248, 242, 0.78) 42%, rgba(251, 248, 242, 0) 72%); }
+  .page-v2 .hero__bg-image { object-position: 50% bottom; }
+}
