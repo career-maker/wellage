@@ -9808,3 +9808,10 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   background-clip: padding-box;
   border-radius: 999px;
 }
+
+/* amenities: room under the slanted card bottoms so they never touch / cross the section edge */
+@media (min-width: 64rem) {
+  .amen { padding-bottom: clamp(3.5rem, 6.5vw, 6.5rem) !important; }
+  main > section.amen { min-height: 0; }
+  .amen__item .amen__media { height: clamp(7rem, 24vh, 15rem); }
+}
