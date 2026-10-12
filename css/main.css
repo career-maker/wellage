@@ -9288,3 +9288,13 @@ main > section.conn {
   .conn__route:hover .conn__name { color: var(--gold-l); transform: translateX(4px); }
   .conn__route:hover .conn__meta { color: #fff; }
 }
+/* destination text sits on a feathered cream plate so the botanical corners never reduce legibility */
+@media (min-width: 75rem) {
+  .conn__place-name, .conn__place-meta {
+    background: rgba(253, 248, 236, 0.9);
+    box-shadow: 0 0 calc(10 * var(--u)) calc(8 * var(--u)) rgba(253, 248, 236, 0.9);
+    border-radius: calc(6 * var(--u));
+  }
+  .conn__place-name { color: #1a2220; font-weight: 500; width: auto; padding-inline: calc(6 * var(--u)); }
+  .conn__place-meta { width: auto; min-width: 80%; text-align: center; }
+}
