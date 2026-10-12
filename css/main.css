@@ -9541,3 +9541,15 @@ html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
 .select__list--float .select__option[aria-selected=true] { background: rgba(216, 168, 90, 0.2); }
 .form--visit .field__ico { z-index: 2; }
 .select__list--float { max-height: 20rem; }
+
+/* ============ Radar centre: fixed Wellage "W" mark; logo tooltip on hover; distance rides on the connector ============ */
+.conn__pin { cursor: help; outline: none; }
+.conn__pin > circle { fill: #fff; stroke: #c9964a; stroke-width: 3; }
+.conn__pin .conn__tip { opacity: 0; transform: translateY(6px); transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 0.8, 0.3, 1); pointer-events: none; }
+.conn__tip rect { fill: #fff; stroke: rgba(201, 150, 74, 0.7); stroke-width: 1.5; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35)); }
+.conn__tip path { fill: #fff; }
+.conn__pin:hover .conn__tip, .conn__pin:focus-visible .conn__tip, .conn__pin:focus .conn__tip { opacity: 1; transform: translateY(0); }
+.conn__pin:focus-visible > circle { stroke: #e8c47a; stroke-width: 4; }
+.conn__dist { pointer-events: none; }
+.conn__dist rect { fill: #0f2f2d; stroke: #e8c47a; stroke-width: 1.2; }
+.conn__dist text { fill: #fff; font: 700 11px var(--font-text); text-anchor: middle; }

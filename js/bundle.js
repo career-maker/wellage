@@ -1242,7 +1242,7 @@ window.PRAANA_CONFIG = {
   var cards = Array.prototype.slice.call(root.querySelectorAll(".conn__place"));
   var dots = Array.prototype.slice.call(root.querySelectorAll(".conn__dot"));
   var link = root.querySelector(".conn__link");
-  var pinKm = root.querySelector(".conn__pin-km");
+  var dist = root.querySelector(".conn__dist");
   var status = root.querySelector("[data-conn-status]");
 
   function select(i) {
@@ -1265,7 +1265,14 @@ window.PRAANA_CONFIG = {
       link.setAttribute("x2", d.getAttribute("data-x"));
       link.setAttribute("y2", d.getAttribute("data-y"));
     }
-    if (pinKm) pinKm.textContent = row.getAttribute("data-km");
+    if (dist && d) {
+      var dx = Number(d.getAttribute("data-x"));
+      var dy = Number(d.getAttribute("data-y"));
+      var k = (Math.sqrt(dx * dx + dy * dy) - 30) / 2;
+      var len = Math.sqrt(dx * dx + dy * dy) || 1;
+      dist.setAttribute("transform", "translate(" + ((dx / len) * (k + 30)).toFixed(1) + " " + ((dy / len) * (k + 30)).toFixed(1) + ")");
+      dist.querySelector("text").textContent = row.getAttribute("data-km") + " km";
+    }
     if (status) status.textContent = row.querySelector(".conn__name").textContent.replace(/\s+/g, " ") + ": " +
       row.getAttribute("data-km") + " km, " + row.getAttribute("data-min");
   }
