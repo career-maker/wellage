@@ -9992,3 +9992,13 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .hero__overlay { background: linear-gradient(180deg, rgba(251, 248, 242, 0.9) 0%, rgba(251, 248, 242, 0.78) 42%, rgba(251, 248, 242, 0) 72%); }
   .page-v2 .hero__bg-image { object-position: 50% bottom; }
 }
+
+/* version 2: radar markers show the place photo instead of a number */
+.page-v2 .conn__dot circle { fill: #fff; stroke: #fff; stroke-width: 2; }
+.page-v2 .conn__dot.is-care circle { fill: #fff; stroke: #e0603f; }
+.page-v2 .conn__dot .conn__dot-no { display: none; }
+.page-v2 .conn__dot image { transform-box: fill-box; transform-origin: center; transition: scale 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.page-v2 .conn__dot.is-active circle,
+.page-v2 .conn__dot.is-active image { scale: 1.5; }
+.page-v2 .conn__dot.is-active circle { fill: #fff; stroke: #c9964a; stroke-width: 2.5; }
+.page-v2 .conn:has(.conn__place:hover) .conn__dot image { scale: 1; }
