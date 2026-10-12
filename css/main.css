@@ -9926,3 +9926,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .site-header__logo--partner { height: 1.9rem; margin-left: 0.5rem; }
   .site-header__divider { height: 1.75rem; margin-left: 0.5rem; }
 }
+
+/* version 2 only: Floor Plans without the corner frame artwork */
+.page-v2 .duo::before, .page-v2 .duo::after,
+.page-v2 .duo__grid::before, .page-v2 .duo__grid::after { content: none !important; display: none !important; }
