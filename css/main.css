@@ -9930,27 +9930,3 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 /* version 2 only: Floor Plans without the corner frame artwork */
 .page-v2 .duo::before, .page-v2 .duo::after,
 .page-v2 .duo__grid::before, .page-v2 .duo__grid::after { content: none !important; display: none !important; }
-
-/* version 2 only: Connectivity without the wave / leaf frame; destination cards sit on a plain cream band */
-.page-v2 .conn__frame { display: none; }
-@media (min-width: 75rem) {
-  .page-v2 .conn__places {
-    left: 0;
-    width: 100%;
-    top: calc(626 * var(--u));
-    bottom: 0;
-    padding: calc(14 * var(--u)) calc(71 * var(--u)) 0;
-    background: #fbf6e9;
-    box-shadow: 0 -2px 0 rgba(201, 150, 74, 0.75);
-    align-items: start;
-  }
-  .page-v2 .conn__place-name, .page-v2 .conn__place-meta { background: none; box-shadow: none; }
-}
-@media (min-width: 75rem) {
-  .page-v2 .conn__places { top: calc(590 * var(--u)); padding-top: calc(10 * var(--u)); }
-  .page-v2 .conn__place img { width: calc(118 * var(--u)); margin-block: calc(4 * var(--u)); }
-  .page-v2 .conn__place { gap: calc(8 * var(--u)); }
-}
-@media (min-width: 75rem) {
-  .page-v2 .conn__ring { display: inline; stroke: rgba(255, 255, 255, 0.55); }
-}
