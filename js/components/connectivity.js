@@ -47,4 +47,31 @@
     d.addEventListener("click", function () { select(Number(d.getAttribute("data-i"))); });
   });
   select(0);
+
+  // optional auto-cycle (data-auto = ms): steps through the destinations while the section is on screen; pauses on hover / focus, stops once the visitor clicks
+  var every = Number(root.getAttribute("data-auto"));
+  if (every > 0 && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var at = 0;
+    var timer = null;
+    var seen = false;
+    var held = false;
+    var done = false;
+    var step = function () {
+      if (!seen || held || done) return;
+      at = (at + 1) % rows.length;
+      select(at);
+    };
+    var go = function () { if (!timer && !done) timer = window.setInterval(step, every); };
+    var stop = function () { window.clearInterval(timer); timer = null; };
+    new IntersectionObserver(function (e) {
+      seen = e[0].isIntersecting;
+      if (seen) go();
+      else stop();
+    }, { threshold: 0.35 }).observe(root);
+    root.addEventListener("mouseenter", function () { held = true; });
+    root.addEventListener("mouseleave", function () { held = false; });
+    root.addEventListener("focusin", function () { held = true; });
+    root.addEventListener("focusout", function () { held = false; });
+    root.addEventListener("click", function (ev) { if (ev.target.closest(".conn__pick, .conn__dot")) { done = true; stop(); } });
+  }
 })();

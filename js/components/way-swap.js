@@ -27,4 +27,35 @@
       show(k);
     });
   });
+  // optional auto-cycle (data-auto = ms): runs while the section is on screen, pauses on hover / focus, stops once the visitor picks an item
+  var every = Number(stage.getAttribute("data-auto"));
+  if (every > 0 && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var host = stage.closest("section") || stage; // the stage itself has no box on desktop (display: contents)
+    var idx = -1;
+    var timer = null;
+    var visible = false;
+    var paused = false;
+    var picked = false;
+    var tick = function () {
+      if (!visible || paused || picked) return;
+      idx = (idx + 1) % items.length;
+      show(items[idx].getAttribute("data-way-item"));
+    };
+    var run = function () {
+      if (timer || picked) return;
+      timer = window.setInterval(tick, every);
+    };
+    var halt = function () {
+      window.clearInterval(timer);
+      timer = null;
+    };
+    new IntersectionObserver(function (e) {
+      visible = e[0].isIntersecting;
+      if (visible) run();
+      else halt();
+    }, { threshold: 0.35 }).observe(host);
+    host.addEventListener("mouseenter", function () { paused = true; });
+    host.addEventListener("mouseleave", function () { paused = false; show(current); idx = -1; });
+    host.addEventListener("click", function (ev) { if (ev.target.closest("[data-way-item]")) { picked = true; halt(); } });
+  }
 })();

@@ -1460,6 +1460,33 @@ window.PRAANA_CONFIG = {
     d.addEventListener("click", function () { select(Number(d.getAttribute("data-i"))); });
   });
   select(0);
+
+  // optional auto-cycle (data-auto = ms): steps through the destinations while the section is on screen; pauses on hover / focus, stops once the visitor clicks
+  var every = Number(root.getAttribute("data-auto"));
+  if (every > 0 && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var at = 0;
+    var timer = null;
+    var seen = false;
+    var held = false;
+    var done = false;
+    var step = function () {
+      if (!seen || held || done) return;
+      at = (at + 1) % rows.length;
+      select(at);
+    };
+    var go = function () { if (!timer && !done) timer = window.setInterval(step, every); };
+    var stop = function () { window.clearInterval(timer); timer = null; };
+    new IntersectionObserver(function (e) {
+      seen = e[0].isIntersecting;
+      if (seen) go();
+      else stop();
+    }, { threshold: 0.35 }).observe(root);
+    root.addEventListener("mouseenter", function () { held = true; });
+    root.addEventListener("mouseleave", function () { held = false; });
+    root.addEventListener("focusin", function () { held = true; });
+    root.addEventListener("focusout", function () { held = false; });
+    root.addEventListener("click", function (ev) { if (ev.target.closest(".conn__pick, .conn__dot")) { done = true; stop(); } });
+  }
 })();
 
 /* components/bg-lazy.js */
@@ -1522,6 +1549,37 @@ window.PRAANA_CONFIG = {
       show(k);
     });
   });
+  // optional auto-cycle (data-auto = ms): runs while the section is on screen, pauses on hover / focus, stops once the visitor picks an item
+  var every = Number(stage.getAttribute("data-auto"));
+  if (every > 0 && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var host = stage.closest("section") || stage; // the stage itself has no box on desktop (display: contents)
+    var idx = -1;
+    var timer = null;
+    var visible = false;
+    var paused = false;
+    var picked = false;
+    var tick = function () {
+      if (!visible || paused || picked) return;
+      idx = (idx + 1) % items.length;
+      show(items[idx].getAttribute("data-way-item"));
+    };
+    var run = function () {
+      if (timer || picked) return;
+      timer = window.setInterval(tick, every);
+    };
+    var halt = function () {
+      window.clearInterval(timer);
+      timer = null;
+    };
+    new IntersectionObserver(function (e) {
+      visible = e[0].isIntersecting;
+      if (visible) run();
+      else halt();
+    }, { threshold: 0.35 }).observe(host);
+    host.addEventListener("mouseenter", function () { paused = true; });
+    host.addEventListener("mouseleave", function () { paused = false; show(current); idx = -1; });
+    host.addEventListener("click", function (ev) { if (ev.target.closest("[data-way-item]")) { picked = true; halt(); } });
+  }
 })();
 
 /* main.js */
