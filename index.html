@@ -13,10 +13,10 @@
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/CormorantGaramond-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/images/hero-bg-m.webp" imagesrcset="assets/images/hero-bg-m.webp 660w, assets/images/hero-bg-1942.webp 1942w" imagesizes="(max-width: 63.99rem) 660px, 1942px" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero-v2-m.webp" imagesrcset="assets/images/hero-v2-m.webp 660w, assets/images/hero-v2.webp 1672w" imagesizes="(max-width: 63.99rem) 660px, 1672px" fetchpriority="high">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
-<body class="page-home">
+<body class="page-home page-v2">
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="scroll-sentinel" data-scroll-sentinel aria-hidden="true"></div>
 
@@ -111,7 +111,7 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true">
-      <picture><source media="(max-width: 63.99rem)" srcset="assets/images/hero-bg-m.webp"><img src="assets/images/hero-bg-1942.webp" width="1942" height="809" alt="" class="hero__bg-image" fetchpriority="high" decoding="async"></picture>
+      <picture><source media="(max-width: 63.99rem)" srcset="assets/images/hero-v2-m.webp"><img src="assets/images/hero-v2.webp" width="1600" height="900" alt="" class="hero__bg-image" fetchpriority="high" decoding="async"></picture>
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__leaves" aria-hidden="true" data-leaves></div>
@@ -123,14 +123,6 @@
         </h1>
         <p class="hero__sub">A New Way of Growing Older.</p>
         <p class="hero__lede"><span>Premium senior living residences near Cochin International Airport, designed for comfort, wellness, independence and meaningful community living.</span></p>
-        <ul class="hero__highlights" aria-label="Project highlights">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Near CIAL</span></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>1&nbsp;&amp;&nbsp;2&nbsp;BHK Residences</span></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg><span>Senior&#8209;friendly Lifestyle</span></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-hospital"/></svg><span>Healthcare Support</span></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg><span>Wellness &amp; Recreation</span></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Secure Community Living</span></li>
-        </ul>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#visit">Schedule a Visit<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--ghost" href="https://vimeo.com/1195489553?fl=pl&amp;fe=cm" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-play"/></svg>Watch Video<span class="sr-only"> (opens the video in a new tab)</span></a>
@@ -206,7 +198,7 @@
         <p class="overview__eyebrow">Project Overview</p>
         <h2 class="overview__title" id="overview-title">Welcome to <span class="overview__title-accent">Wellage Praana</span></h2>
         <p class="overview__sub">Premium senior living by Varma</p>
-        <p class="overview__text">Wellage Praana is a premium senior living community by Varma, located in Nedumbassery near Cochin International Airport. It offers independent living with wellness, healthcare, recreation and community support.</p>
+        <p class="overview__text">Wellage Praana by Varma is a premium senior living community in Nedumbassery, offering independent living with wellness, healthcare, recreation and community support.</p>
       </div>
       <figure class="overview__media">
         <img src="assets/images/praana-elevation-2200.webp" srcset="assets/images/praana-elevation-960.webp 960w, assets/images/praana-elevation-1600.webp 1600w, assets/images/praana-elevation-2200.webp 2200w" sizes="(min-width: 64rem) 60vw, 100vw" width="2200" height="1395" alt="Artist's impression of the Wellage Praana residential blocks with terraced greenery" class="overview__image" loading="lazy" decoding="async">
@@ -249,24 +241,24 @@
       <header class="way__head">
         <p class="way__eyebrow">Life at Praana</p>
         <h2 class="way__title" id="why-title">More than a home.<br><em>A complete way of life.</em></h2>
-        <p class="way__lede">At Wellage Praana, living goes beyond a home. It&rsquo;s a lifestyle that brings together wellness, community, convenience and peace of mind &mdash; every day.</p>
       </header>
 
-      <div class="way__stage">
+      <div class="way__stage" data-way-swap data-auto="2000">
+        <p class="way__lede way__lede--side">At Wellage Praana, living goes beyond a home. It&rsquo;s a lifestyle that brings together wellness, community, convenience and peace of mind &mdash; every day.</p>
         <ol class="way__col way__col--a">
-          <li class="way__item"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-home"/></svg></span><div><span class="way__no">01</span><h3>Independent Living</h3><p>Live life on your own terms, with the right support by your side.</p></div></li>
-          <li class="way__item"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-heart"/></svg></span><div><span class="way__no">02</span><h3>Healthcare &amp; Support</h3><p>Access to healthcare, wellness and daily care for a healthier tomorrow.</p></div></li>
-          <li class="way__item"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-active"/></svg></span><div><span class="way__no">03</span><h3>Active Lifestyle</h3><p>Stay active with fitness, recreation and engaging community experiences.</p></div></li>
+          <li class="way__item" data-way-item="0" tabindex="0"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-home"/></svg></span><div><span class="way__no">01</span><h3>Independent Living</h3><p>Live life on your own terms, with the right support by your side.</p></div></li>
+          <li class="way__item" data-way-item="1" tabindex="0"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-heart"/></svg></span><div><span class="way__no">02</span><h3>Healthcare &amp; Support</h3><p>Access to healthcare, wellness and daily care for a healthier tomorrow.</p></div></li>
+          <li class="way__item" data-way-item="2" tabindex="0"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-active"/></svg></span><div><span class="way__no">03</span><h3>Active Lifestyle</h3><p>Stay active with fitness, recreation and engaging community experiences.</p></div></li>
         </ol>
 
         <figure class="way__figure">
-          <img src="assets/images/praana-courtyard-1600.webp" srcset="assets/images/praana-courtyard-960.webp 960w, assets/images/praana-courtyard-1600.webp 1600w" sizes="(min-width: 64rem) 36vw, 100vw" width="1600" height="900" alt="The landscaped central courtyard at Wellage Praana" class="way__image" loading="lazy" decoding="async">
-        </figure>
+          <img src="assets/images/praana-courtyard-1600.webp" srcset="assets/images/praana-courtyard-960.webp 960w, assets/images/praana-courtyard-1600.webp 1600w" sizes="(min-width: 64rem) 36vw, 100vw" width="1600" height="900" alt="The landscaped central courtyard at Wellage Praana" class="way__image way__swap is-active" data-way-img="base" loading="lazy" decoding="async">
+        <img src="assets/images/life-sofa-960.webp" width="960" height="540" alt="Residents relaxing at home" class="way__image way__swap" loading="lazy" decoding="async" data-way-img="0"><img src="assets/images/care-consult-960.webp" width="960" height="540" alt="Healthcare consultation at Wellage Praana" class="way__image way__swap" loading="lazy" decoding="async" data-way-img="1"><img src="assets/images/amenity-gym-960.webp" width="960" height="540" alt="Fitness studio at Wellage Praana" class="way__image way__swap" loading="lazy" decoding="async" data-way-img="2"><img src="assets/images/life-onam-960.webp" width="960" height="540" alt="Community celebration at Wellage Praana" class="way__image way__swap" loading="lazy" decoding="async" data-way-img="3"><img src="assets/images/amenity-salon-960.webp" width="960" height="540" alt="Wellness and salon services at Wellage Praana" class="way__image way__swap" loading="lazy" decoding="async" data-way-img="4"><img src="assets/images/praana-gate-960.webp" width="960" height="540" alt="The secure entrance gate at Wellage Praana" class="way__image way__swap" loading="lazy" decoding="async" data-way-img="5"></figure>
 
         <ol class="way__col way__col--b" start="4">
-          <li class="way__item"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-people"/></svg></span><div><span class="way__no">04</span><h3>Community &amp; Connection</h3><p>Be part of a vibrant community that feels like family.</p></div></li>
-          <li class="way__item"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-basket"/></svg></span><div><span class="way__no">05</span><h3>Everyday Convenience</h3><p>Everything you need, right within reach, for a hassle-free life.</p></div></li>
-          <li class="way__item"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-shield"/></svg></span><div><span class="way__no">06</span><h3>Safety &amp; Security</h3><p>A secure environment where you and your loved ones can feel at ease.</p></div></li>
+          <li class="way__item" data-way-item="3" tabindex="0"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-people"/></svg></span><div><span class="way__no">04</span><h3>Community &amp; Connection</h3><p>Be part of a vibrant community that feels like family.</p></div></li>
+          <li class="way__item" data-way-item="4" tabindex="0"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-basket"/></svg></span><div><span class="way__no">05</span><h3>Everyday Convenience</h3><p>Everything you need, right within reach, for a hassle-free life.</p></div></li>
+          <li class="way__item" data-way-item="5" tabindex="0"><span class="way__ico"><svg class="way__icon" aria-hidden="true"><use href="#i-shield"/></svg></span><div><span class="way__no">06</span><h3>Safety &amp; Security</h3><p>A secure environment where you and your loved ones can feel at ease.</p></div></li>
         </ol>
 
         <p class="way__more"><a class="btn btn--primary" href="#enquire" data-drawer-open data-prefill="I would like to know more about life at Wellage Praana.">Learn More<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
@@ -361,7 +353,7 @@
       <header class="amen__head">
         <p class="amen__eyebrow">Lifestyle &amp; Amenities</p>
         <h2 class="amen__title" id="amenities-title">Everything you need. <em>All within reach.</em></h2>
-        <p class="amen__lede">At Wellage Praana, every day is designed for your comfort, wellness and happiness. From healthcare to recreation, from everyday conveniences to serene outdoor spaces &mdash; experience a complete senior living lifestyle, all within a close-knit community.</p>
+        <p class="amen__lede">At Wellage Praana, enjoy a fulfilling senior living experience with wellness, comfort, recreation, and everyday conveniences in a close-knit community.</p>
       </header>
 
       <div class="amen__grid">
@@ -464,7 +456,7 @@
   </section>
 
   <!-- ============ 7. CONNECTIVITY ============ -->
-  <section class="conn" id="location" aria-labelledby="location-title" data-conn>
+  <section class="conn" id="location" aria-labelledby="location-title" data-conn data-auto="2000">
     <div class="conn__stage">
       <div class="conn__top">
         <div class="conn__photos" aria-hidden="true">
@@ -481,7 +473,7 @@
         <div class="conn__head">
           <span class="conn__eyebrow">Connectivity</span>
           <h2 class="conn__title" id="location-title">Connected to <em>what matters</em></h2>
-          <p class="conn__lede">Wellage Praana keeps you close to key destinations, healthcare, travel and everyday conveniences, so you&rsquo;re always connected to the people and places that matter.</p>
+          <p class="conn__lede">Wellage Praana keeps you connected to essential destinations, healthcare, and everyday conveniences.</p>
         </div>
         <ul class="conn__routes">
           <li class="conn__route" data-i="0" data-photo="0" data-km="7.5" data-min="12 mins"><span class="conn__num" aria-hidden="true">1</span><svg class="conn__icon" aria-hidden="true"><use href="#i-plane"/></svg><span class="conn__name">Cochin International <br>Airport</span><span class="conn__meta"><b>7.5 km</b><span>12 mins</span></span><button class="conn__pick" type="button" aria-pressed="false" aria-label="Show Cochin International Airport"></button></li>
@@ -494,10 +486,10 @@
           <li class="conn__route conn__route--care" data-i="7" data-photo="7" data-km="8.2" data-min="15 mins"><span class="conn__num" aria-hidden="true">8</span><svg class="conn__icon" aria-hidden="true"><use href="#i-hospital-building"/></svg><span class="conn__name">Little Flower <br>Hospital</span><span class="conn__meta"><b>8.2 km</b><span>15 mins</span></span><button class="conn__pick" type="button" aria-pressed="false" aria-label="Show Little Flower Hospital"></button></li>
         </ul>
         <figure class="conn__radar">
-          <svg viewBox="-210 -210 420 420" role="img" aria-label="Distance rings at 2.5, 5, 7.5 and 10 kilometres around Praana, with the eight nearby places numbered 1 to 8. Schematic only; direction is not indicative."><circle class="conn__ring" r="186"/><circle class="conn__ring" r="141"/><circle class="conn__ring" r="98"/><circle class="conn__ring" r="57"/><g class="conn__pill" transform="translate(0 -184)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">10 km</text></g><g class="conn__pill" transform="translate(0 -140)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">7.5 km</text></g><g class="conn__pill" transform="translate(0 -93)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">5 km</text></g><g class="conn__pill" transform="translate(0 -49)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">2.5 km</text></g><line class="conn__link" x1="0" y1="0" x2="0" y2="0"/><g class="conn__dot" data-i="0" data-x="111" data-y="-139" transform="translate(111 -139)"><circle r="16"/><text y="5">1</text></g><g class="conn__dot" data-i="1" data-x="-70" data-y="-53" transform="translate(-70 -53)"><circle r="16"/><text y="5">2</text></g><g class="conn__dot" data-i="2" data-x="-131" data-y="40" transform="translate(-131 40)"><circle r="16"/><text y="5">3</text></g><g class="conn__dot" data-i="3" data-x="132" data-y="66" transform="translate(132 66)"><circle r="16"/><text y="5">4</text></g><g class="conn__dot" data-i="4" data-x="-66" data-y="150" transform="translate(-66 150)"><circle r="16"/><text y="5">5</text></g><g class="conn__dot is-care" data-i="5" data-x="46" data-y="-36" transform="translate(46 -36)"><circle r="16"/><text y="5">6</text></g><g class="conn__dot is-care" data-i="6" data-x="-154" data-y="-95" transform="translate(-154 -95)"><circle r="16"/><text y="5">7</text></g><g class="conn__dot is-care" data-i="7" data-x="150" data-y="-82" transform="translate(150 -82)"><circle r="16"/><text y="5">8</text></g><g class="conn__dist"><rect x="-30" y="-11" width="60" height="22" rx="11"/><text y="4.5">7.5 km</text></g><g class="conn__pin" tabindex="0" role="img" aria-label="Wellage Praana"><circle r="33"/><image href="assets/images/wellage-w.webp" x="-18.0" y="-15.6" width="36" height="31.2" preserveAspectRatio="xMidYMid meet"/><g class="conn__tip" aria-hidden="true"><rect x="-78" y="-122" width="156" height="66" rx="10"/><path d="M-8 -56h16l-8 9z"/><image href="assets/images/logo-praana.webp" x="-66" y="-116" width="132" height="54" preserveAspectRatio="xMidYMid meet"/></g></g></svg>
+          <svg viewBox="-210 -210 420 420" role="img" aria-label="Distance rings at 2.5, 5, 7.5 and 10 kilometres around Praana, with the eight nearby places numbered 1 to 8. Schematic only; direction is not indicative."><defs><clipPath id="conn-dot-clip"><circle r="15"/></clipPath></defs><circle class="conn__ring" r="79"/><circle class="conn__ring" r="118"/><circle class="conn__ring" r="152"/><circle class="conn__ring" r="184"/><g class="conn__pill" transform="translate(0 -184)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">10 km</text></g><g class="conn__pill" transform="translate(0 -152)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">7.5 km</text></g><g class="conn__pill" transform="translate(0 -118)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">5 km</text></g><g class="conn__pill" transform="translate(0 -79)"><rect x="-27" y="-10" width="54" height="20" rx="10"/><text y="4">2.5 km</text></g><line class="conn__link" x1="0" y1="0" x2="0" y2="0"/><g class="conn__dot" data-i="0" data-x="113" data-y="-102" transform="translate(113 -102)"><circle r="18"/><image href="assets/images/conn-airport.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">1</text></g><g class="conn__dot" data-i="1" data-x="-74" data-y="-27" transform="translate(-74 -27)"><circle r="18"/><image href="assets/images/conn-bypass.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">2</text></g><g class="conn__dot" data-i="2" data-x="-100" data-y="63" transform="translate(-100 63)"><circle r="18"/><image href="assets/images/conn-golf.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">3</text></g><g class="conn__dot" data-i="3" data-x="93" data-y="73" transform="translate(93 73)"><circle r="18"/><image href="assets/images/conn-railway.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">4</text></g><g class="conn__dot" data-i="4" data-x="-57" data-y="175" transform="translate(-57 175)"><circle r="18"/><image href="assets/images/conn-metro.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">5</text></g><g class="conn__dot is-care" data-i="5" data-x="37" data-y="70" transform="translate(37 70)"><circle r="18"/><image href="assets/images/conn-hospital.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">6</text></g><g class="conn__dot is-care" data-i="6" data-x="-126" data-y="-85" transform="translate(-126 -85)"><circle r="18"/><image href="assets/images/conn-rajagiri.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">7</text></g><g class="conn__dot is-care" data-i="7" data-x="147" data-y="-37" transform="translate(147 -37)"><circle r="18"/><image href="assets/images/conn-littleflower.webp" x="-15" y="-15" width="30" height="30" clip-path="url(#conn-dot-clip)" preserveAspectRatio="xMidYMid slice"/><text y="5" class="conn__dot-no">8</text></g><g class="conn__dist"><rect x="-30" y="-11" width="60" height="22" rx="11"/><text y="4.5">7.5 km</text></g><g class="conn__pin" tabindex="0" role="img" aria-label="Wellage Praana"><circle r="33"/><image href="assets/images/wellage-w.webp" x="-18.0" y="-15.6" width="36" height="31.2" preserveAspectRatio="xMidYMid meet"/><g class="conn__tip" aria-hidden="true"><rect x="-78" y="-122" width="156" height="66" rx="10"/><path d="M-8 -56h16l-8 9z"/><image href="assets/images/logo-praana.webp" x="-66" y="-116" width="132" height="54" preserveAspectRatio="xMidYMid meet"/></g></g></svg>
         </figure>
       </div>
-      <img class="conn__frame" src="assets/images/conn-frame.webp" width="1670" height="942" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="conn__frame" src="assets/images/conn-frame-v2c.webp" width="1670" height="942" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <ul class="conn__places">
         <li class="conn__place" data-i="0"><img src="assets/images/conn-airport.webp" width="360" height="360" alt="" loading="lazy" decoding="async"><span class="conn__place-name">Cochin International Airport</span><span class="conn__place-meta">7.5 km &bull; 12 mins</span><button class="conn__pick" type="button" aria-pressed="false" aria-label="Show Cochin International Airport"></button></li>
         <li class="conn__place" data-i="1"><img src="assets/images/conn-bypass.webp" width="360" height="360" alt="" loading="lazy" decoding="async"><span class="conn__place-name">Aluva&ndash;Angamaly Bypass</span><span class="conn__place-meta">2.5 km &bull; 5 mins</span><button class="conn__pick" type="button" aria-pressed="false" aria-label="Show Aluva-Angamaly Bypass"></button></li>
@@ -519,7 +511,7 @@
       <div class="reimagined__copy">
         <span class="section-heading__eyebrow">Why Senior Living</span>
         <h2 class="reimagined__title" id="reimagined-title">Retirement, <em>reimagined</em></h2>
-        <p class="reimagined__lede">Live independently, stay connected, prioritise wellness and enjoy peace of mind in a community designed for the next chapter.</p>
+        <p class="reimagined__lede">Live independently, stay connected, embrace wellness, and enjoy peace of mind.</p>
         <a class="btn btn--primary" href="#visit">Know More<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <ul class="ideas">
@@ -892,7 +884,7 @@
     <span>Enquire Now</span>
   </button>
   <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
-  <div class="drawer" id="enquire" role="dialog" aria-labelledby="drawer-title" data-drawer inert>
+  <div class="drawer" id="enquire" role="dialog" aria-labelledby="drawer-title" data-drawer data-open-delay="2000" inert>
     <header class="drawer__head">
       <div>
         <h2 class="drawer__title" id="drawer-title">Discover Wellage <span class="drawer__title-accent">Praana</span></h2>
@@ -966,7 +958,6 @@
     <a class="float-actions__item float-actions__item--wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener"><img src="assets/images/whatsapp.webp" width="128" height="128" alt="" class="float-actions__wa-img" decoding="async"><span class="float-actions__label">WhatsApp<span class="sr-only"> (opens in a new tab)</span></span></a>
     <a class="float-actions__item float-actions__item--visit" href="#visit"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span class="float-actions__label">Schedule a Visit</span></a>
     <a class="float-actions__item float-actions__item--brochure" href="wellage.pdf" data-brochure-open><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span class="float-actions__label">Download Brochure</span></a>
-      <a class="float-actions__item float-actions__item--ver" href="v2.html" aria-label="View version 2 of this page"><span class="float-actions__ver-badge" aria-hidden="true">V2</span><span class="float-actions__label">Version 2</span></a>
   </nav>
 
   <!-- ============ DIALOGS ============ -->

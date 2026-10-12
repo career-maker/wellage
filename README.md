@@ -11,7 +11,9 @@ npm run build      # scss -> css/main.css + css/main.min.css, js/* -> js/bundle.
 npm run serve      # http://localhost:4173 (sends the 4 security headers, for local verification)
 ```
 
-> `index.html` is generated: edit `tools/src/index.src.html` (it contains `{{img …}}` / `{{gal …}}`
+> **Primary page:** `index.html` is now the former "version 2" (hand-edited; `v2.html` redirects to it). The earlier design is kept as `v1.html`. The build note below describes the old generated page and no longer applies to `index.html`.
+>
+> `index.html` was generated: edit `tools/src/index.src.html` (it contains `{{img …}}` / `{{gal …}}`
 > tokens that expand to responsive `srcset` markup), then run `npm run build`.
 
 ## Structure
