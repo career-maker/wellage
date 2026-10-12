@@ -9573,3 +9573,20 @@ html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
 @media (min-width: 56rem) and (max-width: 63.99rem) {
   .ideas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 }
+
+/* ============ Footer: shorter credits band; clear of the mobile action bar ============ */
+@media (min-width: 64rem) {
+  .site-footer { height: calc(724 * var(--u)); }
+  .site-footer__bg { object-fit: cover; object-position: center top; }
+  .site-footer__copy { top: calc(40 * var(--u)); }
+  .site-footer .site-footer__links { top: calc(36 * var(--u)); }
+  .site-footer .site-footer__credit { top: calc(43 * var(--u)); }
+}
+@media (max-width: 67.99rem) {
+  .site-footer { padding-bottom: 4.5rem; }
+  .site-footer .site-footer__legal-inner { padding-block: 1rem; gap: 0.5rem; }
+  .site-footer .site-footer__legal-inner { grid-template-columns: 1fr; }
+}
+@media (min-width: 40rem) and (max-width: 67.99rem) {
+  .site-footer .site-footer__legal-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 2rem; }
+}
