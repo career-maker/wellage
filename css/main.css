@@ -9657,3 +9657,87 @@ main section .overview__title .overview__title-accent,
 @media (max-width: 63.99rem) {
   .visit__bg::after { background: linear-gradient(180deg, rgba(10, 32, 26, 0.72) 0%, rgba(10, 32, 26, 0.6) 55%, rgba(10, 32, 26, 0.45) 100%); }
 }
+
+/* ============ Amenities: same tilted-photo / skewed-panel card shape as Why Senior Living (cards 1+3 and 2+4 match) ============ */
+@media (min-width: 64rem) {
+  .amen__grid { align-items: start; }
+  .amen__item,
+  .amen__item--wellness, .amen__item--food, .amen__item--rec, .amen__item--outdoor {
+    container-type: inline-size;
+    background: none !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    overflow: visible;
+    filter: drop-shadow(0 12px 18px rgba(18, 48, 42, 0.2));
+  }
+  .amen__item:nth-child(odd)  { --skew: 5deg; --pskew: -2.5deg; margin-top: 0; }
+  .amen__item:nth-child(even) { --skew: 9deg; --pskew: -1deg;   margin-top: clamp(0.6rem, 2.4vh, 1.5rem); }
+  .amen__item--wellness { --panel: #f6efe2; }
+  .amen__item--food     { --panel: #12302a; }
+  .amen__item--rec      { --panel: #f6ead2; }
+  .amen__item--outdoor  { --panel: #e6e9d6; }
+  .amen__item .amen__media {
+    border-radius: 9cqw 9cqw 0 0;
+    overflow: hidden;
+    transform: skewY(var(--pskew));
+    transform-origin: 0 100%;
+  }
+  .amen__item .amen__body {
+    position: relative;
+    isolation: isolate;
+    margin-top: -7cqw !important;
+    padding: 4cqw 9cqw 9cqw !important;
+    background: none !important;
+  }
+  .amen__item .amen__body::before,
+  .amen__item .amen__body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--panel);
+    border-radius: 0 0 9cqw 9cqw;
+  }
+  .amen__item .amen__body::before { bottom: 50%; border-radius: 0; }
+  .amen__item .amen__body::after { transform: skewY(var(--skew)); transform-origin: 0 0; border-radius: 0 0 9cqw 9cqw; }
+}
+
+/* ============ Header: sticky solid bar by default (no transparent overlay) ============ */
+.page-home .site-header,
+.page-home .site-header:not(.is-scrolled) {
+  position: sticky;
+  inset: 0 auto auto 0;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(31, 38, 36, 0.12);
+  box-shadow: 0 6px 24px rgba(15, 47, 45, 0.06);
+}
+.page-home .site-header.is-hidden { transform: none; }
+.page-home .site-header__brand { margin-top: 0; }
+.page-home .hero__inner { padding-top: clamp(1.25rem, 4.5vh, 4rem); }
+.page-home .hero { min-height: calc(100dvh - 4.25rem); }
+@media (min-width: 80rem) {
+  .page-home .hero__inner { padding-top: clamp(1.25rem, 4.5vh, 4rem); }
+  .page-home .hero { min-height: calc(100dvh - 4.75rem); }
+}
+/* in-page anchors land below the sticky bar */
+html { scroll-padding-top: 4.5rem; }
+main > section, .site-footer { scroll-margin-top: 0; }
+
+/* floor plan dialog: fits narrow phones (table scrolls inside, buttons stack full width) */
+.dialog { width: min(42rem, calc(100vw - 1.5rem)); }
+.dialog__panel { padding: clamp(1.1rem, 4vw, 2.5rem); }
+.dialog .spec-table { font-size: 0.875rem; }
+@media (max-width: 36rem) {
+  .dialog .spec-table { display: block; }
+  .dialog .spec-table thead { display: none; }
+  .dialog .spec-table tbody { display: grid; gap: 0.75rem; }
+  .dialog .spec-table tr { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.25rem 0.75rem; padding: 0.75rem; border: 1px solid rgba(31, 38, 36, 0.14); border-radius: 0.75rem; background: #fff; }
+  .dialog .spec-table tbody th { grid-column: 1 / -1; padding: 0; border: 0; font-size: 1.35rem; }
+  .dialog .spec-table td { padding: 0; border: 0; font-size: 0.8125rem; line-height: 1.35; }
+  .dialog .spec-table td::before { display: block; margin-bottom: 0.15rem; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4a5551; }
+  .dialog .spec-table td:nth-of-type(1)::before { content: "Saleable area"; }
+  .dialog .spec-table td:nth-of-type(2)::before { content: "RERA carpet"; }
+  .dialog .spec-table td:nth-of-type(3)::before { content: "Balcony"; }
+  .dialog__actions { display: grid; grid-template-columns: 1fr; }
+  .dialog__actions .btn { width: 100%; }
+}
