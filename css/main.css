@@ -9869,3 +9869,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
+
+/* version 2 only: lighter gold frame around Life at Praana */
+.page-v2 .way::before,
+.page-v2 .way::after { opacity: 0.3; }
