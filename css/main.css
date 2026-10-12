@@ -9590,3 +9590,9 @@ html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
 @media (min-width: 40rem) and (max-width: 67.99rem) {
   .site-footer .site-footer__legal-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 2rem; }
 }
+/* footer address row: pin icon and text share one centre line */
+@media (min-width: 64rem) {
+  .site-footer .site-footer__info { display: flex; align-items: center; gap: calc(20 * var(--u)); padding-left: calc(8 * var(--u)); }
+  .site-footer__pin { position: static; flex: none; width: calc(26 * var(--u)); height: calc(34 * var(--u)); }
+  .site-footer .site-footer__info address { position: static; margin: 0; line-height: 1.4; }
+}
