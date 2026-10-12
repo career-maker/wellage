@@ -10352,3 +10352,8 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .way__col--a { padding-left: clamp(0.5rem, 2vw, 3rem) !important; }
   .way__figure { min-height: 0; }
 }
+
+/* amenities: clear gap between the title block and the (slanted) card row on desktop */
+@media (min-width: 64rem) {
+  .page-v2 .amen__head { margin-bottom: clamp(2.5rem, 6dvh, 4rem); }
+}
