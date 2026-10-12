@@ -400,15 +400,7 @@ window.PRAANA_CONFIG = {
       else li.removeAttribute("data-slot");
     });
     grid.classList.toggle("is-collapsed", !expanded);
-    allBtn.hidden = n <= LIMIT;
-    allBtn.textContent = expanded ? "Show Less" : "View All";
-    allBtn.setAttribute("aria-expanded", String(expanded));
   }
-
-  allBtn.addEventListener("click", function () {
-    expanded = !expanded;
-    layout();
-  });
 
   filters.addEventListener("click", function (e) {
     var btn = e.target.closest("[data-filter]");
@@ -1281,8 +1273,26 @@ window.PRAANA_CONFIG = {
   rows.forEach(function (el, i) {
     el.querySelector(".conn__pick").addEventListener("click", function () { select(i); });
   });
+  var current = 0;
+  var baseSelect = select;
+  select = function (i) {
+    current = Number(rows[i].getAttribute("data-photo"));
+    baseSelect(i);
+  };
+
+  // hovering (or focusing) a thumbnail previews its photo in the background; leaving restores the selected one
+  function preview(photo) {
+    photos.forEach(function (img, n) { img.classList.toggle("is-active", n === photo); });
+  }
   cards.forEach(function (el, i) {
-    el.querySelector(".conn__pick").addEventListener("click", function () { select(i); });
+    var pick = el.querySelector(".conn__pick");
+    pick.addEventListener("click", function () { select(i); });
+    ["mouseenter", "focus"].forEach(function (ev) {
+      pick.addEventListener(ev, function () { preview(i); });
+    });
+    ["mouseleave", "blur"].forEach(function (ev) {
+      pick.addEventListener(ev, function () { preview(current); });
+    });
   });
   dots.forEach(function (d) {
     d.addEventListener("click", function () { select(Number(d.getAttribute("data-i"))); });
