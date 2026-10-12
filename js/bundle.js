@@ -1310,13 +1310,12 @@ window.PRAANA_CONFIG = {
   if (!box) return;
   var zones = Array.prototype.slice.call(document.querySelectorAll(".hero, .site-footer"));
   if (!zones.length || !("IntersectionObserver" in window)) return;
-  var seen = {};
+  var seen = zones.map(function () { return false; });
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      seen[e.target.className] = e.isIntersecting;
+      seen[zones.indexOf(e.target)] = e.isIntersecting;
     });
-    var away = Object.keys(seen).some(function (k) { return seen[k]; });
-    box.classList.toggle("is-away", away);
+    box.classList.toggle("is-away", seen.some(Boolean));
   });
   zones.forEach(function (z) { io.observe(z); });
 })();
