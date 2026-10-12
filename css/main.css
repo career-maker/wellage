@@ -8947,3 +8947,24 @@ main section .film__title.film__title {
 .expert__icon { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 .expert__btn img { width: 1.5rem; height: 1.5rem; object-fit: contain; flex: none; }
 .expert { padding-right: 0.75rem; }
+
+/* ============ Fixes 2026-10-12: room list type, route hover, person-card hover ============ */
+main section .rm__item {
+  font-family: var(--font-display) !important;
+  font-size: var(--t-card) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+}
+@media (hover: hover) {
+  /* row highlight stays inside the rounded list: no sideways shift */
+  .route:hover { transform: none; }
+  /* transparent person cards: lift only, no ring/shadow lines over the photo */
+  .varma .person-card:hover {
+    transform: translateY(-6px);
+    box-shadow: none;
+    filter: none;
+  }
+  .varma .person-card:hover .person-card__photo { box-shadow: 0 24px 40px -24px rgba(18, 48, 42, 0.55); }
+}
+.routes, .duo .routes { overflow: hidden; }
