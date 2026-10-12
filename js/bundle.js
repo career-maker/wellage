@@ -186,7 +186,7 @@ window.PRAANA_CONFIG = {
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && drawer.classList.contains("is-open")) {
       // a styled dropdown handles its own Escape first
-      if (!drawer.querySelector(".select__list:not([hidden])")) setOpen(false);
+      if (!document.querySelector(".select__list--float:not([hidden])")) setOpen(false);
     }
   });
 
@@ -219,6 +219,16 @@ window.PRAANA_CONFIG = {
     if (err) err.textContent = message || "";
   }
 
+  function dialOf(el) {
+    var cc = el.form && el.form.elements.country_code;
+    return cc && cc.value ? cc.value : "+91";
+  }
+
+  function phoneOk(el, v) {
+    if (dialOf(el) === "+91") return PHONE_RE.test(v);
+    return /^\d{6,14}$/.test(v.replace(/[\s-]/g, ""));
+  }
+
   function validateField(el) {
     var v = el.value.trim();
     var msg = "";
@@ -231,8 +241,8 @@ window.PRAANA_CONFIG = {
       if (el.name === "visitors") msg = "Please select the number of visitors.";
     } else if (el.name === "name" && v.length < 2) {
       msg = "Please enter your full name.";
-    } else if (el.name === "phone" && !PHONE_RE.test(v)) {
-      msg = "Enter a valid 10-digit Indian mobile number, e.g. 98765 43210.";
+    } else if (el.name === "phone" && !phoneOk(el, v)) {
+      msg = dialOf(el) === "+91" ? "Enter a valid 10-digit Indian mobile number, e.g. 98765 43210." : "Enter a valid phone number for the selected country.";
     } else if (el.name === "email" && !EMAIL_RE.test(v)) {
       msg = "Enter a valid email address, e.g. name@example.com.";
     } else if (el.name === "date" && v) {
@@ -305,6 +315,7 @@ window.PRAANA_CONFIG = {
       controls.forEach(function (c) {
         data[c.name] = c.value.trim();
       });
+      if (data.phone && !/^\+/.test(data.phone)) data.phone = (data.country_code || "+91") + " " + data.phone;
 
       var fallback =
         '<div class="form__fallback">' +
@@ -636,6 +647,49 @@ window.PRAANA_CONFIG = {
   });
 })();
 
+/* components/phone.js */
+/* Phone fields: country-code dropdown with flag (progressively enhanced by select.js). */
+(function () {
+  "use strict";
+
+  var COUNTRIES = [
+    ["India", "+91", "in"], ["United Arab Emirates", "+971", "ae"], ["Saudi Arabia", "+966", "sa"],
+    ["Qatar", "+974", "qa"], ["Kuwait", "+965", "kw"], ["Oman", "+968", "om"], ["Bahrain", "+973", "bh"],
+    ["United States", "+1", "us"], ["Canada", "+1", "ca"], ["United Kingdom", "+44", "gb"],
+    ["Ireland", "+353", "ie"], ["Germany", "+49", "de"], ["France", "+33", "fr"],
+    ["Australia", "+61", "au"], ["New Zealand", "+64", "nz"], ["Singapore", "+65", "sg"],
+    ["Malaysia", "+60", "my"], ["Sri Lanka", "+94", "lk"], ["Nepal", "+977", "np"]
+  ];
+
+  document.querySelectorAll('input[type="tel"][name="phone"]').forEach(function (input) {
+    var parent = input.parentNode;
+    var box = document.createElement("div");
+    box.className = "phone";
+
+    var sel = document.createElement("select");
+    sel.className = "field__control phone__cc";
+    sel.name = "country_code";
+    sel.id = input.id + "-cc";
+    sel.setAttribute("aria-label", "Country code");
+    COUNTRIES.forEach(function (c) {
+      var o = document.createElement("option");
+      o.value = c[1];
+      o.textContent = c[0] + " (" + c[1] + ")";
+      o.setAttribute("data-flag", c[2]);
+      o.setAttribute("data-short", c[1]);
+      sel.appendChild(o);
+    });
+
+    parent.insertBefore(box, input);
+    box.appendChild(sel);
+    box.appendChild(input);
+    Array.prototype.slice.call(parent.children).forEach(function (n) {
+      if (n.classList && (n.classList.contains("field__ico") || n.classList.contains("field__icon"))) parent.removeChild(n);
+    });
+    parent.classList.add("has-phone");
+  });
+})();
+
 /* components/select.js */
 /* Styled dropdowns: progressive enhancement of native <select> (the select stays the source of truth). */
 (function () {
@@ -685,7 +739,22 @@ window.PRAANA_CONFIG = {
       li.className = "select__option";
       li.setAttribute("role", "option");
       li.id = list.id + "-" + i;
-      li.textContent = o.text;
+      var flag = o.getAttribute("data-flag");
+      if (flag) {
+        var im = document.createElement("img");
+        im.className = "select__flag";
+        im.src = "assets/flags/" + flag + ".svg";
+        im.width = 22;
+        im.height = 15;
+        im.alt = "";
+        im.loading = "lazy";
+        li.appendChild(im);
+        var nm = document.createElement("span");
+        nm.textContent = o.text;
+        li.appendChild(nm);
+      } else {
+        li.textContent = o.text;
+      }
       li.dataset.index = i;
       list.appendChild(li);
       return li;
@@ -700,7 +769,14 @@ window.PRAANA_CONFIG = {
 
     function sync() {
       var i = select.selectedIndex;
-      text.textContent = select.options[i].text;
+      var cur = select.options[i];
+      var curFlag = cur.getAttribute("data-flag");
+      if (curFlag) {
+        text.innerHTML = '<img class="select__flag" src="assets/flags/' + curFlag + '.svg" width="22" height="15" alt=""><span>' + cur.getAttribute("data-short") + "</span>";
+        btn.setAttribute("aria-label", "Country code " + cur.text);
+      } else {
+        text.textContent = cur.text;
+      }
       wrap.classList.toggle("is-placeholder", select.value === "");
       opts.forEach(function (li, n) {
         li.setAttribute("aria-selected", String(n === i));
@@ -716,15 +792,39 @@ window.PRAANA_CONFIG = {
       opts[active].scrollIntoView({ block: "nearest" });
     }
 
+    // the list floats on <body> (position: fixed) so no card, drawer or overflow can clip it; it flips upward when space is short
+    function place() {
+      var r = btn.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var below = vh - r.bottom - 10;
+      var above = r.top - 10;
+      var want = Math.min(list.scrollHeight, 320) + 4;
+      var down = below >= want || below >= above;
+      var h = Math.max(110, Math.min(want, down ? below : above));
+      list.style.maxHeight = h + "px";
+      list.style.minWidth = Math.max(r.width, select.classList.contains("phone__cc") ? 272 : 0) + "px";
+      var w = list.offsetWidth;
+      list.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8)) + "px";
+      var real = Math.min(list.scrollHeight, h);
+      list.style.top = (down ? r.bottom + 6 : r.top - 6 - real) + "px";
+    }
+
     function open() {
       if (!list.hidden) return;
+      document.body.appendChild(list);
+      list.classList.add("select__list--float");
       list.hidden = false;
+      place();
+      window.addEventListener("resize", place);
+      window.addEventListener("scroll", place, true);
       wrap.classList.add("is-open");
       btn.setAttribute("aria-expanded", "true");
       setActive(select.selectedIndex);
     }
 
     function close() {
+      window.removeEventListener("resize", place);
+      window.removeEventListener("scroll", place, true);
       list.hidden = true;
       wrap.classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");
@@ -791,7 +891,7 @@ window.PRAANA_CONFIG = {
     });
 
     document.addEventListener("click", function (e) {
-      if (!wrap.contains(e.target)) close();
+      if (!wrap.contains(e.target) && !list.contains(e.target)) close();
     });
 
     // validation state + programmatic focus mirror the native control
