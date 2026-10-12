@@ -9386,3 +9386,25 @@ main > section.conn {
   .conn__shade { background: linear-gradient(90deg, rgba(5, 22, 28, 0.84) 0%, rgba(5, 22, 28, 0.7) 48%, rgba(5, 22, 28, 0.5) 100%); }
   .conn__routes { background: linear-gradient(90deg, rgba(6, 26, 30, 0.55), rgba(6, 26, 30, 0.42)); }
 }
+/* hero lede: cream plate hugs the paragraph instead of the whole column */
+.hero__lede {
+  width: fit-content;
+  justify-self: start;
+  max-width: min(100%, 29em);
+  text-wrap: balance;
+  padding: 0.15rem 0.35rem;
+  background: rgba(251, 248, 242, 0.86);
+  box-shadow: 0 0 0.8rem 0.55rem rgba(251, 248, 242, 0.86);
+}
+@media (min-width: 64rem) { .hero__lede { max-width: min(100%, 27em); } }
+/* plate lives on an inline span so it follows the text lines only */
+.hero__lede { background: none; box-shadow: none; padding: 0; text-wrap: pretty; }
+.hero__lede > span {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.12em 0.4em;
+  background: rgba(251, 248, 242, 0.88);
+  box-shadow: 0 0 0.7rem 0.4rem rgba(251, 248, 242, 0.88);
+  border-radius: 0.35rem;
+  line-height: 1.9;
+}
