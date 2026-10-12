@@ -10015,3 +10015,20 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .way__figure { aspect-ratio: 4 / 3; }
   .page-v2 .way__figure .way__swap { position: absolute; }
 }
+
+/* ============ One title size for every section (overview, life, floor plans, connectivity …) ============ */
+@media (min-width: 64rem) {
+  main section .overview__title,
+  main section .way__title,
+  .page-v2 main section .way__title,
+  main section .duo .section-heading__title,
+  .duo .section-heading__title,
+  main section .conn__title,
+  main section .section-heading__title {
+    font-size: var(--t-title) !important;
+    line-height: 1.04 !important;
+  }
+  main section .overview__title { white-space: nowrap; }
+  .overview__top { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); }
+  .way__inner { grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1fr); }
+}
