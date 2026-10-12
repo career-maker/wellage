@@ -9198,3 +9198,14 @@ main > section.conn {
   .conn__places { margin-top: 1rem; }
 }
 .duo .plans { width: 100%; max-width: 68rem; justify-self: center; }
+
+/* Life at Praana on tablets: figure on top, the two item columns side by side (was 6 squeezed columns) */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .way__col { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .way__item { grid-template-columns: auto minmax(0, 1fr); }
+  .way__stage { column-gap: 1.75rem; align-items: start; }
+  .way__figure { aspect-ratio: 16 / 9; }
+}
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  main section .way__title { font-size: min(var(--t-title), 3.5vw) !important; white-space: normal; }
+}
