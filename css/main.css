@@ -9741,3 +9741,39 @@ main > section, .site-footer { scroll-margin-top: 0; }
   .dialog__actions { display: grid; grid-template-columns: 1fr; }
   .dialog__actions .btn { width: 100%; }
 }
+
+/* experience form: corner leaves keep their own proportions and sit flush in the card corners */
+.visit-card::after {
+  left: 0;
+  bottom: 0;
+  width: clamp(4.5rem, 9vw, 8rem);
+  height: auto;
+  aspect-ratio: 186 / 183;
+  background-size: contain;
+  background-position: left bottom;
+}
+.visit-card::before {
+  right: 0;
+  top: 0;
+  width: clamp(4.5rem, 9vw, 8rem);
+  height: auto;
+  aspect-ratio: 179 / 176;
+  background-size: contain;
+  background-position: right top;
+}
+
+/* gallery filters: one scrollable row of tabs on phones and tablets */
+@media (max-width: 63.99rem) {
+  .gallery .gallery__filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 0.15rem 1.25rem 0.5rem;
+    margin-inline: -1.25rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+  .gallery .gallery__filters::-webkit-scrollbar { display: none; }
+  .gallery .gallery__filters > *, .gallery .gallery__filters button { flex: none; white-space: nowrap; scroll-snap-align: start; }
+}
