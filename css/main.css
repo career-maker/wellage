@@ -9209,3 +9209,55 @@ main > section.conn {
 @media (min-width: 64rem) and (max-width: 79.99rem) {
   main section .way__title { font-size: min(var(--t-title), 3.5vw) !important; white-space: normal; }
 }
+
+/* ============ Connectivity: destination card hover (lift, photo zoom, gold ring) + linked list row & radar marker ============ */
+.conn__place { position: relative; transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1); }
+.conn__place img {
+  transition: transform 0.7s cubic-bezier(0.22, 0.8, 0.3, 1), box-shadow 0.5s ease;
+}
+.conn__place-name { transition: color 0.35s ease; }
+.conn__place-meta { position: relative; transition: color 0.35s ease, letter-spacing 0.45s ease; }
+.conn__place-meta::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -1px;
+  width: 0;
+  height: 2px;
+  background: #c9964a;
+  transform: translateX(-50%);
+  transition: width 0.5s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+.conn__dot circle { transition: fill 0.3s ease, stroke 0.3s ease; }
+.conn__dot { transform-box: fill-box; transform-origin: center; transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .conn__place:hover { transform: translateY(-10px); }
+  .conn__place:hover img {
+    transform: scale(1.07);
+    box-shadow: 0 0 0 4px #fff, 0 0 0 7px rgba(201, 150, 74, 0.85), 0 18px 28px -12px rgba(18, 48, 42, 0.6);
+  }
+  .conn__place:hover .conn__place-name { color: #8a5a18; }
+  .conn__place:hover .conn__place-meta { color: #12302a; letter-spacing: 0.18em; }
+  .conn__place:hover .conn__place-meta::after { width: 100%; }
+  .conn:has(.conn__place:nth-child(1):hover) .conn__route:nth-child(1) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(1):hover) .conn__dot:nth-of-type(5) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(1):hover) .conn__dot:nth-of-type(5) circle { fill: #c9964a; stroke: #fff; }
+  .conn:has(.conn__place:nth-child(2):hover) .conn__route:nth-child(2) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(2):hover) .conn__dot:nth-of-type(6) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(2):hover) .conn__dot:nth-of-type(6) circle { fill: #c9964a; stroke: #fff; }
+  .conn:has(.conn__place:nth-child(3):hover) .conn__route:nth-child(3) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(3):hover) .conn__dot:nth-of-type(7) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(3):hover) .conn__dot:nth-of-type(7) circle { fill: #c9964a; stroke: #fff; }
+  .conn:has(.conn__place:nth-child(4):hover) .conn__route:nth-child(4) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(4):hover) .conn__dot:nth-of-type(8) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(4):hover) .conn__dot:nth-of-type(8) circle { fill: #c9964a; stroke: #fff; }
+  .conn:has(.conn__place:nth-child(5):hover) .conn__route:nth-child(5) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(5):hover) .conn__dot:nth-of-type(9) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(5):hover) .conn__dot:nth-of-type(9) circle { fill: #c9964a; stroke: #fff; }
+  .conn:has(.conn__place:nth-child(6):hover) .conn__route:nth-child(6) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(6):hover) .conn__dot:nth-of-type(10) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(6):hover) .conn__dot:nth-of-type(10) circle { fill: #c9964a; stroke: #fff; }
+  .conn:has(.conn__place:nth-child(7):hover) .conn__route:nth-child(7) { background: rgba(232, 196, 122, 0.16); }
+  .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) circle { fill: #c9964a; stroke: #fff; }
+}
