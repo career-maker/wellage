@@ -10313,3 +10313,13 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
     background: linear-gradient(90deg, rgba(8, 24, 20, 0.6) 0%, rgba(8, 24, 20, 0.42) 38%, rgba(8, 24, 20, 0.05) 62%, rgba(8, 24, 20, 0) 100%);
   }
 }
+
+/* mobile: hero height is fixed to the *small* viewport so the browser's collapsing address bar never resizes (zooms) the photo while scrolling */
+@media (max-width: 63.99rem) {
+  .page-v2 .hero { min-height: calc(100svh - 4.25rem); }
+  .page-v2 .hero__bg { contain: layout paint; }
+  .page-v2 .hero__bg-image { will-change: auto; }
+}
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .page-v2 .hero { min-height: max(calc(100svh - 4.25rem), 62vw); }
+}
