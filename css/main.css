@@ -10109,3 +10109,8 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 main > section.amen { padding-bottom: clamp(4rem, 9dvh, 7rem) !important; }
   .page-v2 .amen__grid { padding-bottom: clamp(0.5rem, 2dvh, 1.5rem); }
 }
+
+/* version 2: four-button dock (V1 link hidden) and Enquire tab clear of the header */
+.page-v2 .float-actions { grid-template-columns: repeat(4, 1fr); }
+.drawer-tab { top: clamp(6.25rem, 15dvh, 11rem); }
+@media (min-width: 68rem) and (max-height: 40rem) { .drawer-tab { top: 5.75rem; } }
