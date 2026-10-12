@@ -10032,3 +10032,16 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .overview__top { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); }
   .way__inner { grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1fr); }
 }
+
+/* version 2: Residences and Amenities - taller sections, title gap matched to the other sections */
+.page-v2 main > section.rm,
+.page-v2 main > section.amen {
+  justify-content: flex-start;
+  min-height: max(100dvh, 46rem);
+  padding-top: clamp(4.5rem, 8dvh, 6.5rem) !important;
+  padding-bottom: clamp(3.5rem, 7dvh, 6rem) !important;
+}
+.page-v2 .rm__inner { padding-top: 0; --rm-h: clamp(8rem, calc(100dvh - 24rem), 36rem); }
+@media (max-width: 63.99rem) {
+  .page-v2 main > section.rm, .page-v2 main > section.amen { min-height: 0; padding-top: 4.5rem !important; }
+}
