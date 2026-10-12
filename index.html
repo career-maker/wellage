@@ -13,7 +13,7 @@
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/CormorantGaramond-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/images/hero-bg-1300.webp" imagesrcset="assets/images/hero-bg-1300.webp 1300w, assets/images/hero-bg-1942.webp 1942w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero-bg-m.webp" imagesrcset="assets/images/hero-bg-m.webp 660w, assets/images/hero-bg-1942.webp 1942w" imagesizes="(max-width: 63.99rem) 660px, 1942px" fetchpriority="high">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body class="page-home">
@@ -95,7 +95,7 @@
 
       <div class="site-header__actions">
         <a class="site-header__phone" href="tel:+919048857777"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+91 9048 857777</span></a>
-        <a class="site-header__wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener" aria-label="Chat on WhatsApp (opens in a new tab)"><img src="assets/images/whatsapp.png" width="128" height="128" alt="" class="site-header__wa-img" decoding="async"></a>
+        <a class="site-header__wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener" aria-label="Chat on WhatsApp (opens in a new tab)"><img src="assets/images/whatsapp.webp" width="128" height="128" alt="" class="site-header__wa-img" decoding="async"></a>
         <a class="btn btn--primary btn--sm site-header__cta" href="#visit">Schedule a Visit</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle>
           <span class="sr-only">Menu</span>
@@ -109,7 +109,7 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true">
-      <img src="assets/images/hero-bg-1942.webp" srcset="assets/images/hero-bg-1300.webp 1300w, assets/images/hero-bg-1942.webp 1942w" sizes="100vw" width="1942" height="809" alt="" class="hero__bg-image" fetchpriority="high">
+      <picture><source media="(max-width: 63.99rem)" srcset="assets/images/hero-bg-m.webp"><img src="assets/images/hero-bg-1942.webp" width="1942" height="809" alt="" class="hero__bg-image" fetchpriority="high" decoding="async"></picture>
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__leaves" aria-hidden="true" data-leaves></div>
@@ -299,7 +299,7 @@
               <ul class="rm__list">
                 <li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-sofa"/></svg></span><span class="rm__item">Sofa</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-tv"/></svg></span><span class="rm__item">TV unit</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-storage"/></svg></span><span class="rm__item">Storage</span></li>
               </ul>
-              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="rm__ring" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></p>
+              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
             </div>
           </div>
           <div class="rm__panel" role="tabpanel" id="panel-kitchen" aria-labelledby="tab-kitchen" hidden>
@@ -313,7 +313,7 @@
                 <li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-fridge"/></svg></span><span class="rm__item">Refrigerator</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-cooker"/></svg></span><span class="rm__item">Induction cooker</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-kettle"/></svg></span><span class="rm__item">Kettle</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-microwave"/></svg></span><span class="rm__item">Microwave</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-drop"/></svg></span><span class="rm__item">Water purifier</span></li>
               </ul>
               <p class="rm__note">Fully equipped so you can prepare a meal or a cup of tea the day you move in.</p>
-              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="rm__ring" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></p>
+              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
             </div>
           </div>
           <div class="rm__panel" role="tabpanel" id="panel-bedroom" aria-labelledby="tab-bedroom" hidden>
@@ -327,7 +327,7 @@
                 <li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-bed"/></svg></span><span class="rm__item">Queen-size cot</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-bed"/></svg></span><span class="rm__item">Orthopedic mattress</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-wardrobe"/></svg></span><span class="rm__item">Wardrobe</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-ac"/></svg></span><span class="rm__item">AC</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-desk"/></svg></span><span class="rm__item">Work desk</span></li>
               </ul>
               <p class="rm__note">A restful, air-conditioned bedroom with an orthopedic mattress.</p>
-              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="rm__ring" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></p>
+              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
             </div>
           </div>
           <div class="rm__panel" role="tabpanel" id="panel-bath" aria-labelledby="tab-bath" hidden>
@@ -344,7 +344,7 @@
                 <li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><span class="rm__item">Safety features</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-washer"/></svg></span><span class="rm__item">Washing machine</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span class="rm__item">Digital locker</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-curtain"/></svg></span><span class="rm__item">Curtains</span></li><li><span class="rm__ico"><svg aria-hidden="true"><use href="#i-plug"/></svg></span><span class="rm__item">Electrical fittings</span></li>
               </ul>
               <p class="rm__note">Senior-friendly safety features and everyday utilities built in.</p>
-              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="rm__ring" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></p>
+              <p class="rm__cta"><a class="btn btn--primary rm__btn" href="#floor-plans"><span>View Floor Plans</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
             </div>
           </div>
         </div>
@@ -466,7 +466,7 @@
     <div class="conn__stage">
       <div class="conn__top">
         <div class="conn__photos" aria-hidden="true">
-          <img class="conn__photo is-active" data-conn-photo src="assets/images/conn-photo-airport-1672.webp" srcset="assets/images/conn-photo-airport-960.webp 960w, assets/images/conn-photo-airport-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" aria-hidden="true" decoding="async">
+          <img class="conn__photo is-active" data-conn-photo src="assets/images/conn-photo-airport-1672.webp" srcset="assets/images/conn-photo-airport-960.webp 960w, assets/images/conn-photo-airport-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <img class="conn__photo" data-conn-photo src="assets/images/conn-photo-bypass-1672.webp" srcset="assets/images/conn-photo-bypass-960.webp 960w, assets/images/conn-photo-bypass-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <img class="conn__photo" data-conn-photo src="assets/images/conn-photo-golf-1672.webp" srcset="assets/images/conn-photo-golf-960.webp 960w, assets/images/conn-photo-golf-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <img class="conn__photo" data-conn-photo src="assets/images/conn-photo-railway-1672.webp" srcset="assets/images/conn-photo-railway-960.webp 960w, assets/images/conn-photo-railway-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" aria-hidden="true" loading="lazy" decoding="async">
@@ -583,7 +583,7 @@
       </div>
       <div class="visit-card">
         <header class="visit-card__head">
-          <img class="visit-card__logo" src="assets/images/visit-logo-leaf.png" alt="" width="78" height="90" aria-hidden="true">
+          <img class="visit-card__logo" src="assets/images/visit-logo-leaf.webp" alt="" width="78" height="90" aria-hidden="true">
           <div>
             <h3 class="visit-card__title">Schedule a Visit</h3>
             <p class="visit-card__tag">Take the first step towards a brighter tomorrow</p>
@@ -619,7 +619,7 @@
             <p class="field__error" id="visit-guests-err" role="alert"></p>
           </div>
           <div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <button class="btn btn--primary visit-card__btn" type="submit" data-submit><svg class="btn__icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>Schedule a Visit</span><span class="visit-card__ring" aria-hidden="true"><svg><use href="#i-chevron"/></svg></span></button>
+          <button class="btn btn--primary visit-card__btn" type="submit" data-submit><svg class="btn__icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>Schedule a Visit</span><svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
           <div class="form__status" role="status" aria-live="polite" data-status></div>
           <p class="form__note form__note--wide visit-card__note"><svg aria-hidden="true"><use href="#i-headset"/></svg><span>A visit is confirmed only when our team contacts you.<br>Prefer to talk? Call <a href="tel:+919048857777">+91 9048 857777</a>.</span></p>
         </form>
@@ -961,7 +961,7 @@
   <!-- ============ FLOATING CONVERSION CONTROLS ============ -->
   <nav class="float-actions" aria-label="Quick contact actions" data-float>
     <a class="float-actions__item float-actions__item--call" href="tel:+919048857777"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="float-actions__label">Call Now</span></a>
-    <a class="float-actions__item float-actions__item--wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener"><img src="assets/images/whatsapp.png" width="128" height="128" alt="" class="float-actions__wa-img" decoding="async"><span class="float-actions__label">WhatsApp<span class="sr-only"> (opens in a new tab)</span></span></a>
+    <a class="float-actions__item float-actions__item--wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener"><img src="assets/images/whatsapp.webp" width="128" height="128" alt="" class="float-actions__wa-img" decoding="async"><span class="float-actions__label">WhatsApp<span class="sr-only"> (opens in a new tab)</span></span></a>
     <a class="float-actions__item float-actions__item--visit" href="#visit"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span class="float-actions__label">Schedule a Visit</span></a>
     <a class="float-actions__item float-actions__item--brochure" href="wellage.pdf" download="Wellage_Praana_Brochure.pdf" target="_blank"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span class="float-actions__label">Download Brochure</span></a>
   </nav>
@@ -1001,9 +1001,10 @@
 
 
   <aside class="expert" data-expert aria-label="Chat with an expert">
-    <span class="expert__avatar" aria-hidden="true"><img class="expert__icon" src="assets/images/whatsapp.png" width="128" height="128" alt="" decoding="async"><i class="expert__dot"></i></span>
+    <span class="expert__avatar" aria-hidden="true"><img class="expert__icon" src="assets/images/whatsapp.webp" width="128" height="128" alt="" decoding="async"><i class="expert__dot"></i></span>
     <p class="expert__text">Planning a move? Talk to our senior living expert and find the right home at Praana.</p>
-    <a class="expert__btn" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20an%20expert%20about%20Wellage%20Praana." target="_blank" rel="noopener"><img src="assets/images/whatsapp.png" width="128" height="128" alt="" decoding="async"><span>Chat With An Expert</span><span class="sr-only"> (opens in a new tab)</span></a>
+    <a class="expert__call" href="tel:+919048857777"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Call Now</span></a>
+    <a class="expert__btn" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20talk%20to%20an%20expert%20about%20Wellage%20Praana." target="_blank" rel="noopener"><img src="assets/images/whatsapp.webp" width="128" height="128" alt="" decoding="async"><span>Chat With An Expert</span><span class="sr-only"> (opens in a new tab)</span></a>
   </aside>
   <script src="js/bundle.min.js" defer></script>
 </body>

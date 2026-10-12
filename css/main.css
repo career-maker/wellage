@@ -2057,7 +2057,7 @@ main > section:not(.hero),
   z-index: 0;
   width: 70%;
   aspect-ratio: 3 / 2;
-  background: url("../assets/images/botanical-flourish.webp") center / 100% 100% no-repeat;
+  background: var(--bg1, none) center / 100% 100% no-repeat;
   opacity: 0.85;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(90deg, #000 55%, transparent 100%);
@@ -3651,7 +3651,7 @@ main > section:not(.hero),
   right: -3.25rem;
   width: 11rem;
   aspect-ratio: 3 / 2;
-  background: url("../assets/images/botanical-flourish.webp") center / 100% 100% no-repeat;
+  background: var(--bg2, none) center / 100% 100% no-repeat;
   transform: scaleX(-1);
   opacity: 0.85;
   pointer-events: none;
@@ -4786,7 +4786,7 @@ main > section:not(.hero),
   top: -10%;
   width: 70%;
   aspect-ratio: 3 / 2;
-  background: url("../assets/images/botanical-flourish.webp") center / 100% 100% no-repeat;
+  background: var(--bg3, none) center / 100% 100% no-repeat;
   opacity: 0.35;
   filter: brightness(1.6);
   transform: scaleX(-1);
@@ -5929,7 +5929,7 @@ main > section[id],
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("../assets/images/corner-frame-gold.webp") center / 100% 100% no-repeat;
+  background: var(--bg4, none) center / 100% 100% no-repeat;
   pointer-events: none;
 }
 .way::before {
@@ -6031,7 +6031,7 @@ main > section[id],
   z-index: -1;
   width: min(70%, 60rem);
   aspect-ratio: 1672 / 941;
-  background: url("../assets/images/corner-frame-gold2.webp") center / 100% 100% no-repeat;
+  background: var(--bg5, none) center / 100% 100% no-repeat;
   pointer-events: none;
 }
 .rooms::before {
@@ -6144,7 +6144,7 @@ main > section[id],
   z-index: 0;
   width: min(34%, 30rem);
   aspect-ratio: 1672 / 941;
-  background: url("../assets/images/corner-frame-gold2.webp") center / 100% 100% no-repeat;
+  background: var(--bg6, none) center / 100% 100% no-repeat;
   pointer-events: none;
 }
 .film::before {
@@ -6245,7 +6245,7 @@ main > section[id],
 .film::before,
 .film::after {
   width: min(46%, 40rem);
-  background-image: url("../assets/images/corner-frame-green-gold.webp");
+  background-image: var(--bg7, none);
   transform: none;
   opacity: 0.95;
 }
@@ -6518,7 +6518,7 @@ main > section[id],
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("../assets/images/frame-duo.webp") center / 100% 100% no-repeat;
+  background: var(--bg8, none) center / 100% 100% no-repeat;
   pointer-events: none;
 }
 @media (max-width: 79.99rem) {
@@ -6701,7 +6701,7 @@ main > section[id],
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("../assets/images/frame-duo.webp") center / 100% 100% no-repeat;
+  background: var(--bg8, none) center / 100% 100% no-repeat;
   pointer-events: none;
   transform: scale(0.5);
   opacity: 1;
@@ -6823,7 +6823,7 @@ main > section[id],
     overflow: hidden;
     margin-top: clamp(0.5rem, 1.4vh, 1rem);
     min-height: 3rem;
-    background: #17382f url("../assets/images/botanical-flourish.webp") right -1rem center / auto 170% no-repeat;
+    background: #17382f var(--bg9, none) right -1rem center / auto 170% no-repeat;
   }
 
   /* connectivity */
@@ -6938,7 +6938,7 @@ main > section[id],
 }
 
 /* ============ Floor plans v6: watercolour background + supplied distance-rings artwork ============ */
-.duo { background: #fbf6e9 url("../assets/images/bg-duo.webp") center / cover no-repeat; }
+.duo { background: #fbf6e9 var(--bg10, none) center / cover no-repeat; }
 .duo::before, .duo::after, .duo__grid::before, .duo__grid::after { content: none; display: none; }
 .duo .radar__img { display: block; width: 100%; height: auto; margin-inline: auto; }
 @media (min-width: 64rem) {
@@ -6995,7 +6995,7 @@ main > section[id],
 
 /* v8: botanical gold corner frame (four scaled quarters, pinned to the corners) */
 .duo::before, .duo::after, .duo__grid::before, .duo__grid::after {
-  background: url("../assets/images/frame-duo2.webp") center / 100% 100% no-repeat;
+  background: var(--bg11, none) center / 100% 100% no-repeat;
   transform: scale(0.55);
   opacity: 1;
 }
@@ -7027,7 +7027,7 @@ main > section[id],
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: #fbf6ea url("../assets/images/bg-reimagined.webp") center / cover no-repeat;
+  background: #fbf6ea var(--bg12, none) center / cover no-repeat;
 }
 .reimagined__grid {
   display: grid;
@@ -7282,7 +7282,7 @@ main > section[id],
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: #fbf6ea url("../assets/images/bg-rooms.webp") center / cover no-repeat;
+  background: #fbf6ea var(--bg13, none) center / cover no-repeat;
 }
 .rm__inner {
   --rm-h: clamp(8rem, calc(100dvh - 25rem), 36rem);
@@ -7700,7 +7700,7 @@ main > section[id],
   right: -0.5rem;
   width: clamp(5rem, 11vw, 10rem);
   aspect-ratio: 384 / 521;
-  background-image: url("../assets/images/idea-leaf-2.webp");
+  background-image: var(--bg14, none);
   background-position: top right;
   transform: rotate(10deg);
   opacity: 0.9;
@@ -7710,7 +7710,7 @@ main > section[id],
   left: -0.75rem;
   width: clamp(4.5rem, 9vw, 8rem);
   aspect-ratio: 488 / 671;
-  background-image: url("../assets/images/idea-leaf-3.webp");
+  background-image: var(--bg15, none);
   background-position: bottom left;
   transform: rotate(-12deg) scaleX(-1);
   opacity: 0.9;
@@ -7874,14 +7874,14 @@ main > section[id],
   right: 0.8%;
   width: 21.4%;
   height: 25.5%;
-  background-image: url("../assets/images/visit-leaf-tr.png");
+  background-image: var(--bg16, none);
 }
 .visit-card::after {
   bottom: 0.9%;
   left: 1.3%;
   width: 21.6%;
   height: 26.5%;
-  background-image: url("../assets/images/visit-leaf-bl.png");
+  background-image: var(--bg17, none);
 }
 .visit-card > * { position: relative; z-index: 1; }
 .visit-card__logo { object-fit: contain; width: clamp(2.6rem, 4.2vw, 4.2rem); height: auto; }
@@ -8039,9 +8039,9 @@ main > section[id],
   background: no-repeat right bottom / contain;
   pointer-events: none;
 }
-.testimonials .quote-card--1::after { background-image: url("../assets/images/testi-leaf-1.png"); }
-.testimonials .quote-card--2::after { background-image: url("../assets/images/testi-leaf-2.png"); }
-.testimonials .quote-card--3::after { background-image: url("../assets/images/testi-leaf-3.png"); width: 40%; }
+.testimonials .quote-card--1::after { background-image: var(--bg18, none); }
+.testimonials .quote-card--2::after { background-image: var(--bg19, none); }
+.testimonials .quote-card--3::after { background-image: var(--bg20, none); width: 40%; }
 
 @media (min-width: 64rem) {
   main > section#testimonials { display: block; padding: 0; }
@@ -8411,7 +8411,7 @@ main > section[id],
   bottom: 0;
   width: 5.5rem;
   height: 4.6rem;
-  background: url("../assets/images/faq-leaf.png") no-repeat right bottom / contain;
+  background: var(--bg21, none) no-repeat right bottom / contain;
   pointer-events: none;
 }
 .faq .accordion__panel-inner > div {
@@ -8575,7 +8575,7 @@ main > section[id],
 .site-footer .site-footer__info { display: flex; gap: 0.75rem; align-items: flex-start; padding: 1rem clamp(1.25rem, 6vw, 4rem) 1.5rem; border-top: 1px solid rgba(138, 90, 24, 0.3); margin-inline: clamp(1.25rem, 6vw, 4rem); padding-inline: 0; color: #1f2624; font-size: 0.9rem; }
 .site-footer__pin { flex: none; width: 1.4rem; height: 1.4rem; color: #8a5a18; }
 .site-footer .site-footer__info a { color: #1f2624; }
-.site-footer .site-footer__legal { background: #0c3a2f url("../assets/images/footer-bg-960.webp") bottom / cover no-repeat; color: #f1ecdc; border: 0; }
+.site-footer .site-footer__legal { background: #0c3a2f var(--bg22, none) bottom / cover no-repeat; color: #f1ecdc; border: 0; }
 .site-footer .site-footer__legal-inner { display: grid; gap: 0.75rem; padding: 1.5rem clamp(1.25rem, 6vw, 4rem); font-size: 0.9rem; }
 .site-footer .site-footer__legal a, .site-footer .site-footer__legal p { color: #f1ecdc; }
 .site-footer .site-footer__links { display: flex; gap: 1.5rem; }
@@ -9011,16 +9011,6 @@ main > section.conn {
 .conn__stage { position: relative; }
 
 /* ---- small / medium screens: stacked ---- */
-.conn__stage::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: clamp(18rem, 70vw, 34rem);
-  z-index: -1;
-  background:
-    linear-gradient(180deg, rgba(11, 42, 44, 0.35) 0%, rgba(11, 42, 44, 0.15) 40%, #0b2a2c 100%),
-    url("../assets/images/conn-bg-m.webp") left top / cover no-repeat;
-}
 .conn__head { padding: clamp(2.25rem, 7vw, 4rem) var(--pad) 1.25rem; }
 .conn__eyebrow {
   display: flex;
@@ -9413,3 +9403,71 @@ main > section.conn {
   .conn__place { padding-inline: calc(6 * var(--u)); }
   .conn__place img { width: calc(128 * var(--u)); }
 }
+
+/* ============ Lazy section artwork: images load only when their section is near the viewport (class set by bg-lazy.js) ============ */
+@media (min-width: 48rem) { .overview.is-near { --bg1: url("../assets/images/botanical-flourish.webp"); } }
+html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
+.rooms.is-near { --bg3: url("../assets/images/botanical-flourish.webp"); --bg5: url("../assets/images/corner-frame-gold2.webp"); }
+.way.is-near { --bg4: url("../assets/images/corner-frame-gold.webp"); }
+.film.is-near { --bg6: url("../assets/images/corner-frame-gold2.webp"); --bg7: url("../assets/images/corner-frame-green-gold.webp"); }
+.duo.is-near { --bg8: url("../assets/images/frame-duo.webp"); --bg9: url("../assets/images/botanical-flourish.webp"); --bg10: url("../assets/images/bg-duo.webp"); --bg11: url("../assets/images/frame-duo2.webp"); }
+.reimagined.is-near { --bg12: url("../assets/images/bg-reimagined.webp"); }
+.rm.is-near { --bg13: url("../assets/images/bg-rooms.webp"); }
+.visit.is-near { --bg14: url("../assets/images/idea-leaf-2.webp"); --bg15: url("../assets/images/idea-leaf-3.webp"); --bg16: url("../assets/images/visit-leaf-tr.webp"); --bg17: url("../assets/images/visit-leaf-bl.webp"); }
+.testimonials.is-near { --bg18: url("../assets/images/testi-leaf-1.webp"); --bg19: url("../assets/images/testi-leaf-2.webp"); --bg20: url("../assets/images/testi-leaf-3.webp"); }
+.faq.is-near { --bg21: url("../assets/images/faq-leaf.webp"); }
+.site-footer.is-near { --bg22: url("../assets/images/footer-bg-960.webp"); }
+
+/* ============ Expert bar: call button + hidden over hero/footer ============ */
+.expert__call {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.9rem;
+  padding: 0 1rem;
+  border-radius: 0.65rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.expert__call svg { width: 1.15rem; height: 1.15rem; }
+.expert__call:hover { background: rgba(255, 255, 255, 0.16); transform: translateY(-1px); }
+.expert { animation-delay: 0.3s; transition: opacity 0.3s ease, visibility 0s; }
+.expert.is-away { animation: none; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s ease, visibility 0s 0.25s; }
+@media (max-width: 39.99rem) {
+  .expert { gap: 0.5rem; }
+  .expert__call span { display: none; }
+  .expert__call { padding: 0; width: 2.9rem; justify-content: center; }
+  .expert__btn { padding: 0 0.85rem; font-size: 0.9rem; }
+}
+
+/* ============ Connectivity: tablet two-column (list | radar) now that the list lives in .conn__top ============ */
+@media (min-width: 40rem) and (max-width: 74.99rem) {
+  .conn__stage { display: block; }
+  .conn__top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; column-gap: 1.5rem; }
+  .conn__head { grid-column: 1 / -1; }
+  .conn__routes { grid-column: 1; margin-right: 0; }
+  .conn__radar { grid-column: 2; margin: 0 var(--pad) 0 0; width: auto; }
+}
+
+/* Residences: title no longer hugs the section edge on small screens */
+@media (max-width: 63.99rem) {
+  .rm__inner { padding-top: 2.45rem; }
+}
+
+/* ============ Buttons: one style everywhere (no botanical patterns, one arrow, no ring) ============ */
+.btn, .duo .plan .btn, .form--visit .visit-card__btn { background-image: none !important; }
+.btn .btn__icon--arrow { width: 1.1rem; height: 1.1rem; margin: 0; flex: none; }
+.btn.rm__btn { min-width: 0; padding: 0.85rem 1.75rem; gap: 0.6rem; border-radius: 0.6rem; }
+.rm__btn .btn__icon, .rm__btn > span:first-child { margin: 0; }
+.form--visit .visit-card__btn { padding-inline: 1.75rem; gap: 0.6rem; border-radius: 0.6rem; min-height: 3.25rem; font-size: 0.9375rem; font-weight: 600; }
+/* hero art on small screens is a pre-cropped 660px slice, so it is centred rather than offset */
+@media (max-width: 63.99rem) {
+  .hero__bg-image { object-position: 50% center; }
+}
+.hero__bg picture { display: block; width: 100%; height: 100%; }

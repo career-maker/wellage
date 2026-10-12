@@ -1100,6 +1100,24 @@ window.PRAANA_CONFIG = {
 })();
 
 /* components/expert.js */
+/* Floating "chat with an expert" prompt: hidden while the hero or footer is on screen. */
+(function () {
+  "use strict";
+  var box = document.querySelector("[data-expert]");
+  if (!box) return;
+  var zones = Array.prototype.slice.call(document.querySelectorAll(".hero, .site-footer"));
+  if (!zones.length || !("IntersectionObserver" in window)) return;
+  var seen = {};
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      seen[e.target.className] = e.isIntersecting;
+    });
+    var away = Object.keys(seen).some(function (k) { return seen[k]; });
+    box.classList.toggle("is-away", away);
+  });
+  zones.forEach(function (z) { io.observe(z); });
+})();
+
 /* Floating "chat with an expert" prompt: dismissible for the rest of the session. */
 (function () {
   "use strict";
@@ -1170,6 +1188,37 @@ window.PRAANA_CONFIG = {
     d.addEventListener("click", function () { select(Number(d.getAttribute("data-i"))); });
   });
   select(0);
+})();
+
+/* components/bg-lazy.js */
+/* Lazy section artwork: CSS background images are exposed (via custom properties) only once a section is near the viewport. */
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var targets = Array.prototype.slice.call(document.querySelectorAll("main > section, .site-footer"));
+
+  function wake(el) { el.classList.add("is-near"); }
+
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(wake);
+    root.classList.add("is-idle");
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      wake(e.target);
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "100% 0px 100% 0px" });
+  targets.forEach(function (el) { io.observe(el); });
+
+  var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 2500); };
+  window.addEventListener("load", function () {
+    idle(function () { root.classList.add("is-idle"); });
+  });
 })();
 
 /* main.js */
