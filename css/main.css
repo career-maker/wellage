@@ -9616,3 +9616,14 @@ html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
 /* Residences: breathing room under the View Floor Plans button */
 .rm__inner { padding-bottom: 1.5rem; }
 @media (max-width: 63.99rem) { .rm__inner { padding-bottom: 2.75rem; } }
+
+/* Overview title on a single line */
+main section .overview__title { display: block !important; white-space: nowrap; }
+main section .overview__title .overview__title-accent,
+.overview__title.title-anim .overview__title-accent { display: inline !important; }
+@media (max-width: 63.99rem) {
+  main section .overview__title { font-size: min(var(--t-title), 7.6vw) !important; }
+}
+@media (min-width: 64rem) {
+  main section .overview__title { font-size: min(var(--t-title), 3.25vw) !important; }
+}
