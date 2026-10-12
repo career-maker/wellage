@@ -10323,3 +10323,9 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 40rem) and (max-width: 63.99rem) {
   .page-v2 .hero { min-height: max(calc(100svh - 4.25rem), 62vw); }
 }
+
+/* overview media on phones/tablets: exactly the screen width, so the play button is truly centred on the photo */
+@media (max-width: 63.99rem) {
+  .overview__media { width: 100%; min-height: 0; aspect-ratio: 16 / 10; }
+  .overview__play { top: 46%; left: 50%; }
+}
