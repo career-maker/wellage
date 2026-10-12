@@ -9930,3 +9930,16 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 /* version 2 only: Floor Plans without the corner frame artwork */
 .page-v2 .duo::before, .page-v2 .duo::after,
 .page-v2 .duo__grid::before, .page-v2 .duo__grid::after { content: none !important; display: none !important; }
+
+/* floor plans: heading and cards share the same side gutter as every other section */
+.duo .plans { max-width: none; width: 100%; margin-inline: 0; justify-self: stretch; padding-right: 0; }
+.duo__grid { padding-inline: clamp(1.25rem, 6.4vw, 7.8rem) !important; max-width: none; }
+@media (min-width: 64rem) {
+  .duo .plan__photo img { aspect-ratio: 2.6 / 1; }
+  .duo .plans__head { margin-bottom: 0.75rem; }
+}
+@media (min-width: 64rem) {
+  .duo .plans__head { align-items: center; row-gap: 0.5rem; margin-bottom: 1.25rem; }
+  .duo .plans__head .plans__lede { max-width: 34rem; font-size: var(--t-lede); }
+  .duo .plans__head .section-heading__title { line-height: 1.05; margin: 0; }
+}
