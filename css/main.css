@@ -10084,3 +10084,22 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .amen__lede { display: none; }
   .page-v2 .amen__no { font-size: 1.35rem; margin-bottom: 0.15rem; }
 }
+
+/* Enquire tab: no heavy double outline; a thin inset ring only for keyboard focus */
+.drawer-tab, .drawer-tab:hover, .drawer-tab:focus { outline: none !important; }
+.drawer-tab:focus-visible { outline: none !important; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85), -6px 10px 24px -10px rgba(18, 48, 42, 0.55); }
+
+/* smaller desktop screens: Enquire tab starts higher and the dock compacts so they never overlap */
+.drawer-tab { top: clamp(4.75rem, 12dvh, 10rem); }
+@media (min-width: 68rem) and (max-height: 54rem) {
+  .float-actions { gap: 0.3rem; bottom: 0.75rem; }
+  .float-actions__item { min-height: 2.6rem; width: 2.6rem; padding: 0 0.6rem; }
+  .float-actions__item .icon, .float-actions__item img { width: 1.15rem; height: 1.15rem; }
+  .drawer-tab { padding: 0.65rem 0.5rem; gap: 0.4rem; }
+  .drawer-tab span { font-size: 0.7rem; }
+}
+@media (min-width: 68rem) and (max-height: 40rem) {
+  .drawer-tab { top: 4.25rem; }
+  .float-actions__item { min-height: 2.35rem; width: 2.35rem; }
+  .float-actions { gap: 0.2rem; bottom: 0.5rem; }
+}
