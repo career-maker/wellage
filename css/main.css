@@ -10207,3 +10207,19 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (max-width: 63.99rem) {
   .page-v2 .hero__copy::before { inset: -2.5rem -4rem -2.25rem -2.5rem; background: radial-gradient(ellipse closest-side at 44% 50%, rgba(251, 248, 242, 0.95) 0%, rgba(251, 248, 242, 0.9) 66%, rgba(251, 248, 242, 0.55) 86%, rgba(251, 248, 242, 0) 100%); }
 }
+
+/* enquiry form on phones: one field per row so nothing is clipped and placeholders show in full */
+@media (max-width: 39.99rem) {
+  .drawer__row, .drawer .drawer__row { grid-template-columns: minmax(0, 1fr) !important; gap: 1rem; }
+  .drawer { width: 100%; max-width: 100vw; }
+  .drawer .field, .drawer .field__box, .drawer .phone, .drawer .select { min-width: 0; width: 100%; }
+  .drawer .field__control { font-size: 1rem; text-overflow: ellipsis; }
+  .drawer .phone { display: flex; }
+  .drawer .phone .select__btn { flex: none; }
+  .drawer .phone > input.field__control { flex: 1 1 auto; min-width: 0; padding-inline: 0.85rem; }
+  .drawer .select__btn .select__value { overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 39.99rem) {
+  .drawer .phone .select { width: auto; flex: none; }
+  .drawer .phone > input.field__control { width: auto; }
+}
