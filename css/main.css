@@ -9873,3 +9873,6 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 /* version 2 only: lighter gold frame around Life at Praana */
 .page-v2 .way::before,
 .page-v2 .way::after { opacity: 0; display: none; }
+
+/* version 2 only: Lifestyle & Amenities without the corner frame artwork */
+.page-v2 .amen__frame { display: none; }
