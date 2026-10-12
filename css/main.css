@@ -9822,3 +9822,8 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 68rem) {
   .float-actions__item--ver { background: #3a2a52; }
 }
+
+/* sticky header: slides away while scrolling down, returns on scroll up */
+.page-home .site-header { transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.3s ease; will-change: transform; }
+.page-home .site-header.is-hidden { transform: translateY(-110%); box-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .page-home .site-header { transition: none; } }
