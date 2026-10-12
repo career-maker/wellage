@@ -9,7 +9,7 @@ window.PRAANA_CONFIG = {
 
   // Approved brochure PDF (path or URL). Empty = no file supplied yet, so the
   // brochure CTAs scroll to the enquiry form with a pre-filled request instead.
-  brochureUrl: "",
+  brochureUrl: "wellage.pdf",
 
   // Lead endpoint. Expected contract: POST application/json
   //   { form: "enquiry" | "visit", name, phone, email, unit?, message?, date?, visitors?, source }

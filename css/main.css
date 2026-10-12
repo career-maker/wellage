@@ -9596,3 +9596,13 @@ html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
   .site-footer__pin { position: static; flex: none; width: calc(26 * var(--u)); height: calc(34 * var(--u)); }
   .site-footer .site-footer__info address { position: static; margin: 0; line-height: 1.4; }
 }
+
+/* ============ Brochure popup ============ */
+.dialog--form .dialog__panel { width: min(26rem, calc(100vw - 2rem)); display: grid; gap: 0.9rem; }
+.dialog--form .form { display: grid; gap: 1rem; margin-top: 0.25rem; }
+.dialog--form .dialog__note { margin: 0; }
+.dialog--form .btn--block { width: 100%; }
+.dialog--form .form__status:empty { display: none; }
+.dialog.dialog--form { width: min(28rem, 100vw - 2rem); }
+.dialog--form .dialog__panel { width: auto; }
+.dialog--form .dialog__title { margin: 0 3rem 0 0; }

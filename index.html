@@ -837,7 +837,7 @@
       <p class="final-cta__text"><strong>See Praana. Feel the Difference.</strong> Discover a senior living community designed around comfort, wellness, independence and connection.</p>
       <div class="final-cta__actions">
         <a class="final-cta__btn final-cta__btn--gold" href="#visit"><span>Schedule a Visit</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="final-cta__btn" href="wellage.pdf" download="Wellage_Praana_Brochure.pdf" target="_blank"><span>Download Brochure</span><svg aria-hidden="true"><use href="#i-download"/></svg></a>
+        <a class="final-cta__btn" href="wellage.pdf" data-brochure-open><span>Download Brochure</span><svg aria-hidden="true"><use href="#i-download"/></svg></a>
         <a class="final-cta__btn" href="tel:+919048857777"><span>Talk to an Advisor</span><svg aria-hidden="true"><use href="#i-chat"/></svg></a>
       </div>
     </div>
@@ -964,10 +964,33 @@
     <a class="float-actions__item float-actions__item--call" href="tel:+919048857777"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="float-actions__label">Call Now</span></a>
     <a class="float-actions__item float-actions__item--wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener"><img src="assets/images/whatsapp.webp" width="128" height="128" alt="" class="float-actions__wa-img" decoding="async"><span class="float-actions__label">WhatsApp<span class="sr-only"> (opens in a new tab)</span></span></a>
     <a class="float-actions__item float-actions__item--visit" href="#visit"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span class="float-actions__label">Schedule a Visit</span></a>
-    <a class="float-actions__item float-actions__item--brochure" href="wellage.pdf" download="Wellage_Praana_Brochure.pdf" target="_blank"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span class="float-actions__label">Download Brochure</span></a>
+    <a class="float-actions__item float-actions__item--brochure" href="wellage.pdf" data-brochure-open><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span class="float-actions__label">Download Brochure</span></a>
   </nav>
 
   <!-- ============ DIALOGS ============ -->
+  <dialog class="dialog dialog--form" id="brochure-dialog" aria-labelledby="brochure-title">
+    <div class="dialog__panel">
+      <button class="dialog__close" type="button" data-dialog-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <h2 class="dialog__title" id="brochure-title">Download the brochure</h2>
+      <p class="dialog__note">Share your email and phone number and the Wellage Praana brochure will download right away.</p>
+      <form class="form" data-brochure-form novalidate>
+        <div class="field">
+          <label class="field__label" for="brochure-email">Email <abbr title="required">*</abbr></label>
+          <input class="field__control" id="brochure-email" name="email" type="email" autocomplete="email" placeholder="yourname@example.com" required aria-describedby="brochure-email-err">
+          <p class="field__error" id="brochure-email-err" role="alert"></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="brochure-phone">Phone <abbr title="required">*</abbr></label>
+          <div class="field__wrap"><input class="field__control" id="brochure-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="98765 43210" required aria-describedby="brochure-phone-err"></div>
+          <p class="field__error" id="brochure-phone-err" role="alert"></p>
+        </div>
+        <div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn btn--primary btn--block" type="submit">Download Brochure<svg class="btn__icon" aria-hidden="true"><use href="#i-download"/></svg></button>
+        <p class="form__status" data-brochure-status role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
   <dialog class="dialog" id="plans-dialog" aria-labelledby="plans-dialog-title">
     <div class="dialog__panel">
       <button class="dialog__close" type="button" data-dialog-close aria-label="Close floor plans"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
