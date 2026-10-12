@@ -9876,3 +9876,26 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 
 /* version 2 only: Lifestyle & Amenities without the corner frame artwork */
 .page-v2 .amen__frame { display: none; }
+
+/* ============ Hover focus: hovered card flattens and grows, siblings blur (Amenities + Why Senior Living) ============ */
+@media (min-width: 64rem) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .amen__item, .idea { transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1), filter 0.45s ease, opacity 0.45s ease !important; }
+  .amen__item .amen__media, .idea__photo { transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1); }
+  .amen__item .amen__body::after, .idea__body::after { transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1); }
+
+  .amen__item:hover, .idea:hover {
+    --skew: 0deg;
+    --pskew: 0deg;
+    z-index: 3;
+    transform: scale(1.07) !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 22px 28px rgba(18, 48, 42, 0.32));
+  }
+  .amen__grid:has(.amen__item:hover) .amen__item:not(:hover),
+  .ideas:has(.idea:hover) .idea:not(:hover) {
+    filter: blur(3px) saturate(0.85);
+    opacity: 0.6;
+    transform: scale(0.97) !important;
+  }
+  .amen__item:hover .idea__badge, .idea:hover .idea__badge { transform: none; }
+}
