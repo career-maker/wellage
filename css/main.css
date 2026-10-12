@@ -9899,3 +9899,14 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   }
   .amen__item:hover .idea__badge, .idea:hover .idea__badge { transform: none; }
 }
+
+/* version 2: Life at Praana description sits in the empty top-right cell */
+@media (min-width: 64rem) {
+  .page-v2 .way__lede--side { grid-column: 3; grid-row: 1; align-self: end; margin: 0 0 clamp(0.5rem, 2vh, 1.5rem); max-width: 26rem; display: block !important; }
+}
+@media (max-width: 63.99rem) {
+  .page-v2 .way__lede--side { order: -2; max-width: none; margin: 0; }
+}
+@media (min-width: 64rem) {
+  .page-v2 main section .way__title { font-size: min(var(--t-title), 3.9vw) !important; }
+}
