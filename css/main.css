@@ -9553,3 +9553,23 @@ html.is-idle { --bg2: url("../assets/images/botanical-flourish.webp"); }
 .conn__dist { pointer-events: none; }
 .conn__dist rect { fill: #0f2f2d; stroke: #e8c47a; stroke-width: 1.2; }
 .conn__dist text { fill: #fff; font: 700 11px var(--font-text); text-anchor: middle; }
+
+/* ============ Tablet gap fixes (40rem - 64rem) ============ */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  /* FAQ: two real columns side by side instead of one narrow column */
+  .faq .faq__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.25rem; align-items: start; }
+  .faq .faq__cols::before, .faq .faq__cols::after { content: none; display: none; }
+  .faq .faq__col { grid-row: 1; min-width: 0; }
+  .faq .faq__col:nth-child(1) { grid-column: 1; }
+  .faq .faq__col:nth-child(2) { grid-column: 2; }
+  .faq__lede { max-width: 34rem; }
+
+  /* Why Senior Living: copy spans the row (button on the right), cards in a four-up row below */
+  .reimagined__copy { grid-template-columns: minmax(0, 1fr) auto; column-gap: 2rem; align-items: end; justify-items: start; }
+  .reimagined__copy > * { grid-column: 1; }
+  .reimagined__copy > .btn { grid-column: 2; grid-row: 1 / span 5; align-self: end; margin-bottom: 0.25rem; }
+  .reimagined__lede { max-width: 40rem; }
+}
+@media (min-width: 56rem) and (max-width: 63.99rem) {
+  .ideas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+}
