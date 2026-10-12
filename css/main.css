@@ -10301,3 +10301,15 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .hero__actions .btn--ghost:hover .btn__icon,
   .page-v2 .hero__actions .btn--ghost:active .btn__icon { background: #fff; color: #12302a; transform: none; }
 }
+
+/* tablets / large phones (640px - 1023px): the full landscape photo, copy on the left, couple stays in view on the right */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .page-v2 .hero { min-height: max(calc(100dvh - 4.25rem), 62vw); }
+  .page-v2 .hero__bg { height: 100%; top: 0; bottom: auto; }
+  .page-v2 .hero__bg-image { height: 100%; width: 100%; object-fit: cover; object-position: 74% center; }
+  .page-v2 .hero__inner { align-items: center; padding-top: 0; padding-bottom: 5rem; }
+  .page-v2 .hero__copy { max-width: 26rem; }
+  .page-v2 .hero__overlay {
+    background: linear-gradient(90deg, rgba(8, 24, 20, 0.6) 0%, rgba(8, 24, 20, 0.42) 38%, rgba(8, 24, 20, 0.05) 62%, rgba(8, 24, 20, 0) 100%);
+  }
+}
