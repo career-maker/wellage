@@ -10002,3 +10002,16 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .page-v2 .conn__dot.is-active image { scale: 1.5; }
 .page-v2 .conn__dot.is-active circle { fill: #fff; stroke: #c9964a; stroke-width: 2.5; }
 .page-v2 .conn:has(.conn__place:hover) .conn__dot image { scale: 1; }
+
+/* version 2: Life at Praana centre photo swaps with the hovered / tapped item */
+.page-v2 .way__figure { position: relative; overflow: hidden; }
+.page-v2 .way__figure .way__swap { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity 0.55s ease, transform 0.9s cubic-bezier(0.22, 0.8, 0.3, 1); }
+.page-v2 .way__figure .way__swap.is-active { opacity: 1; transform: scale(1); }
+.page-v2 .way__item[data-way-item] { cursor: pointer; transition: transform 0.35s ease; border-radius: 0.5rem; outline: none; }
+.page-v2 .way__item[data-way-item]:hover, .page-v2 .way__item[data-way-item].is-on { transform: translateX(4px); }
+.page-v2 .way__item[data-way-item]:hover .way__ico, .page-v2 .way__item[data-way-item].is-on .way__ico { background: #17382f; color: #fff; }
+.page-v2 .way__item[data-way-item]:focus-visible { box-shadow: 0 0 0 2px #c9964a; }
+@media (max-width: 63.99rem) {
+  .page-v2 .way__figure { aspect-ratio: 4 / 3; }
+  .page-v2 .way__figure .way__swap { position: absolute; }
+}
