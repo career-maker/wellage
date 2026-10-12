@@ -10282,3 +10282,22 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .reimagined__lede { max-width: none; width: 100%; }
   .reimagined__copy > .btn { justify-self: start; }
 }
+
+/* Watch Video on touch screens: label stays visible while pressed / focused */
+@media (max-width: 63.99rem) {
+  .page-v2 .hero__actions .btn--ghost,
+  .page-v2 .hero__actions .btn--ghost:hover,
+  .page-v2 .hero__actions .btn--ghost:focus,
+  .page-v2 .hero__actions .btn--ghost:focus-visible,
+  .page-v2 .hero__actions .btn--ghost:active {
+    background: rgba(8, 24, 20, 0.7) !important;
+    border-color: #fff !important;
+    color: #fff !important;
+    transform: none;
+    box-shadow: none;
+  }
+  .page-v2 .hero__actions .btn--ghost::before, .page-v2 .hero__actions .btn--ghost::after { display: none; }
+  .page-v2 .hero__actions .btn--ghost:active { background: rgba(8, 24, 20, 0.88) !important; }
+  .page-v2 .hero__actions .btn--ghost:hover .btn__icon,
+  .page-v2 .hero__actions .btn--ghost:active .btn__icon { background: #fff; color: #12302a; transform: none; }
+}
