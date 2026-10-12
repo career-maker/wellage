@@ -10045,3 +10045,10 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (max-width: 63.99rem) {
   .page-v2 main > section.rm, .page-v2 main > section.amen { min-height: 0; padding-top: 4.5rem !important; }
 }
+
+/* version 2: golden wave + dashed rings frame; rings in the radar are drawn to match the frame's dashed rings */
+@media (min-width: 75rem) {
+  .page-v2 .conn__radar { left: calc(1179 * var(--u)); top: calc(195 * var(--u)); width: calc(452 * var(--u)); }
+  .page-v2 .conn__ring { display: none; }
+  .page-v2 .conn__ring:nth-of-type(3) { display: inline; stroke: rgba(240, 184, 80, 0.85); stroke-width: 1.4; stroke-dasharray: 5 5; }
+}
