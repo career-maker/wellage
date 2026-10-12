@@ -9873,7 +9873,3 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 /* version 2 only: lighter gold frame around Life at Praana */
 .page-v2 .way::before,
 .page-v2 .way::after { opacity: 0.1; }
-
-/* version 2 only: The Residences without the leaf / frame artwork */
-.page-v2 .rm, .page-v2 .rm.is-near { --bg13: none; background-image: none; }
-.page-v2 .rm::before, .page-v2 .rm::after { content: none; }
