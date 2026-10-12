@@ -9852,3 +9852,20 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .float-actions__item--ver .float-actions__label { font-size: 0.6875rem; }
 }
 .float-actions__item--ver, .float-actions__item--ver .float-actions__label { color: #fff !important; }
+
+/* floor plans: BHK badge sits inside the photo, top-left */
+.duo .plan { position: relative; }
+.duo .plan .plan__type {
+  position: absolute;
+  z-index: 3;
+  top: calc(clamp(0.6rem, 1vw, 0.9rem) + 0.75rem);
+  left: calc(clamp(0.6rem, 1vw, 0.9rem) + 0.75rem);
+  margin: 0;
+  padding: 0.3rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: 0 6px 16px -6px rgba(18, 48, 42, 0.45);
+  font-size: clamp(1.15rem, 0.95rem + 0.5vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
