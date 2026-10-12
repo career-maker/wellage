@@ -9229,7 +9229,7 @@ main > section.conn {
   transition: width 0.5s cubic-bezier(0.22, 0.8, 0.3, 1);
 }
 .conn__dot circle { transition: fill 0.3s ease, stroke 0.3s ease; }
-.conn__dot { transform-box: fill-box; transform-origin: center; transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.conn__dot circle, .conn__dot text { transform-box: fill-box; transform-origin: center; transition: scale 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .conn__place:hover { transform: translateY(-10px); }
   .conn__place:hover img {
@@ -9240,25 +9240,25 @@ main > section.conn {
   .conn__place:hover .conn__place-meta { color: #12302a; letter-spacing: 0.18em; }
   .conn__place:hover .conn__place-meta::after { width: 100%; }
   .conn:has(.conn__place:nth-child(1):hover) .conn__route:nth-child(1) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(1):hover) .conn__dot:nth-of-type(5) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(1):hover) .conn__dot:nth-of-type(5) circle, .conn:has(.conn__place:nth-child(1):hover) .conn__dot:nth-of-type(5) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(1):hover) .conn__dot:nth-of-type(5) circle { fill: #c9964a; stroke: #fff; }
   .conn:has(.conn__place:nth-child(2):hover) .conn__route:nth-child(2) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(2):hover) .conn__dot:nth-of-type(6) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(2):hover) .conn__dot:nth-of-type(6) circle, .conn:has(.conn__place:nth-child(2):hover) .conn__dot:nth-of-type(6) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(2):hover) .conn__dot:nth-of-type(6) circle { fill: #c9964a; stroke: #fff; }
   .conn:has(.conn__place:nth-child(3):hover) .conn__route:nth-child(3) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(3):hover) .conn__dot:nth-of-type(7) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(3):hover) .conn__dot:nth-of-type(7) circle, .conn:has(.conn__place:nth-child(3):hover) .conn__dot:nth-of-type(7) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(3):hover) .conn__dot:nth-of-type(7) circle { fill: #c9964a; stroke: #fff; }
   .conn:has(.conn__place:nth-child(4):hover) .conn__route:nth-child(4) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(4):hover) .conn__dot:nth-of-type(8) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(4):hover) .conn__dot:nth-of-type(8) circle, .conn:has(.conn__place:nth-child(4):hover) .conn__dot:nth-of-type(8) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(4):hover) .conn__dot:nth-of-type(8) circle { fill: #c9964a; stroke: #fff; }
   .conn:has(.conn__place:nth-child(5):hover) .conn__route:nth-child(5) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(5):hover) .conn__dot:nth-of-type(9) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(5):hover) .conn__dot:nth-of-type(9) circle, .conn:has(.conn__place:nth-child(5):hover) .conn__dot:nth-of-type(9) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(5):hover) .conn__dot:nth-of-type(9) circle { fill: #c9964a; stroke: #fff; }
   .conn:has(.conn__place:nth-child(6):hover) .conn__route:nth-child(6) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(6):hover) .conn__dot:nth-of-type(10) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(6):hover) .conn__dot:nth-of-type(10) circle, .conn:has(.conn__place:nth-child(6):hover) .conn__dot:nth-of-type(10) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(6):hover) .conn__dot:nth-of-type(10) circle { fill: #c9964a; stroke: #fff; }
   .conn:has(.conn__place:nth-child(7):hover) .conn__route:nth-child(7) { background: rgba(232, 196, 122, 0.16); }
-  .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) { transform: scale(1.45); }
+  .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) circle, .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) text { scale: 1.45; }
   .conn:has(.conn__place:nth-child(7):hover) .conn__dot:nth-of-type(11) circle { fill: #c9964a; stroke: #fff; }
 }
 
@@ -9342,7 +9342,7 @@ main > section.conn {
 .conn__pin-km { font-size: 17px; font-weight: 700; }
 .conn__pin-unit { font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .conn__dot { cursor: pointer; }
-.conn__dot.is-active { transform: scale(1.5); }
+.conn__dot.is-active circle, .conn__dot.is-active text { scale: 1.5; }
 .conn__dot.is-active circle { fill: #c9964a; stroke: #fff; }
 .conn__dot.is-active text { fill: #0b2a2c; }
 
@@ -9407,4 +9407,9 @@ main > section.conn {
   box-shadow: 0 0 0.7rem 0.4rem rgba(251, 248, 242, 0.88);
   border-radius: 0.35rem;
   line-height: 1.9;
+}
+@media (min-width: 75rem) {
+  .conn__places { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .conn__place { padding-inline: calc(6 * var(--u)); }
+  .conn__place img { width: calc(128 * var(--u)); }
 }
