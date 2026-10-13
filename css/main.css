@@ -10508,3 +10508,60 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (prefers-reduced-motion: reduce) {
   .testimonials .link-arrow, .testimonials .link-arrow::after, .testimonials .link-arrow .icon { transition: none; }
 }
+
+/* ============ Video popup: framed player ============ */
+.dialog--video {
+  width: min(66rem, 100vw - 2rem);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+}
+.dialog--video::backdrop { background: rgba(6, 24, 20, 0.84); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.dialog--video[open] { animation: video-pop 0.35s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.dialog--video[open]::backdrop { animation: video-fade 0.3s ease; }
+@keyframes video-pop { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes video-fade { from { opacity: 0; } to { opacity: 1; } }
+.video-shell {
+  padding: 0.6rem;
+  border-radius: 1.4rem;
+  background: linear-gradient(160deg, #123a30 0%, #0c2a24 100%);
+  border: 1px solid rgba(201, 162, 74, 0.7);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.7), 0 0 0 5px rgba(201, 162, 74, 0.12);
+}
+.video-shell__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.25rem 0.35rem 0.7rem 0.9rem; }
+.video-shell__title {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fbf8f2;
+}
+.video-shell__title span { color: #e3c17a; }
+.video-shell__close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(227, 193, 122, 0.85);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.25s ease;
+}
+.video-shell__close .icon { width: 1.1rem; height: 1.1rem; }
+.video-shell__close:hover,
+.video-shell__close:focus-visible { background: #e3c17a; border-color: #e3c17a; color: #0c2a24; transform: rotate(90deg); outline: none; }
+.video-shell__close:focus-visible { box-shadow: 0 0 0 3px rgba(227, 193, 122, 0.45); }
+.dialog--video .video-frame { border-radius: 0.9rem; max-height: calc(100dvh - 8rem); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); }
+@media (max-width: 40rem) {
+  .dialog--video { width: calc(100vw - 1rem); }
+  .video-shell__title { font-size: 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dialog--video[open], .dialog--video[open]::backdrop { animation: none; } }
