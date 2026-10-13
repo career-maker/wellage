@@ -11292,3 +11292,12 @@ main section .visit-card__title {
 .vcard__player iframe { display: block; width: 100%; height: 100%; border: 0; }
 .vcard.is-playing { transform: none; }
 .vcard.is-playing .vcard__img { transform: none; }
+
+/* the playing video shows as a complete rounded box (no slanted cut), so every corner and the player controls are visible */
+.vcard.is-playing .vcard__player,
+.vcard.is-playing:nth-child(even) .vcard__player {
+  clip-path: none;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0 2px #e8c47a, 0 18px 30px -14px rgba(18, 48, 42, 0.55);
+}
+.vcard.is-playing .vcard__btn { visibility: hidden; }
