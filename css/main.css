@@ -10404,3 +10404,41 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 64rem) { .page-v2 .hero__actions { width: max-content; max-width: 90vw; flex-wrap: nowrap; } }
 @media (min-width: 64rem) { .page-v2 .hero__copy { grid-template-columns: minmax(0, 1fr); } .page-v2 .hero__actions { justify-self: start; } }
 @media (min-width: 64rem) { .page-v2 .hero__eyebrow { white-space: nowrap; letter-spacing: 0.24em; } .page-v2 .hero__eyebrow::after { width: 1.75rem; } }
+
+/* tablet: hero buttons side by side */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .page-v2 .hero__actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+}
+
+/* desktop hero: no white wash, white text on a soft dark fade (same treatment as tablet / mobile) */
+@media (min-width: 64rem) {
+  .page-v2 .hero__overlay {
+    background: linear-gradient(90deg, rgba(8, 24, 20, 0.62) 0%, rgba(8, 24, 20, 0.5) 24%, rgba(8, 24, 20, 0.22) 42%, rgba(8, 24, 20, 0) 58%);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .page-v2 .hero__copy { color: #fff; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.45); }
+  .page-v2 .hero__eyebrow { color: #f3d9a0; }
+  .page-v2 .hero__eyebrow::after { background: #f3d9a0; }
+  .page-v2 .hero__title, .page-v2 .hero__title-main, .page-v2 .hero__sub, .page-v2 .hero__lede, .page-v2 .hero__lede > span { color: #fff !important; }
+  .page-v2 .hero__dot { color: #f3d9a0; }
+  .page-v2 .hero__actions .btn { text-shadow: none; }
+  .page-v2 .hero__actions .btn--ghost,
+  .page-v2 .hero__actions .btn--ghost:hover,
+  .page-v2 .hero__actions .btn--ghost:focus-visible {
+    background: rgba(8, 24, 20, 0.55) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+    color: #fff !important;
+    box-shadow: none;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .page-v2 .hero__actions .btn--ghost .btn__icon { color: #12302a; background: #fff; box-sizing: content-box; width: 0.95rem; height: 0.95rem; padding: 0.4rem; border-radius: 50%; }
+  .page-v2 .hero__actions .btn--ghost::before, .page-v2 .hero__actions .btn--ghost::after { display: none; }
+}
+@media (min-width: 64rem) {
+  .page-v2 .hero__actions .btn--ghost { border-radius: 999px; min-height: 3rem; padding: 0.4rem 1.25rem 0.4rem 0.5rem; gap: 0.6rem; overflow: visible; }
+  .page-v2 .hero__overlay {
+    background: linear-gradient(90deg, rgba(8, 24, 20, 0.7) 0%, rgba(8, 24, 20, 0.58) 26%, rgba(8, 24, 20, 0.28) 44%, rgba(8, 24, 20, 0) 60%);
+  }
+}
