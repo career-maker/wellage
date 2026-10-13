@@ -3,20 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
   <title>Privacy Policy | Wellage Praana</title>
   <meta name="description" content="Privacy Policy for the Wellage Praana landing page.">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
-<body class="page-legal">
-  <header class="site-header">
+<body class="page-legal page-v2">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.6 4.2-2.2 1.4a11.5 11.5 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.500-5.700-6.500-11A6.500 6.500 0 0 1 18.500 10C18.500 15.300 12 21 12 21Z"/><circle cx="12" cy="10" r="2.300"/></g></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 0 1 0 16.2 8 8 0 0 1-4.13-1.14l-.3-.18-3.1.82.83-3.03-.2-.31A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 3.6c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.47s1.07 2.87 1.22 3.07c.15.2 2.07 3.3 5.1 4.5 2.52 1 3.03.8 3.57.75.55-.05 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.57-.49-.5-.67-.5h-.57Z"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.3 5 12 5 12 5s-6.3 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2C2 8.75 2 12 2 12s0 3.25.4 4.8a2.5 2.5 0 0 0 1.76 1.77C5.7 19 12 19 12 19s6.3 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77C22 15.25 22 12 22 12s0-3.25-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
     <div class="container site-header__bar">
-      <a class="site-header__brand" href="index.html" aria-label="Wellage Praana, back to home"><img class="site-header__logo" src="assets/images/logo-praana.webp" width="360" height="117" alt="Wellage Praana by Varma"></a>
-      <a class="btn btn--outline btn--sm" href="index.html">Back to home</a>
+      <a class="site-header__brand" href="index.html" aria-label="Wellage Praana by Varma, back to top">
+        <img src="assets/images/logo-praana.webp" width="360" height="117" alt="Wellage Praana by Varma" class="site-header__logo" decoding="async">
+      </a>
+      <span class="site-header__divider" aria-hidden="true"></span>
+      <img src="assets/images/logo-varma-homes.webp" width="400" height="167" alt="Varma Homes" class="site-header__logo site-header__logo--partner" decoding="async">
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary" data-nav>
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Home</a></li>
+          <li><a class="main-nav__link" href="index.html#amenities">Amenities</a></li>
+          <li><a class="main-nav__link" href="index.html#floor-plans">Floor Plans</a></li>
+          <li><a class="main-nav__link" href="index.html#location">Location</a></li>
+          <li><a class="main-nav__link" href="index.html#faq">FAQ</a></li>
+        </ul>
+        <div class="main-nav__contact">
+          <a class="btn btn--outline btn--block" href="tel:+919048857777"><svg class="btn__icon" aria-hidden="true"><use href="#i-phone"/></svg>+91 9048 857777</a>
+          <a class="btn btn--primary btn--block" href="index.html#visit">Schedule a Visit</a>
+        </div>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__phone" href="tel:+919048857777"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+91 9048 857777</span></a>
+        <a class="site-header__wa" href="https://wa.me/919048857777?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Wellage%20Praana." target="_blank" rel="noopener" aria-label="Chat on WhatsApp (opens in a new tab)"><img src="assets/images/whatsapp.webp" width="128" height="128" alt="" class="site-header__wa-img" decoding="async"></a>
+        <a class="btn btn--primary btn--sm site-header__cta" href="index.html#visit">Schedule a Visit</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle>
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </header>
-  <main class="section legal">
+  <main class="section legal" id="main">
     <div class="container legal__body">
       <div class="section-heading">
         <span class="section-heading__eyebrow">Legal</span>
@@ -65,5 +101,46 @@
       <p>For questions about this policy or your data, call <a href="tel:+919048857777">+91 9048 857777</a> or write to <a href="mailto:wellage@varmahomes.com">wellage@varmahomes.com</a>.</p>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <img class="site-footer__bg" src="assets/images/footer-bg-1895.webp" srcset="assets/images/footer-bg-960.webp 960w, assets/images/footer-bg-1895.webp 1895w" sizes="100vw" width="1895" height="830" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="site-footer__box">
+      <div class="site-footer__bar">
+        <a class="site-footer__brand" href="index.html" aria-label="Wellage Praana by Varma, back to top"><img src="assets/images/logo-praana.webp" width="360" height="117" alt="Wellage Praana by Varma" class="site-footer__logo" loading="lazy" decoding="async"></a>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#overview">Overview</a></li>
+            <li><a href="index.html#residences">Residences</a></li>
+            <li><a href="index.html#amenities">Amenities</a></li>
+            <li><a href="index.html#location">Location</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#visit">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__contact">
+          <a class="site-footer__phone" href="tel:+919048857777"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>+91 9048 857777</a>
+          <ul class="social" aria-label="Social media">
+            <li><a class="social__link social__link--wa" href="https://wa.me/919048857777" target="_blank" rel="noopener" aria-label="Chat on WhatsApp (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+            <li><a class="social__link" href="https://www.youtube.com/@Varmawellage/videos" target="_blank" rel="noopener" aria-label="Varma Wellage on YouTube (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__info">
+        <svg class="site-footer__pin" aria-hidden="true"><use href="#i-pin"/></svg>
+        <address>Varma Wellage Private Limited, G-129, 55/938(A), 3rd Cross Road, Panampilly Nagar, Cochin &ndash; 682036 &middot; <a href="mailto:wellage@varmahomes.com">wellage@varmahomes.com</a> &middot; K-RERA/PRJ/ERN/063/2026</address>
+      </div>
+      <div class="site-footer__legal">
+        <div class="site-footer__legal-inner">
+          <p class="site-footer__copy">&copy; Wellage Wellness Village Pvt Ltd. All rights reserved.</p>
+          <p class="site-footer__links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></p>
+          <p class="site-footer__credit"><span>Designed and Developed by</span> <a href="https://www.intersmart.in/" target="_blank" rel="noopener"><img src="assets/images/footerintersmart-logo.svg" alt="InterSmart" width="117" height="19" loading="lazy"><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bundle.min.js" defer></script>
 </body>
 </html>
