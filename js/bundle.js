@@ -656,7 +656,7 @@ window.PRAANA_CONFIG = {
     bar.firstElementChild.style.setProperty("--pct", pct);
   });
 
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // reduced-motion visitors still get the slides (the crossfade and title animation are switched off in CSS)
   var targets = document.querySelectorAll(".reveal");
   if (reduce || !("IntersectionObserver" in window)) {
     targets.forEach(function (el) {
@@ -1726,7 +1726,7 @@ window.PRAANA_CONFIG = {
     el.classList.add("is-visible"); // titles.js transition: words rise out of their masks, staggered
   }
   function stop() { window.clearInterval(timer); timer = null; }
-  function play() { if (reduce || timer || document.hidden) return; timer = window.setInterval(function () { show(index + 1); }, DELAY); }
+  function play() { if (timer || document.hidden) return; timer = window.setInterval(function () { show(index + 1); }, DELAY); }
 
   dots.forEach(function (d, n) {
     d.addEventListener("click", function () { show(n); stop(); play(); });
@@ -1737,7 +1737,10 @@ window.PRAANA_CONFIG = {
 
   function start() { box.classList.add("is-ready"); play(); }
   if (document.readyState === "complete") start();
-  else window.addEventListener("load", start);
+  else {
+    window.addEventListener("load", start);
+    window.setTimeout(start, 3000); // slow phones: do not wait for every last asset
+  }
 })();
 
 /* main.js */
