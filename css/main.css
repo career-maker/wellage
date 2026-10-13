@@ -10956,3 +10956,31 @@ main section .way__title { font-size: var(--t-title) !important; }
 
 /* hero slide change: reset the word-rise instantly before replaying it */
 .title-anim.title-snap .tw__i { transition: none !important; }
+
+/* Project Overview: plain background, same cream as About Varma, no botanical leaf artwork */
+.overview {
+  background: #f9f4e8;
+  --bg1: none;
+}
+.overview::before,
+.overview::after,
+.overview.is-near::before,
+.overview.is-near::after {
+  content: none;
+  display: none;
+  background: none;
+}
+
+/* phones: no floating "chat with an expert / call now" bar (the bottom action bar already has Call + WhatsApp) */
+@media (max-width: 39.99rem) {
+  .expert { display: none !important; }
+}
+
+/* Project Overview facts + pillars: lift on hover only, no square outline / box shadow around the item */
+.facts__item:hover,
+.pillars__item:hover,
+.facts__item:focus-within,
+.pillars__item:focus-within {
+  box-shadow: none;
+  outline: 0;
+}
