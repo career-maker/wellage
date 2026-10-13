@@ -10442,3 +10442,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
     background: linear-gradient(90deg, rgba(8, 24, 20, 0.7) 0%, rgba(8, 24, 20, 0.58) 26%, rgba(8, 24, 20, 0.28) 44%, rgba(8, 24, 20, 0) 60%);
   }
 }
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .page-v2 .hero__copy { grid-template-columns: minmax(0, 1fr); }
+  .page-v2 .hero__actions { flex-wrap: nowrap; width: max-content; max-width: 92vw; justify-self: start; }
+}
