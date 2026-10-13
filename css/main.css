@@ -10480,3 +10480,31 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .site-footer .social__wa-img { width: 1.55rem; height: 1.55rem; }
 @media (min-width: 64rem) { .site-footer .social__wa-img { width: calc(34 * var(--u)); height: calc(34 * var(--u)); } }
 .site-footer .social__link--wa:hover { background: #d8a85a; }
+
+/* testimonials "Visit Praana": gold underline sweeps in, arrow glides right */
+.testimonials .link-arrow { position: relative; transition: color 0.3s ease, letter-spacing 0.3s ease; }
+.testimonials .link-arrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: #c58a2c;
+  transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.testimonials .link-arrow .icon { transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.testimonials .link-arrow:hover,
+.testimonials .link-arrow:focus-visible { color: #8a5a18; letter-spacing: 0.05em; }
+.testimonials .link-arrow:hover::after,
+.testimonials .link-arrow:focus-visible::after { width: 100%; }
+.testimonials .link-arrow:hover .icon,
+.testimonials .link-arrow:focus-visible .icon { transform: translateX(0.4rem); }
+.testimonials .link-arrow:active .icon { transform: translateX(0.7rem); }
+@media (min-width: 64rem) {
+  .testimonials .link-arrow::after { bottom: calc(-3 * var(--u)); height: calc(3 * var(--u)); }
+  .testimonials .link-arrow:hover .icon, .testimonials .link-arrow:focus-visible .icon { transform: translateX(calc(10 * var(--u))); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonials .link-arrow, .testimonials .link-arrow::after, .testimonials .link-arrow .icon { transition: none; }
+}
