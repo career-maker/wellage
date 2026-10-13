@@ -451,26 +451,32 @@ window.PRAANA_CONFIG = {
     grid.classList.toggle("is-collapsed", !expanded);
   }
 
-  filters.addEventListener("click", function (e) {
-    var btn = e.target.closest("[data-filter]");
-    if (!btn) return;
-    var f = btn.dataset.filter;
-    filters.querySelectorAll("[data-filter]").forEach(function (b) {
-      var on = b === btn;
-      b.classList.toggle("is-active", on);
-      b.setAttribute("aria-pressed", String(on));
-    });
+  function applyFilter(f) {
     var shown = 0;
     items.forEach(function (li) {
-      var show = f === "all" || li.dataset.cat === f;
+      var show = li.dataset.cat === f;
       li.hidden = !show;
       if (show) shown += 1;
     });
     empty.hidden = shown !== 0;
     grid.hidden = shown === 0;
+    expanded = false;
     layout();
+  }
+
+  filters.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-filter]");
+    if (!btn) return;
+    filters.querySelectorAll("[data-filter]").forEach(function (b) {
+      var on = b === btn;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
+    applyFilter(btn.dataset.filter);
   });
-  layout();
+  // there is no "All" tab: start on the first category
+  var first = filters.querySelector("[data-filter].is-active") || filters.querySelector("[data-filter]");
+  applyFilter(first.dataset.filter);
 
   // lightbox
   var box = document.querySelector("[data-lightbox]");
