@@ -11008,3 +11008,15 @@ main section .way__title { font-size: var(--t-title) !important; }
   .page-v2 .hero__title-main { font-size: 12.4vw !important; }
   .page-v2 .hero__inner--slide3 .hero__title-main { max-width: calc(100vw - 8vw - 2.75rem); }
 }
+
+/* phones: the hero image runs the full height of the hero (no separate green panel under it);
+   a dark wash at the bottom keeps the title and button readable */
+@media (max-width: 39.99rem) {
+  .page-v2 .hero__bg { top: 0; bottom: 0; height: 100%; }
+  .page-v2 .hero__overlay,
+  .page-v2 .hero.is-poster .hero__overlay {
+    background: linear-gradient(0deg, rgba(8, 28, 23, 0.86) 0%, rgba(8, 28, 23, 0.6) 34%, rgba(8, 28, 23, 0) 66%);
+  }
+  .page-v2 .hero__inner { padding-bottom: 1.75rem; }
+  .page-v2 .hero__inner--slide3 { padding-bottom: 1.75rem; }
+}
