@@ -1,4 +1,3 @@
+# BETA / STAGING: do not crawl or index. Replace with production rules at launch.
 User-agent: *
-Allow: /
-Disallow: /privacy-policy.html
-Disallow: /terms.html
+Disallow: /

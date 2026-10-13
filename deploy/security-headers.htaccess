@@ -6,6 +6,8 @@
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "DENY"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # BETA: keep out of search engines. Remove this line at launch.
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive"
 </IfModule>
 
 # Caching: fingerprint-free assets, so keep HTML revalidating and cache static files for a month.
