@@ -27,6 +27,6 @@
     track.addEventListener("scroll", sync, { passive: true });
     window.addEventListener("resize", sync);
     if ("ResizeObserver" in window) new ResizeObserver(sync).observe(track);
-    sync();
+    window.requestAnimationFrame(function () { window.requestAnimationFrame(sync); });
   });
 })();

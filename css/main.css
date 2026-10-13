@@ -64,28 +64,38 @@ a {
   }
 }
 @font-face {
-  font-family: "Cormorant Garamond";
-  src: url("../assets/fonts/CormorantGaramond-var.woff2") format("woff2");
-  font-weight: 500 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat-var.woff2") format("woff2");
+  font-family: "Fraunces";
+  src: url("../assets/fonts/Fraunces-var.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
+  size-adjust: 83%;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/Fraunces-italic-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  size-adjust: 83%;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/Figtree-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 104%;
 }
 body {
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.7;
   color: #3c4643;
 }
 
 .display {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.01em;
@@ -625,7 +635,7 @@ main > section:not(.hero),
   color: #8a5a18;
 }
 .section-heading__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5rem + 1.1111111111vw, 2.5rem);
   font-weight: 700;
   line-height: 1.12;
@@ -921,7 +931,7 @@ main > section:not(.hero),
   border: 0;
   background: none;
   text-align: left;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.3125rem, 1.1666666667rem + 0.6481481481vw, 1.75rem);
   font-weight: 600;
   line-height: 1.25;
@@ -998,13 +1008,13 @@ main > section:not(.hero),
   border-radius: 0.75rem;
 }
 .quote-card__mark {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 4rem;
   line-height: 0.6;
   color: #8a5a18;
 }
 .quote-card__text {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.25rem, 1.1666666667rem + 0.3703703704vw, 1.5rem);
   font-weight: 500;
   line-height: 1.4;
@@ -1044,7 +1054,7 @@ main > section:not(.hero),
   object-position: center 25%;
 }
 .person-card__name {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.625rem;
   font-weight: 600;
   line-height: 1.15;
@@ -1086,7 +1096,7 @@ main > section:not(.hero),
   display: block;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(31, 38, 36, 0.14);
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: #1f2624;
@@ -1121,7 +1131,7 @@ main > section:not(.hero),
     position: relative;
     padding: 0.5rem 0;
     border: 0;
-    font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+    font-family: "Figtree", "Segoe UI", Arial, sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -1213,7 +1223,7 @@ main > section:not(.hero),
 }
 .dialog__title {
   margin: 0 3rem 1.25rem 0;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5416666667rem + 0.9259259259vw, 2.375rem);
   font-weight: 600;
   line-height: 1.1;
@@ -1255,7 +1265,7 @@ main > section:not(.hero),
   color: #4a5551;
 }
 .spec-table tbody th {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.375rem;
   color: #1f2624;
 }
@@ -1493,7 +1503,7 @@ main > section:not(.hero),
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 .drawer__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.1;
@@ -1652,11 +1662,11 @@ main > section:not(.hero),
 .hero__title {
   display: grid;
   margin: 0;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   color: #12302a;
 }
 .hero__eyebrow {
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
   font-size: clamp(0.8125rem, 0.7rem + 0.5vw, 1.0625rem);
   font-weight: 600;
   letter-spacing: 0.28em;
@@ -1675,7 +1685,7 @@ main > section:not(.hero),
 }
 .hero__sub {
   margin-top: clamp(0.5rem, 1.5vh, 1rem);
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.375rem, min(1.1rem + 1.5vw, 4.6vh), 2.5rem);
   font-weight: 500;
   line-height: 1.15;
@@ -1834,7 +1844,7 @@ main > section:not(.hero),
   text-transform: uppercase;
 }
 .hero__form-title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.625rem;
   font-weight: 700;
   line-height: 1.1;
@@ -1965,7 +1975,7 @@ main > section:not(.hero),
   margin-bottom: 0.4rem;
 }
 .hero-modal__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.625rem, 1.25rem + 1.6vw, 2.25rem);
   font-weight: 700;
   line-height: 1.05;
@@ -2112,7 +2122,7 @@ main > section:not(.hero),
 .overview__title {
   display: grid;
   margin-top: 1.25rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.75rem, 1.6rem + 3.6vw, 4.5rem);
   font-weight: 600;
   line-height: 1.02;
@@ -2314,7 +2324,7 @@ main > section:not(.hero),
 }
 .overview__quote {
   position: relative;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.625rem, 1.2rem + 1.5vw, 2.25rem);
   font-weight: 500;
   line-height: 1.2;
@@ -2413,7 +2423,7 @@ main > section:not(.hero),
   max-width: 32rem;
 }
 .why__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5833333333rem + 0.7407407407vw, 2.25rem);
   font-weight: 700;
   line-height: 1.15;
@@ -2705,7 +2715,7 @@ main > section:not(.hero),
   color: #d9b573;
 }
 .life__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.5833333333rem + 1.8518518519vw, 3.25rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -2792,7 +2802,7 @@ main > section:not(.hero),
   box-shadow: 0 10px 30px -20px rgba(18, 48, 42, 0.45);
 }
 .plan__type {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1;
@@ -2979,7 +2989,7 @@ main > section:not(.hero),
   justify-items: start;
 }
 .reimagined__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.875rem, 1.6666666667rem + 0.9259259259vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -3076,7 +3086,7 @@ main > section:not(.hero),
   color: #d9b573;
 }
 .visit__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5rem + 1.1111111111vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -3196,7 +3206,7 @@ main > section:not(.hero),
   border-block: 1px solid rgba(31, 38, 36, 0.14);
 }
 .varma__stat-num {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(3rem, 2.5rem + 3vw, 5rem);
   font-weight: 700;
   line-height: 0.9;
@@ -3352,7 +3362,7 @@ main > section:not(.hero),
 }
 .faq .accordion__trigger {
   padding: 0.95rem 0;
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
 }
@@ -3404,7 +3414,7 @@ main > section:not(.hero),
   transform: scaleX(-1) rotate(20deg);
 }
 .final-cta__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.4166666667rem + 1.4814814815vw, 2.75rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -3431,7 +3441,7 @@ main > section:not(.hero),
 }
 .legal__h {
   margin-top: 1rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: #1f2624;
@@ -4477,7 +4487,7 @@ main > section:not(.hero),
   opacity: 0.6;
 }
 .way__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.75rem);
   font-weight: 600;
   line-height: 1;
@@ -4530,7 +4540,7 @@ main > section:not(.hero),
 }
 .way__no {
   grid-row: 1 / span 2;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #8a5a18;
@@ -4539,7 +4549,7 @@ main > section:not(.hero),
   display: none;
 }
 .way__item h3 {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.4rem, 1.15rem + 0.7vw, 1.75rem);
   font-weight: 600;
   line-height: 1.15;
@@ -4638,7 +4648,7 @@ main > section:not(.hero),
   opacity: 0.6;
 }
 .rooms__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.5rem);
   font-weight: 600;
   line-height: 1;
@@ -4684,7 +4694,7 @@ main > section:not(.hero),
   border-radius: 0;
   background: none;
   box-shadow: none;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.25rem, 1rem + 0.7vw, 1.75rem);
   font-weight: 600;
   line-height: 1.1;
@@ -4726,7 +4736,7 @@ main > section:not(.hero),
   height: 3px;
 }
 .rooms .tabs__no {
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -4793,7 +4803,7 @@ main > section:not(.hero),
 }
 .rooms .room-visual span {
   position: relative;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 2.6vw, 3.75rem);
   font-style: italic;
   font-weight: 500;
@@ -4829,7 +4839,7 @@ main > section:not(.hero),
   border-top: 1px solid rgba(138, 90, 24, 0.28);
   border-radius: 0;
   background: none;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.4rem, 1.15rem + 0.8vw, 1.85rem);
   font-weight: 600;
   line-height: 1.2;
@@ -4848,7 +4858,7 @@ main > section:not(.hero),
   margin: 0;
   border-radius: 0;
   background: none;
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -4932,7 +4942,7 @@ main > section:not(.hero),
   opacity: 0.6;
 }
 .amen__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.75rem);
   font-weight: 600;
   line-height: 1;
@@ -4980,7 +4990,7 @@ main > section:not(.hero),
   color: #8a5a18;
 }
 .amen__name {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.75rem);
   font-weight: 600;
   line-height: 1.05;
@@ -5173,7 +5183,7 @@ main > section:not(.hero),
   opacity: 0.7;
 }
 .film__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(3rem, 1.6rem + 5vw, 6.25rem);
   font-weight: 600;
   line-height: 0.95;
@@ -5209,14 +5219,14 @@ main > section:not(.hero),
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem);
   font-weight: 600;
   line-height: 1.5;
   color: #fbf8f2;
 }
 .film__themes li span {
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -5737,7 +5747,7 @@ main > section[id],
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.35rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.25rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -6222,7 +6232,7 @@ main > section[id],
 }
 .film__inner { flex: 1 1 auto; min-height: 100dvh; align-self: stretch; }
 .film__themes li .film__theme {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.1rem, 0.9rem + 0.7vw, 1.6rem);
   font-weight: 600;
   letter-spacing: 0;
@@ -6230,7 +6240,7 @@ main > section[id],
   color: #fbf8f2;
   line-height: 1.15;
 }
-.film__themes li .film__no { font-family: "Montserrat", "Segoe UI", Arial, sans-serif; }
+.film__themes li .film__no { font-family: "Figtree", "Segoe UI", Arial, sans-serif; }
 @media (max-width: 63.99rem) {
   .film__inner { min-height: 0; }
   .film__themes { gap: 1rem 0; }
@@ -6351,7 +6361,7 @@ main > section[id],
 .reimagined__title,
 .visit__title,
 .final-cta__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif !important;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif !important;
   font-size: var(--section-title-size) !important;
   font-weight: 600 !important;
   line-height: 1.08 !important;
@@ -6602,7 +6612,7 @@ main > section[id],
   padding: 0.4rem 1.4rem;
   border-radius: 1.25rem;
   background: #ece6d2;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.4rem, 1rem + 1vh, 1.9rem);
   font-weight: 600;
   color: #12302a;
@@ -6681,7 +6691,7 @@ main > section[id],
   padding: 0.7rem 1rem;
   border-radius: 1.25rem;
   background: rgba(236, 230, 210, 0.75);
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 0.95rem;
   font-style: italic;
   color: #3c4643;
@@ -7160,7 +7170,7 @@ main > section[id],
 }
 .idea__title {
   margin-top: 0.75rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.1;
@@ -7291,7 +7301,7 @@ main > section[id],
   padding-inline: clamp(1.25rem, 6.4vw, 7.8rem);
 }
 .rm__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: var(--section-title-size);
   font-weight: 600;
   line-height: 1.08;
@@ -7343,7 +7353,7 @@ main > section[id],
 .rm__name {
   position: relative;
   padding-bottom: 0.3rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.15rem, 0.9rem + 0.7vw, 1.75rem);
   line-height: 1.15;
   color: #6b7370;
@@ -7446,7 +7456,7 @@ main > section[id],
 }
 .rm__ico svg { width: 50%; height: 50%; }
 .rm__item {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.15rem, 0.9rem + 0.7vw, 1.75rem);
   font-weight: 500;
   color: #12302a;
@@ -7729,7 +7739,7 @@ main > section[id],
   color: #d29a3f;
 }
 .visit-card__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.9rem, 1.2rem + 1.7vw, 3rem);
   font-weight: 600;
   line-height: 1.05;
@@ -7999,7 +8009,7 @@ main > section[id],
 .testi__eyebrow::after { content: ""; width: 4.5rem; height: 1px; background: #a8660f; opacity: 0.8; }
 .testi__title {
   margin-top: 0.6rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.1;
@@ -8025,8 +8035,8 @@ main > section[id],
 .testimonials .quote-card__mark { color: #a8660f; font-weight: 700; }
 .quote-card__cite { display: flex; align-items: center; gap: 1rem; }
 .quote-card__avatar { flex: none; width: 3.5rem; height: 3.5rem; border-radius: 50%; }
-.quote-card__who { font-family: "Cormorant Garamond", "Times New Roman", serif; font-size: 1.25rem; font-weight: 700; color: #12302a; }
-.quote-card__who small { margin-top: 0.15rem; font-family: "Montserrat", "Segoe UI", Arial, sans-serif; font-size: 0.8125rem; font-weight: 400; color: #3c4643; }
+.quote-card__who { font-family: "Fraunces", "Georgia", "Times New Roman", serif; font-size: 1.25rem; font-weight: 700; color: #12302a; }
+.quote-card__who small { margin-top: 0.15rem; font-family: "Figtree", "Segoe UI", Arial, sans-serif; font-size: 0.8125rem; font-weight: 400; color: #3c4643; }
 .testimonials .link-arrow { color: #12302a; font-weight: 600; }
 .testimonials .quote-card::after {
   content: "";
@@ -8131,7 +8141,7 @@ main > section[id],
   left: 0;
   bottom: -0.25em;
   z-index: -1;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(6rem, 22vw, 20rem);
   letter-spacing: 0.3em;
   line-height: 1;
@@ -8153,7 +8163,7 @@ main > section[id],
 }
 .varma__eyebrow::after { content: ""; width: 3.5rem; height: 1px; background: #a8660f; }
 .varma__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.1;
@@ -8171,7 +8181,7 @@ main > section[id],
 .varma .varma__stat-num {
   padding-right: 1.5rem;
   border-right: 1px solid rgba(168, 102, 15, 0.3);
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(3rem, 2rem + 4vw, 6rem);
   font-weight: 500;
   line-height: 1;
@@ -8259,7 +8269,7 @@ main > section[id],
 }
 .gallery__eyebrow::after { content: ""; width: 3.5rem; height: 1px; background: #a8660f; opacity: 0.8; }
 .gallery__title {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.1;
@@ -8351,7 +8361,7 @@ main > section[id],
 .faq__eyebrow::after { content: ""; width: 3.5rem; height: 1px; background: #a8660f; opacity: 0.8; }
 .faq__title {
   margin-top: 0.6rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.05;
@@ -8373,7 +8383,7 @@ main > section[id],
 .faq .accordion__trigger {
   gap: 1rem;
   padding: 0.85rem 1rem;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.2;
@@ -8636,8 +8646,8 @@ main > section[id],
    eyebrow / title / lede / body / card title / small. Montserrat for UI + reading text,
    Cormorant Garamond for display (titles and card titles). */
 :root {
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
-  --font-text: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font-display: "Fraunces", "Georgia", "Times New Roman", serif;
+  --font-text: "Figtree", "Segoe UI", Arial, sans-serif;
   --t-eyebrow: clamp(0.75rem, 0.62rem + 0.25vw, 0.95rem);
   --t-title: clamp(2rem, 1.1rem + 3.4vw, 4.5rem);
   --t-lede: clamp(1rem, 0.8rem + 0.55vw, 1.4rem);
@@ -10534,7 +10544,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .video-shell__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.25rem 0.35rem 0.7rem 0.9rem; }
 .video-shell__title {
   margin: 0;
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -10620,3 +10630,87 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 
 /* Residences: a little more air between the feature list and "View Floor Plans" */
 .page-v2 .rm__info .rm__cta, .rm__info .rm__cta { margin-top: clamp(1.1rem, 3dvh, 1.75rem) !important; }
+
+/* performance: sections below the hero are not styled / laid out until they approach the viewport */
+/* sections stay fully rendered so in-page anchors land correctly; only the footer is deferred */
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+.site-footer { contain-intrinsic-size: auto 660px; }
+@media (min-width: 64rem) { .site-footer { contain-intrinsic-size: auto 545px; } }
+
+/* Hero v2 (tablet + desktop): title + CTAs bottom-left, tagline + lede bottom-right. Mobile (<40rem) untouched. */
+@media(min-width:40rem){
+.page-v2 .hero__inner{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(1.5rem,4vw,4rem);justify-content:space-between;align-items:end;align-self:flex-end;padding-bottom:5.75rem}
+.page-v2 .hero__copy{display:contents}
+.page-v2 .hero__copy::before{content:none}
+.page-v2 .hero__title{grid-column:1;grid-row:1;align-self:end}
+.page-v2 .hero__actions{grid-column:1;grid-row:2;align-self:start;flex-direction:row;flex-wrap:nowrap;align-items:center;width:auto;max-width:none}
+.page-v2 .hero__sub,.page-v2 .hero__lede{grid-column:2;justify-self:end;width:100%;max-width:33rem;border-left:1px solid rgba(255,255,255,.55);padding-left:clamp(1rem,2vw,1.75rem)}
+.page-v2 .hero__sub{grid-row:1;align-self:end;margin:0;padding-bottom:.55rem;font-size:clamp(1.2rem,2.2vw,2.25rem);white-space:normal;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.page-v2 .hero__lede{display:block;grid-row:2;align-self:start;margin:0;padding-top:0;max-width:33rem;font-size:clamp(.9375rem,1.35vw,1.25rem);line-height:1.55;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.page-v2 .hero__overlay{background:linear-gradient(0deg,rgba(8,24,20,.7) 0%,rgba(8,24,20,.42) 30%,rgba(8,24,20,0) 60%);-webkit-mask-image:none;mask-image:none}
+}
+@media(min-width:80rem){.page-v2 .hero__inner{padding-bottom:3.5rem}}
+@media(min-width:40rem){
+.page-v2 .hero__inner{align-content:end}
+.page-v2 .hero__lede{font-family:"Fraunces","Georgia","Times New Roman",serif;font-size:clamp(1rem,1.45vw,1.4rem);font-weight:500;line-height:1.35}
+.page-v2 .hero__lede>span{line-height:inherit}
+}
+@media(min-width:40rem){
+.page-v2 .hero__inner{row-gap:0}
+.page-v2 .hero__lede,.page-v2 .hero__lede>span{background:none;box-shadow:none;color:#fff !important;padding-block:0}
+.page-v2 .hero__lede>span{padding:0;border-radius:0}
+.page-v2 .hero__lede{text-wrap:pretty}
+}
+@media(min-width:40rem){.page-v2 .hero__sub,.page-v2 .hero__lede{border-radius:0}}
+/* Hero v2 mobile: same arrangement as desktop (copy at the bottom, over the sharp couple image), single column */
+@media(max-width:39.99rem){
+.page-v2 .hero{min-height:min(calc(100svh - 4.25rem),165vw)}
+.page-v2 .hero__bg-image{object-position:47% 25%}
+.page-v2 .hero__overlay{background:linear-gradient(0deg,rgba(8,24,20,.82) 0%,rgba(8,24,20,.6) 38%,rgba(8,24,20,0) 68%)}
+.page-v2 .hero__inner{display:grid;grid-template-columns:minmax(0,1fr);align-content:end;align-self:flex-end;padding-top:0;padding-bottom:5.5rem;row-gap:0}
+.page-v2 .hero__copy{display:contents}
+.page-v2 .hero__title{grid-row:1}
+.page-v2 .hero__actions{grid-row:2;margin-top:.9rem;flex-direction:row}
+.page-v2 .hero__sub,.page-v2 .hero__lede{grid-column:1;max-width:none;width:100%;border-left:1px solid rgba(255,255,255,.55);padding-left:1rem;border-radius:0;background:none;box-shadow:none;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.page-v2 .hero__sub{grid-row:3;margin:1.1rem 0 0;padding-bottom:.35rem;font-size:1.3rem;white-space:normal}
+.page-v2 .hero__lede{display:block;grid-row:4;margin:0;font-family:"Fraunces","Georgia","Times New Roman",serif;font-size:1.0625rem;font-weight:500;line-height:1.35;color:#fff !important}
+.page-v2 .hero__lede>span{background:none;box-shadow:none;padding:0;color:#fff !important;line-height:inherit}
+}
+@media(max-width:39.99rem){
+.page-v2 .hero{background:#0f2b26;min-height:calc(100svh - 4.25rem)}
+.page-v2 .hero__bg{top:0;bottom:auto;height:min(105vw,62svh)}
+.page-v2 .hero__bg-image{object-position:44% 20%}
+.page-v2 .hero__overlay{background:linear-gradient(180deg,rgba(15,43,38,0) 0,rgba(15,43,38,0) calc(min(105vw,62svh) - 8rem),#0f2b26 min(105vw,62svh),#0f2b26 100%)}
+}
+@media(max-width:39.99rem){
+.page-v2 .hero__bg{height:min(92vw,62svh)}
+.page-v2 .hero__bg-image{object-position:50% 20%}
+.page-v2 .hero__overlay{background:linear-gradient(180deg,rgba(15,43,38,0) 0,rgba(15,43,38,0) calc(min(92vw,62svh) - 7rem),#0f2b26 min(92vw,62svh),#0f2b26 100%)}
+.page-v2 .hero__inner{padding-top:calc(min(92vw,62svh) - 4rem)}
+}
+@media(max-width:39.99rem){.page-v2 .hero__sub,.page-v2 .hero__lede{display:none}}
+@media(max-width:39.99rem){
+.page-v2 .hero{min-height:0}
+.page-v2 .hero__bg{height:min(108vw,66svh)}
+.page-v2 .hero__overlay{background:linear-gradient(180deg,rgba(15,43,38,0) 0,rgba(15,43,38,0) calc(min(108vw,66svh) - 7rem),#0f2b26 min(108vw,66svh),#0f2b26 100%)}
+.page-v2 .hero__inner{padding-top:calc(min(108vw,66svh) - 4.5rem)}
+}
+/* Section title fits its column: each line of "More than a home. / A complete way of life." stays on one line */
+@media(min-width:64rem){
+.page-v2 main section .way__head{container-type:inline-size}
+.page-v2 main section .way__head .way__title{font-size:min(var(--t-title),13.4cqi) !important;white-space:nowrap;line-height:1.08 !important}
+}
+main h2,.drawer__title,.hero-modal__title{text-wrap:balance}
+.drawer__title{font-size:1.3rem;white-space:nowrap}
+/* 640-767px: right column was crushed to a sliver; stack tagline + lede under the CTAs instead */
+@media(min-width:40rem) and (max-width:47.99rem){
+.page-v2 .hero__inner{grid-template-columns:minmax(0,1fr)}
+.page-v2 .hero__sub,.page-v2 .hero__lede{grid-column:1;justify-self:start}
+.page-v2 .hero__sub{grid-row:3;margin-top:1.1rem}
+.page-v2 .hero__lede{grid-row:4}
+}
+.video-fallback{margin:.75rem 0 0;font-size:.875rem;text-align:center;color:rgba(255,255,255,.8)}
+.video-fallback a{color:#f3d9a0;text-decoration:underline}

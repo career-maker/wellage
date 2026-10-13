@@ -41,14 +41,39 @@
     return ok;
   }
 
+  function brochureUrl() {
+    return cfg.brochureUrl || "wellage.pdf";
+  }
+
   function download() {
     var a = document.createElement("a");
-    a.href = cfg.brochureUrl || "wellage.pdf";
+    a.href = brochureUrl();
     a.download = "Wellage_Praana_Brochure.pdf";
     a.rel = "noopener";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+  }
+
+  // Never claim a download that would 404. (file:// cannot be probed, so assume it exists there.)
+  function brochureExists() {
+    if (location.protocol === "file:") return Promise.resolve(true);
+    return fetch(brochureUrl(), { method: "HEAD", cache: "no-store" }).then(
+      function (r) { return r.ok; },
+      function () { return false; }
+    );
+  }
+
+  function fail(msg) {
+    busy = false;
+    status.className = "form__status is-visible form__status--error";
+    status.textContent = msg + " ";
+    var a = document.createElement("a");
+    a.href = "https://wa.me/" + (cfg.whatsapp || "") + "?text=" + encodeURIComponent("Hello, please send me the Wellage Praana brochure.");
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Message us on WhatsApp";
+    status.appendChild(a);
   }
 
   document.addEventListener("click", function (e) {
@@ -77,18 +102,26 @@
     };
     busy = true;
     function done() {
-      busy = false;
-      status.className = "form__status is-visible form__status--info";
-      status.textContent = "Thank you. Your brochure download is starting.";
-      download();
-      window.setTimeout(function () { if (dialog.open) dialog.close(); }, 1600);
+      brochureExists().then(function (ok) {
+        if (!ok) { fail("The brochure is not available to download just now."); return; }
+        busy = false;
+        status.className = "form__status is-visible form__status--info";
+        status.textContent = "Thank you. Your brochure download is starting.";
+        download();
+        window.setTimeout(function () { if (dialog.open) dialog.close(); }, 1600);
+      });
     }
     if (cfg.formEndpoint) {
       fetch(cfg.formEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data)
-      }).then(done, done);
+      }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        done();
+      }).catch(function () {
+        fail("We could not submit your details. Please try again or contact us.");
+      });
     } else {
       done();
     }

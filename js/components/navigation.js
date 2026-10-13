@@ -9,14 +9,6 @@
 
   var desktop = window.matchMedia("(min-width: 68rem)");
 
-  // header height as a CSS variable (the transparent header overlays the top of the hero)
-  function setHeaderHeight() {
-    document.documentElement.style.setProperty("--hdr-h", header.offsetHeight + "px");
-  }
-  setHeaderHeight();
-  window.addEventListener("resize", setHeaderHeight, { passive: true });
-  window.addEventListener("load", setHeaderHeight);
-
   // Sentinel + IntersectionObserver instead of a scroll listener (avoids forced layout reads).
   var sentinel = document.querySelector("[data-scroll-sentinel]");
   if (sentinel && "IntersectionObserver" in window) {
