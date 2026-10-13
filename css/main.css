@@ -10778,3 +10778,66 @@ main section .way__title { font-size: var(--t-title) !important; }
   .overview__rera-no { display: block; }
   .overview__rera-no { margin-top: 0.15rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
 }
+
+/* Header: three logos in a row. Varma Homes (primary) | Wellage (secondary) | Praana (third). */
+.site-header__brand--group {
+  display: flex;
+  align-items: center;
+  flex: none;
+  margin-right: auto;
+}
+.site-header__brand--group .site-header__logo {
+  display: block;
+  flex: none;
+  width: auto;
+  max-width: none;
+  height: 2.5rem;
+  margin: 0;
+}
+.site-header__brand--group .site-header__logo--secondary { height: 2.35rem; }
+.site-header__brand--group .site-header__logo--third { height: 2.15rem; }
+.site-header__brand--group .site-header__divider {
+  flex: none;
+  width: 1px;
+  height: 2rem;
+  margin-inline: clamp(0.5rem, 1vw, 0.9rem);
+  background: rgba(31, 38, 36, 0.22);
+}
+@media (max-width: 80rem) {
+  .site-header__brand--group .site-header__logo { height: 2.2rem; }
+  .site-header__brand--group .site-header__logo--secondary { height: 2.05rem; }
+  .site-header__brand--group .site-header__logo--third { height: 1.85rem; }
+}
+@media (max-width: 47.99rem) {
+  .site-header__brand--group .site-header__logo { height: 1.6rem; }
+  .site-header__brand--group .site-header__logo--secondary { height: 1.5rem; }
+  .site-header__brand--group .site-header__logo--third { height: 1.3rem; }
+  .site-header__brand--group .site-header__divider { height: 1.4rem; margin-inline: 0.4rem; }
+}
+@media (max-width: 22.5rem) {
+  .site-header__brand--group .site-header__logo { height: 1.35rem; }
+  .site-header__brand--group .site-header__logo--secondary { height: 1.25rem; }
+  .site-header__brand--group .site-header__logo--third { height: 1.1rem; }
+  .site-header__brand--group .site-header__divider { margin-inline: 0.3rem; }
+}
+
+/* Footer: same three logos as the header. Varma Homes (primary) | Wellage (secondary) | Praana (third). */
+.site-footer__brand { display: flex; align-items: center; gap: 0.7rem; }
+.site-footer__brand .site-footer__logo { width: auto; max-width: none; height: 2.4rem; }
+.site-footer__brand .site-footer__logo--secondary { height: 2.2rem; }
+.site-footer__brand .site-footer__logo--third { height: 2rem; }
+.site-footer__brand .site-footer__divider { height: 1.9rem; }
+@media (max-width: 22.5rem) {
+  .site-footer__brand { gap: 0.45rem; }
+  .site-footer__brand .site-footer__logo { height: 1.7rem; }
+  .site-footer__brand .site-footer__logo--secondary { height: 1.55rem; }
+  .site-footer__brand .site-footer__logo--third { height: 1.4rem; }
+}
+@media (min-width: 64rem) {
+  .site-footer__brand { gap: calc(12 * var(--u)); }
+  .site-footer__brand .site-footer__logo { height: calc(50 * var(--u)); }
+  .site-footer__brand .site-footer__logo--secondary { height: calc(47 * var(--u)); }
+  .site-footer__brand .site-footer__logo--third { height: calc(42 * var(--u)); }
+  .site-footer__brand .site-footer__divider { height: calc(42 * var(--u)); }
+  .site-footer__brand { top: calc(346 * var(--u)); left: calc(70 * var(--u)); }
+}
