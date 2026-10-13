@@ -11301,3 +11301,8 @@ main section .visit-card__title {
   box-shadow: 0 0 0 2px #e8c47a, 0 18px 30px -14px rgba(18, 48, 42, 0.55);
 }
 .vcard.is-playing .vcard__btn { visibility: hidden; }
+
+/* video testimonials: soft shadow that fits inside the swipe rail, so it is never cut into a visible box */
+.vcard { filter: drop-shadow(0 12px 12px rgba(18, 48, 42, 0.16)); }
+.vcards { padding: 2rem 1.5rem 3.25rem; margin-inline: -1.25rem; }
+@media (max-width: 63.99rem) { .vcards { margin-inline: -1.25rem; padding-inline: 1.25rem; } }
