@@ -11124,3 +11124,25 @@ main section .visit-card__title {
   .conn__place:last-child { margin-right: var(--pad, 1.25rem); }
   .conn__place img { width: 7rem; }
 }
+
+/* Testimonials: give the cards room so a longer quote never runs into the gold rule / avatar below it */
+@media (min-width: 64rem) {
+  /* the author row follows the quote in normal flow (pinned to the bottom of the card), so a long quote can never run into it */
+  .testimonials .quote-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: calc(426 * var(--u));
+    padding-bottom: calc(27 * var(--u));
+  }
+  .testimonials .quote-card__cite {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: auto;
+    margin-left: calc(-9 * var(--u));
+    padding-top: calc(34 * var(--u));
+  }
+  .testimonials .quote-card__cite::before { top: calc(14 * var(--u)); left: calc(9 * var(--u)); }
+  .quote-card--2 .quote-card__text { line-height: calc(32 * var(--u)); }
+}

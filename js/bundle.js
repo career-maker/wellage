@@ -1500,7 +1500,7 @@ window.PRAANA_CONFIG = {
       dist.querySelector("text").textContent = row.getAttribute("data-km") + " km";
     }
     if (status) status.textContent = row.querySelector(".conn__name").textContent.replace(/\s+/g, " ") + ": " +
-      row.getAttribute("data-km") + " km, " + row.getAttribute("data-min");
+      row.getAttribute("data-km") + " km" + (row.getAttribute("data-min") ? ", " + row.getAttribute("data-min") : "");
   }
 
   rows.forEach(function (el, i) {
