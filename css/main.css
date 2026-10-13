@@ -10472,3 +10472,49 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone .icon { color: #fff !important; }
 .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { filter: invert(1) hue-rotate(180deg) brightness(1.35); }
 .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) { border-bottom: 0 !important; box-shadow: none !important; }
+
+/* transparent header state: slightly larger items + a feathered dark wash behind the bar */
+.page-home.page-v2 .site-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(100% + 3rem);
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(8, 24, 20, 0.5) 0%,
+    rgba(8, 24, 20, 0.42) 35%,
+    rgba(8, 24, 20, 0.26) 62%,
+    rgba(8, 24, 20, 0.1) 82%,
+    rgba(8, 24, 20, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open)::before { opacity: 1; }
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) { background: none; }
+@media (min-width: 64rem) {
+  .page-home.page-v2 .site-header .site-header__logo,
+  .page-home.page-v2 .site-header .main-nav__link,
+  .page-home.page-v2 .site-header .site-header__phone { transition: transform 0.3s ease, font-size 0.3s ease; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo { transform: scale(1.14); transform-origin: left center; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brand { margin-right: 0.6rem; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-left: 1.3rem; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link { font-size: 1.0625rem; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: 1.0625rem; }
+}
+@media (max-width: 63.99rem) {
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo { transform: scale(1.12); transform-origin: left center; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-left: 0.9rem; }
+}
+@media (min-width: 64rem) {
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { transform: scale(1.05); margin-left: 1.1rem; margin-right: 1.5rem; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link,
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: 1rem; }
+}
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link,
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: inherit; }
+  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-right: 0.5rem; }
+}
