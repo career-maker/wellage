@@ -10605,3 +10605,12 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .float-actions__label .lbl-full { display: none; }
   .float-actions__label .lbl-short { display: inline; }
 }
+
+/* tablet / large phone: enquiry drawer uses the full available width so the two-column fields never clip */
+@media (min-width: 30rem) and (max-width: 63.99rem) {
+  .drawer { width: min(34rem, calc(100vw - 2rem)); right: 1rem; }
+  .drawer .drawer__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (min-width: 30rem) and (max-width: 39.99rem) {
+  .drawer .drawer__row { grid-template-columns: minmax(0, 1fr); }
+}
