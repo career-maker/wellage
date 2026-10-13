@@ -11020,3 +11020,22 @@ main section .way__title { font-size: var(--t-title) !important; }
   .page-v2 .hero__inner { padding-bottom: 1.75rem; }
   .page-v2 .hero__inner--slide3 { padding-bottom: 1.75rem; }
 }
+
+/* phones: bigger header logos (they were tiny) and no empty band between the hero and Project Overview */
+@media (max-width: 47.99rem) {
+  .site-header__brand--group .site-header__logo { height: 2rem; }
+  .site-header__brand--group .site-header__logo--secondary { height: 1.85rem; }
+  .site-header__brand--group .site-header__logo--third { height: 1.6rem; }
+  .site-header__brand--group .site-header__divider { height: 1.7rem; margin-inline: 0.4rem; }
+}
+@media (max-width: 22.5rem) {
+  .site-header__brand--group .site-header__logo { height: 1.7rem; }
+  .site-header__brand--group .site-header__logo--secondary { height: 1.58rem; }
+  .site-header__brand--group .site-header__logo--third { height: 1.36rem; }
+  .site-header__brand--group .site-header__divider { height: 1.45rem; margin-inline: 0.3rem; }
+}
+@media (max-width: 39.99rem) {
+  .overview__top { padding-top: 1.25rem; }
+  .overview__content { padding-top: 0; }
+  .overview__eyebrow { margin-top: 0; }
+}
