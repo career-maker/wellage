@@ -11277,6 +11277,18 @@ main section .visit-card__title {
   .vcard, .vcard__img, .vcard__play { transition: none; }
 }
 
-/* portrait player popup for YouTube Shorts */
-.dialog--reel .video-shell { width: min(92vw, calc((100dvh - 9rem) * 9 / 16 + 1.5rem)); }
-.dialog--reel .video-frame { aspect-ratio: 9 / 16; max-height: calc(100dvh - 8rem); width: 100%; }
+/* the Short plays inside its own card */
+.vcard { position: relative; }
+.vcard__player {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  overflow: hidden;
+  background: #000;
+  border-radius: 1.25rem 1.25rem 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+.vcard:nth-child(even) .vcard__player { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%); }
+.vcard__player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.vcard.is-playing { transform: none; }
+.vcard.is-playing .vcard__img { transform: none; }
