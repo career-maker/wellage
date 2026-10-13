@@ -10984,3 +10984,27 @@ main section .way__title { font-size: var(--t-title) !important; }
   box-shadow: none;
   outline: 0;
 }
+
+/* phones: slimmer right-edge tabs (Enquire Now / Watch Video), same 11px / 600 type as the bottom action bar */
+@media (max-width: 47.99rem) {
+  .drawer-tab,
+  .video-tab {
+    gap: 0.35rem;
+    padding: 0.55rem 0.35rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .drawer-tab span,
+  .video-tab span { font-size: 0.6875rem; }
+  .drawer-tab .icon,
+  .video-tab .icon { width: 0.95rem; height: 0.95rem; }
+  .video-tab { top: calc(clamp(6.25rem, 15dvh, 11rem) + 8.4rem); }
+}
+
+/* phones: hero titles (all slides, same size) stay clear of the right-edge tabs */
+@media (max-width: 39.99rem) {
+  .page-v2 .hero__title-main { font-size: 12.4vw !important; }
+  .page-v2 .hero__inner--slide3 .hero__title-main { max-width: calc(100vw - 8vw - 2.75rem); }
+}
