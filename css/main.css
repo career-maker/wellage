@@ -10582,3 +10582,13 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 
 /* transparent header: white WhatsApp icon */
 .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__wa-img { filter: brightness(0) invert(1); }
+
+/* footer social: WhatsApp uses the side-dock logo (white); icons stay visible on hover */
+.social__wa-img { display: block; width: 1.7rem; height: 1.7rem; object-fit: contain; filter: brightness(0) invert(1); }
+@media (min-width: 64rem) { .site-footer .social__wa-img { width: calc(38 * var(--u)); height: calc(38 * var(--u)); } }
+.site-footer .social__link:hover,
+.site-footer .social__link:focus-visible { background: #d8a85a; color: #0e3a2e; }
+.site-footer .social__link--wa:hover,
+.site-footer .social__link--wa:focus-visible { background: #d8a85a; }
+.site-footer .social__link:hover .icon { color: #0e3a2e; fill: currentColor; }
+.site-footer .social__link--wa:hover .social__wa-img { filter: brightness(0); }
