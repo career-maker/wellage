@@ -10549,3 +10549,6 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .site-footer .site-footer__nav ul { left: calc(24 * var(--u)); gap: 0 calc(24 * var(--u)); }
   .site-footer .site-footer__nav a { font-size: calc(18 * var(--u)); }
 }
+/* transparent header logos: real colours, no glow */
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { filter: none; }
