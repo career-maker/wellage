@@ -10552,3 +10552,30 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 /* transparent header logos: real colours, no glow */
 .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
 .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { filter: none; }
+
+/* ============ Transparent header: both logos sit on a solid white pill so their real colours stay readable ============ */
+.page-home.page-v2 .site-header__brands {
+  display: flex;
+  align-items: center;
+  flex: none;
+  margin-right: auto;
+  padding: 0.3rem 1.1rem;
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.page-home.page-v2 .site-header__brands .site-header__logo--partner { margin-right: 0; }
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands {
+  background: #fff;
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.35);
+}
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__logo,
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__logo--partner {
+  transform: none;
+  filter: none;
+}
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__brand { margin-right: 0; }
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__divider { background: rgba(31, 38, 36, 0.22); }
+@media (max-width: 39.99rem) {
+  .page-home.page-v2 .site-header__brands { padding: 0.25rem 0.7rem; }
+}
