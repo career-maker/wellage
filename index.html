@@ -625,6 +625,31 @@
     </div>
   </section>
 
+  <!-- ============ VIDEO TESTIMONIALS ============ -->
+  <section class="vtest" id="stories" aria-labelledby="vtest-title">
+    <div class="vtest__grid">
+      <div class="vtest__copy">
+        <span class="section-heading__eyebrow">Video Testimonials</span>
+        <h2 class="vtest__title" id="vtest-title">Hear their <em>stories</em></h2>
+        <p class="vtest__lede">Real voices from the Wellage family, in their own words.</p>
+        <a class="btn btn--primary" href="https://www.youtube.com/@Varmawellage/shorts" target="_blank" rel="noopener">More on YouTube<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="vtest__stage">
+        <button class="vtest__nav vtest__nav--prev" type="button" aria-label="Previous videos" data-vrail-prev><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <ul class="vcards" data-vrail aria-label="Video testimonials">
+          <li class="vcard vcard--1"><button class="vcard__btn" type="button" data-reel="_IluJrKxgvA" aria-label="Play video testimonial 1: Launch of Wellage Praana by Varma Homes"><img src="assets/images/reel-1.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+          <li class="vcard vcard--2"><button class="vcard__btn" type="button" data-reel="0NIPBCi8Yyo" aria-label="Play video testimonial 2: A visit to the Wellage Praana Experience Centre"><img src="assets/images/reel-2.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+          <li class="vcard vcard--3"><button class="vcard__btn" type="button" data-reel="-5vonzMpwMk" aria-label="Play video testimonial 3: Wellage Praana Experience Centre"><img src="assets/images/reel-3.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+          <li class="vcard vcard--4"><button class="vcard__btn" type="button" data-reel="WuNZIFSMw34" aria-label="Play video testimonial 4: Hear Their Story. Discover Wellage Praana"><img src="assets/images/reel-4.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+          <li class="vcard vcard--5"><button class="vcard__btn" type="button" data-reel="6E0YMt6gQYA" aria-label="Play video testimonial 5: Praana by Varma Wellage, Luxury Senior Living"><img src="assets/images/reel-5.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+          <li class="vcard vcard--6"><button class="vcard__btn" type="button" data-reel="r8haJ_eAFVE" aria-label="Play video testimonial 6: Wellage Praana at The Hindu Home Expo, Lulu Mall Kochi"><img src="assets/images/reel-6.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+          <li class="vcard vcard--7"><button class="vcard__btn" type="button" data-reel="KEbbOUrKY2w" aria-label="Play video testimonial 7: Praana by Wellage"><img src="assets/images/reel-7.webp" width="360" height="640" alt="" class="vcard__img" loading="lazy" decoding="async"><span class="vcard__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span></button></li>
+        </ul>
+        <button class="vtest__nav vtest__nav--next" type="button" aria-label="Next videos" data-vrail-next><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 11. ABOUT VARMA ============ -->
   <section class="varma" id="varma" aria-labelledby="varma-title">
     <span class="varma__mark" aria-hidden="true">Varma</span>
@@ -959,6 +984,15 @@
     </div>
   </dialog>
 
+  <dialog class="dialog dialog--video dialog--reel" id="reel-dialog" aria-label="Video testimonial">
+    <div class="video-shell">
+      <div class="video-shell__bar">
+        <p class="video-shell__title"><span>Wellage</span> Testimonial</p>
+        <button class="video-shell__close" type="button" data-dialog-close aria-label="Close video"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="video-frame" data-reel-frame></div>
+    </div>
+  </dialog>
   <dialog class="dialog dialog--video" id="video-dialog" aria-label="Wellage Praana video">
     <div class="video-shell">
       <div class="video-shell__bar">
