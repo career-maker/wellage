@@ -1220,7 +1220,8 @@ window.PRAANA_CONFIG = {
     return Math.random() < 0.5 ? -1 : 1;
   }
 
-  function start(back, front, host) {
+  // big = hero leaves: larger, and they ride a gusting wind (leaf-wind) instead of dropping straight down
+  function start(back, front, host, big) {
     var turn = 0;
 
     // Re-roll the path of one leaf. Called at creation and whenever a fall ends (leaf is off-screen then).
@@ -1233,18 +1234,20 @@ window.PRAANA_CONFIG = {
         leaf.style.animationDelay = "0s";
         target.appendChild(leaf);
       }
+      if (big) x0 = Math.max(-4, x0 - 18); // wind carries them right, so start further left
       var s = leaf.style;
       s.setProperty("--x0", x0.toFixed(1) + "vw");
       s.setProperty("--x1", (x0 + rnd(-5, 5)).toFixed(1) + "vw");
-      s.setProperty("--dur", rnd(8, 14).toFixed(1) + "s");
+      s.setProperty("--dur", (big ? rnd(10, 16) : rnd(8, 14)).toFixed(1) + "s");
+      s.setProperty("--wind", rnd(0.55, 1.35).toFixed(2));
       s.opacity = rnd(0.5, 0.8).toFixed(2);
       var img = leaf.firstChild.firstChild;
-      img.style.width = rnd(30, 58).toFixed(0) + "px";
+      img.style.width = (big ? rnd(68, 124) : rnd(30, 58)).toFixed(0) + "px";
       img.width = SIZES[t.file][0];
       img.height = SIZES[t.file][1];
       img.src = "assets/leaves/leaf-" + t.file + ".webp";
       var sw = leaf.firstChild.style;
-      sw.setProperty("--sway", rnd(14, 38).toFixed(0) + "px");
+      sw.setProperty("--sway", (big ? rnd(26, 62) : rnd(14, 38)).toFixed(0) + "px");
       sw.setProperty("--sway-dur", rnd(3.2, 5.8).toFixed(1) + "s");
       img.style.setProperty("--r0", rnd(-180, 180).toFixed(0) + "deg");
       img.style.setProperty("--rs", (sign() * rnd(90, 240)).toFixed(0) + "deg");
@@ -1255,7 +1258,7 @@ window.PRAANA_CONFIG = {
     var leaf = document.createElement("div");
     var sway = document.createElement("div");
     var img = document.createElement("img");
-    leaf.className = "leaf";
+    leaf.className = big ? "leaf leaf--wind" : "leaf";
     sway.className = "leaf__sway";
     img.className = "leaf__img";
     img.alt = "";
@@ -1287,7 +1290,7 @@ window.PRAANA_CONFIG = {
   // hero
   var heroBack = document.querySelector("[data-leaves]");
   var heroFront = document.querySelector("[data-leaves-front]");
-  if (heroBack && heroFront) start(heroBack, heroFront, document.getElementById("top"));
+  if (heroBack && heroFront) start(heroBack, heroFront, document.getElementById("top"), true);
 
   // life at praana film band
   var filmBack = document.querySelector("[data-leaves-film]");
@@ -1639,6 +1642,44 @@ window.PRAANA_CONFIG = {
     host.addEventListener("mouseleave", function () { paused = false; show(current); idx = -1; });
     host.addEventListener("click", function (ev) { if (ev.target.closest("[data-way-item]")) { picked = true; halt(); } });
   }
+})();
+
+/* components/counter.js */
+/* Count-up for numbers marked data-count="30" (optional data-suffix="+"): runs once when scrolled into view. */
+(function () {
+  "use strict";
+
+  var els = document.querySelectorAll("[data-count]");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  function run(el) {
+    var end = Number(el.getAttribute("data-count"));
+    var suffix = el.getAttribute("data-suffix") || "";
+    var final = el.textContent;
+    var dur = 1600;
+    var t0 = null;
+    el.style.minWidth = el.offsetWidth + "px"; // hold the final width so nothing shifts while counting
+    function tick(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(end * eased) + suffix;
+      if (p < 1) window.requestAnimationFrame(tick);
+      else el.textContent = final;
+    }
+    el.textContent = "0" + suffix;
+    window.requestAnimationFrame(tick);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      run(e.target);
+    });
+  }, { threshold: 0.6 });
+  els.forEach(function (el) { io.observe(el); });
 })();
 
 /* main.js */

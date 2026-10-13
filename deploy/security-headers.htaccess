@@ -1,30 +1,40 @@
-# Apache (mod_headers). Place in the site root, or merge into the vhost.
-# Verify with:  curl -sI https://<your-domain>/  and a header scanner (securityheaders.com).
+# Apache (mod_headers). Save as ".htaccess" in the site folder (e.g. /wellage/.htaccess) or merge into the vhost.
+# It only works when the server is Apache/LiteSpeed with AllowOverride FileInfo. On nginx use security-headers.nginx.conf.
+# Verify with:  curl -sI https://<your-domain>/wellage/  and a header scanner (securityheaders.com).
 <IfModule mod_headers.c>
-  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; frame-src https://player.vimeo.com; object-src 'none'"
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; frame-src https://player.vimeo.com; object-src 'none'; upgrade-insecure-requests"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-  Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
   # BETA: keep out of search engines. Remove this line at launch.
   Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+  # do not advertise the stack
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
 </IfModule>
+ServerSignature Off
 
-# Caching: fingerprint-free assets, so keep HTML revalidating and cache static files for a month.
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/webp "access plus 1 month"
-  ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType text/javascript "access plus 1 week"
-</IfModule>
-
-# Compression (gzip) for text assets
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml application/json
-</IfModule>
-<IfModule mod_expires.c>
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 1 month"
-</IfModule>
+# Caching: fingerprint-free assets, so keep HTML revalidating and cache static files for a month.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+</IfModule>
+
+# Compression (gzip) for text assets
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml application/json
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
