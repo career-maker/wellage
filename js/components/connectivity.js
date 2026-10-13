@@ -12,6 +12,14 @@
   var pinKm = root.querySelector(".conn__pin-km");
   var status = root.querySelector("[data-conn-status]");
 
+  // phones: the place circles are a horizontal swipe strip; keep the active one centred (scrolls the strip only, never the page)
+  function centerInStrip(el) {
+    var strip = el.parentNode;
+    if (!strip || strip.scrollWidth <= strip.clientWidth + 2) return;
+    var left = el.offsetLeft - (strip.clientWidth - el.offsetWidth) / 2;
+    strip.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+  }
+
   function select(i) {
     var row = rows[i];
     if (!row) return;
@@ -25,6 +33,7 @@
       var on = n === photo && i < cards.length;
       el.classList.toggle("is-active", on);
       el.querySelector(".conn__pick").setAttribute("aria-pressed", String(on));
+      if (on) centerInStrip(el);
     });
     dots.forEach(function (d) { d.classList.toggle("is-active", Number(d.getAttribute("data-i")) === i); });
     var d = dots[i];

@@ -11071,3 +11071,56 @@ main section .way__title { font-size: var(--t-title) !important; }
   .overview__rera-no { display: inline; font-size: 0.8125rem; letter-spacing: 0.02em; text-transform: none; font-weight: 500; color: #6b7571; }
   .overview__rera-no { margin: 0 0 0 0.35rem; font-weight: 600; color: #12302a; }
 }
+
+/* Residences: plain cream background, no leaf / frame artwork */
+.rm,
+.rm.is-near {
+  background: #f9f4e8;
+  --bg13: none;
+}
+.rm::before,
+.rm::after { content: none; display: none; background: none; }
+
+/* Schedule a Visit card: a strong, bold title (Marcellus has a single light weight, so use the bold body face) */
+main section .visit-card__title {
+  font-family: var(--font-text) !important;
+  font-size: clamp(1.45rem, 1.1rem + 0.9vw, 2rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.15 !important;
+  color: #0e2a24;
+}
+.visit-card__title::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  margin-top: 0.45rem;
+  border-radius: 2px;
+  background: #a8660f;
+}
+
+/* Connectivity on phones: the eight place circles are one horizontal swipe strip instead of a tall 2-column stack */
+@media (max-width: 47.99rem) {
+  .conn__places {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding: 1.5rem 0 1.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--pad, 1.25rem);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .conn__places::-webkit-scrollbar { display: none; }
+  .conn__place {
+    flex: 0 0 8.25rem;
+    scroll-snap-align: center;
+  }
+  .conn__place:first-child { margin-left: var(--pad, 1.25rem); }
+  .conn__place:last-child { margin-right: var(--pad, 1.25rem); }
+  .conn__place img { width: 7rem; }
+}
