@@ -10447,85 +10447,6 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-v2 .hero__actions { flex-wrap: nowrap; width: max-content; max-width: 92vw; justify-self: start; }
 }
 
-/* ============ Home: transparent header with white items over the hero; solid white bar once scrolled (sticky) ============ */
-.page-home.page-v2 .site-header { margin-bottom: calc(-1 * var(--hdr-h, 4.5rem)); z-index: 60; }
-.page-home.page-v2 .hero { box-sizing: content-box; padding-top: var(--hdr-h, 4.5rem); }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) {
-  background: linear-gradient(180deg, rgba(8, 24, 20, 0.5) 0%, rgba(8, 24, 20, 0) 100%);
-  border-bottom-color: transparent;
-  box-shadow: none;
-}
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { color: #fff; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link.is-current { color: #f3d9a0; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone .icon { color: #fff; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo { filter: brightness(0) invert(1); }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__divider { background: rgba(255, 255, 255, 0.55); }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .nav-toggle { color: #fff; border-color: rgba(255, 255, 255, 0.8); background: rgba(8, 24, 20, 0.25); }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .nav-toggle__bars,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .nav-toggle__bars::before,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .nav-toggle__bars::after { background: #fff; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone span { color: #fff !important; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link.is-current { color: #f3d9a0 !important; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone .icon { color: #fff !important; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { filter: invert(1) hue-rotate(180deg) brightness(1.35); }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) { border-bottom: 0 !important; box-shadow: none !important; }
-
-/* transparent header state: slightly larger items + a feathered dark wash behind the bar */
-.page-home.page-v2 .site-header::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: calc(100% + 3rem);
-  pointer-events: none;
-  background: linear-gradient(180deg,
-    rgba(8, 24, 20, 0.5) 0%,
-    rgba(8, 24, 20, 0.42) 35%,
-    rgba(8, 24, 20, 0.26) 62%,
-    rgba(8, 24, 20, 0.1) 82%,
-    rgba(8, 24, 20, 0) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open)::before { opacity: 1; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) { background: none; }
-@media (min-width: 64rem) {
-  .page-home.page-v2 .site-header .site-header__logo,
-  .page-home.page-v2 .site-header .main-nav__link,
-  .page-home.page-v2 .site-header .site-header__phone { transition: transform 0.3s ease, font-size 0.3s ease; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo { transform: scale(1.14); transform-origin: left center; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brand { margin-right: 0.6rem; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-left: 1.3rem; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link { font-size: 1.0625rem; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: 1.0625rem; }
-}
-@media (max-width: 63.99rem) {
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo { transform: scale(1.12); transform-origin: left center; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-left: 0.9rem; }
-}
-@media (min-width: 64rem) {
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { transform: scale(1.05); margin-left: 1.1rem; margin-right: 1.5rem; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link,
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: 1rem; }
-}
-@media (min-width: 64rem) and (max-width: 79.99rem) {
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .main-nav__link,
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: inherit; }
-  .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-right: 0.5rem; }
-}
-
-/* ============ Transparent header keeps the logos' real colours ============ */
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner {
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.45));
-}
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__divider { background: rgba(255, 255, 255, 0.8); }
-
 /* ============ Footer: both logos (Praana + Varma Homes) as in the header ============ */
 .site-footer__brand { display: flex; align-items: center; gap: 0.9rem; }
 .site-footer__divider { flex: none; width: 1px; height: 2.25rem; background: rgba(31, 38, 36, 0.28); }
@@ -10540,49 +10461,11 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .site-footer .site-footer__nav ul { left: calc(30 * var(--u)); gap: 0 calc(30 * var(--u)); }
   .site-footer .site-footer__nav a { font-size: calc(18.4 * var(--u)); }
 }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner {
-  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 9px rgba(255, 255, 255, 0.8));
-}
 @media (min-width: 64rem) {
   .site-footer .site-footer__nav { left: calc(500 * var(--u)); }
   .site-footer .site-footer__nav ul { left: calc(24 * var(--u)); gap: 0 calc(24 * var(--u)); }
   .site-footer .site-footer__nav a { font-size: calc(18 * var(--u)); }
 }
-/* transparent header logos: real colours, no glow */
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { filter: none; }
-
-/* ============ Transparent header: both logos sit on a solid white pill so their real colours stay readable ============ */
-.page-home.page-v2 .site-header__brands {
-  display: flex;
-  align-items: center;
-  flex: none;
-  margin-right: auto;
-  padding: 0.3rem 1.1rem;
-  border-radius: 999px;
-  background: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.page-home.page-v2 .site-header__brands .site-header__logo--partner { margin-right: 0; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands {
-  background: #fff;
-  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.35);
-}
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__logo,
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__logo--partner {
-  transform: none;
-  filter: none;
-}
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__brand { margin-right: 0; }
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__brands .site-header__divider { background: rgba(31, 38, 36, 0.22); }
-@media (max-width: 39.99rem) {
-  .page-home.page-v2 .site-header__brands { padding: 0.25rem 0.7rem; }
-}
-
-/* transparent header: white WhatsApp icon */
-.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__wa-img { filter: brightness(0) invert(1); }
-
 /* footer social: WhatsApp uses the side-dock logo (white); icons stay visible on hover */
 .social__wa-img { display: block; width: 1.7rem; height: 1.7rem; object-fit: contain; filter: brightness(0) invert(1); }
 @media (min-width: 64rem) { .site-footer .social__wa-img { width: calc(38 * var(--u)); height: calc(38 * var(--u)); } }
