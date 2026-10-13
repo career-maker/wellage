@@ -10372,3 +10372,16 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .legal__body p, .legal__list { line-height: 1.7; }
 .legal__list { list-style: disc; padding-left: 1.4rem; }
 .legal__list li::marker { color: #8a5a18; }
+
+/* video popup layer */
+.dialog--video {
+  width: min(70rem, 100vw - 2rem);
+  max-width: none;
+  overflow: visible;
+  background: #000;
+  border-radius: 1rem;
+}
+.dialog--video .dialog__close { top: -2.75rem; right: 0; background: rgba(255, 255, 255, 0.92); }
+.video-frame { aspect-ratio: 16 / 9; max-height: calc(100dvh - 7rem); width: 100%; border-radius: 1rem; overflow: hidden; background: #000; }
+.video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+@media (max-width: 40rem) { .dialog--video { width: calc(100vw - 1rem); } }

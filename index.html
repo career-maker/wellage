@@ -126,7 +126,7 @@
         <p class="hero__lede"><span>Premium senior living residences near Cochin International Airport, designed for comfort, wellness, independence and meaningful community living.</span></p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#visit">Schedule a Visit<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--ghost" href="https://vimeo.com/1195489553?fl=pl&amp;fe=cm" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-play"/></svg>Watch Video<span class="sr-only"> (opens the video in a new tab)</span></a>
+          <a class="btn btn--ghost" href="https://vimeo.com/1195489553?fl=pl&amp;fe=cm" data-video-open="https://player.vimeo.com/video/1195489553?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-play"/></svg>Watch Video<span class="sr-only"> (opens the video in a new tab)</span></a>
         </div>
       </div>
     </div>
@@ -983,6 +983,11 @@
         <p class="form__status" data-brochure-status role="status" aria-live="polite"></p>
       </form>
     </div>
+  </dialog>
+
+  <dialog class="dialog dialog--video" id="video-dialog" aria-label="Wellage Praana video">
+    <button class="dialog__close" type="button" data-dialog-close aria-label="Close video"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="video-frame" data-video-frame></div>
   </dialog>
 
   <dialog class="dialog" id="plans-dialog" aria-labelledby="plans-dialog-title">
