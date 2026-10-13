@@ -10518,3 +10518,34 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__phone { font-size: inherit; }
   .page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner { margin-right: 0.5rem; }
 }
+
+/* ============ Transparent header keeps the logos' real colours ============ */
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.45));
+}
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__divider { background: rgba(255, 255, 255, 0.8); }
+
+/* ============ Footer: both logos (Praana + Varma Homes) as in the header ============ */
+.site-footer__brand { display: flex; align-items: center; gap: 0.9rem; }
+.site-footer__divider { flex: none; width: 1px; height: 2.25rem; background: rgba(31, 38, 36, 0.28); }
+.site-footer__logo--partner { width: auto; height: 2.6rem; }
+@media (min-width: 64rem) {
+  .site-footer__brand { gap: calc(16 * var(--u)); }
+  .site-footer__logo { width: calc(200 * var(--u)); }
+  .site-footer__divider { height: calc(48 * var(--u)); }
+  .site-footer__logo--partner { width: auto; height: calc(64 * var(--u)); }
+  .site-footer__brand { top: calc(340 * var(--u)); }
+  .site-footer .site-footer__nav { left: calc(560 * var(--u)); }
+  .site-footer .site-footer__nav ul { left: calc(30 * var(--u)); gap: 0 calc(30 * var(--u)); }
+  .site-footer .site-footer__nav a { font-size: calc(18.4 * var(--u)); }
+}
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo,
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__logo--partner {
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 9px rgba(255, 255, 255, 0.8));
+}
+@media (min-width: 64rem) {
+  .site-footer .site-footer__nav { left: calc(500 * var(--u)); }
+  .site-footer .site-footer__nav ul { left: calc(24 * var(--u)); gap: 0 calc(24 * var(--u)); }
+  .site-footer .site-footer__nav a { font-size: calc(18 * var(--u)); }
+}
