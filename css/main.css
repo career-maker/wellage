@@ -10617,3 +10617,6 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 
 /* title word masks: room for italic overhangs (the "f" in "of life") */
 .title-anim .tw { padding: 0.12em 0.18em 0.24em; margin: -0.12em -0.18em -0.24em; }
+
+/* Residences: a little more air between the feature list and "View Floor Plans" */
+.page-v2 .rm__info .rm__cta, .rm__info .rm__cta { margin-top: clamp(1.1rem, 3dvh, 1.75rem) !important; }
