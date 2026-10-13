@@ -10614,3 +10614,6 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (min-width: 30rem) and (max-width: 39.99rem) {
   .drawer .drawer__row { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* title word masks: room for italic overhangs (the "f" in "of life") */
+.title-anim .tw { padding: 0.12em 0.18em 0.24em; margin: -0.12em -0.18em -0.24em; }
