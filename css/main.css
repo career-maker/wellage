@@ -10579,3 +10579,6 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media (max-width: 39.99rem) {
   .page-home.page-v2 .site-header__brands { padding: 0.25rem 0.7rem; }
 }
+
+/* transparent header: white WhatsApp icon */
+.page-home.page-v2 .site-header:not(.is-scrolled):not(.is-menu-open) .site-header__wa-img { filter: brightness(0) invert(1); }
