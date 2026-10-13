@@ -10598,3 +10598,10 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
   .video-tab:active { background: #12302a; }
   .drawer-tab.is-hidden + .video-tab { transform: translateX(110%); }
 }
+
+/* bottom action bar (phones / tablets): short "Visit" label */
+.float-actions__label .lbl-short { display: none; }
+@media (max-width: 67.99rem) {
+  .float-actions__label .lbl-full { display: none; }
+  .float-actions__label .lbl-short { display: inline; }
+}
