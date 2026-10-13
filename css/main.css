@@ -10592,3 +10592,8 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .site-footer .social__link--wa:focus-visible { background: #d8a85a; }
 .site-footer .social__link:hover .icon { color: #0e3a2e; fill: currentColor; }
 .site-footer .social__link--wa:hover .social__wa-img { filter: brightness(0); }
+/* footer social icons: same dark disc, white glyph, same optical size */
+.site-footer .social__link--wa { background: #0e3a2e; }
+.site-footer .social__wa-img { width: 1.55rem; height: 1.55rem; }
+@media (min-width: 64rem) { .site-footer .social__wa-img { width: calc(34 * var(--u)); height: calc(34 * var(--u)); } }
+.site-footer .social__link--wa:hover { background: #d8a85a; }
