@@ -63,39 +63,50 @@ a {
     scroll-behavior: auto;
   }
 }
+/* Marcellus ships one weight + no italic: the same file is declared for 400-700 and for italic so the browser never fakes bold/oblique */
 @font-face {
-  font-family: "Fraunces";
-  src: url("../assets/fonts/Fraunces-var.woff2") format("woff2");
+  font-family: "Marcellus";
+  src: url("../assets/fonts/Marcellus.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
-  size-adjust: 83%;
+  size-adjust: 88%;
+  unicode-range: U+0000-002F, U+003A-007F, U+00A0-024F, U+2000-206F, U+20A0-20CF;
 }
 @font-face {
-  font-family: "Fraunces";
-  src: url("../assets/fonts/Fraunces-italic-var.woff2") format("woff2");
+  font-family: "Marcellus";
+  src: url("../assets/fonts/Marcellus.woff2") format("woff2");
   font-weight: 400 700;
   font-style: italic;
   font-display: swap;
-  size-adjust: 83%;
+  size-adjust: 88%;
+  unicode-range: U+0000-002F, U+003A-007F, U+00A0-024F, U+2000-206F, U+20A0-20CF;
 }
 @font-face {
-  font-family: "Figtree";
-  src: url("../assets/fonts/Figtree-var.woff2") format("woff2");
+  font-family: "Mulish";
+  src: url("../assets/fonts/Mulish-var.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
-  size-adjust: 104%;
+  size-adjust: 102%;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("../assets/fonts/Mulish-italic-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  size-adjust: 102%;
 }
 body {
-  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.7;
   color: #3c4643;
 }
 
 .display {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.01em;
@@ -635,7 +646,7 @@ main > section:not(.hero),
   color: #8a5a18;
 }
 .section-heading__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5rem + 1.1111111111vw, 2.5rem);
   font-weight: 700;
   line-height: 1.12;
@@ -931,7 +942,7 @@ main > section:not(.hero),
   border: 0;
   background: none;
   text-align: left;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.3125rem, 1.1666666667rem + 0.6481481481vw, 1.75rem);
   font-weight: 600;
   line-height: 1.25;
@@ -1008,13 +1019,13 @@ main > section:not(.hero),
   border-radius: 0.75rem;
 }
 .quote-card__mark {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 4rem;
   line-height: 0.6;
   color: #8a5a18;
 }
 .quote-card__text {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.25rem, 1.1666666667rem + 0.3703703704vw, 1.5rem);
   font-weight: 500;
   line-height: 1.4;
@@ -1054,7 +1065,7 @@ main > section:not(.hero),
   object-position: center 25%;
 }
 .person-card__name {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.625rem;
   font-weight: 600;
   line-height: 1.15;
@@ -1096,7 +1107,7 @@ main > section:not(.hero),
   display: block;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(31, 38, 36, 0.14);
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: #1f2624;
@@ -1131,7 +1142,7 @@ main > section:not(.hero),
     position: relative;
     padding: 0.5rem 0;
     border: 0;
-    font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+    font-family: "Mulish", "Segoe UI", Arial, sans-serif;
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -1223,7 +1234,7 @@ main > section:not(.hero),
 }
 .dialog__title {
   margin: 0 3rem 1.25rem 0;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5416666667rem + 0.9259259259vw, 2.375rem);
   font-weight: 600;
   line-height: 1.1;
@@ -1265,7 +1276,7 @@ main > section:not(.hero),
   color: #4a5551;
 }
 .spec-table tbody th {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.375rem;
   color: #1f2624;
 }
@@ -1503,7 +1514,7 @@ main > section:not(.hero),
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 .drawer__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.1;
@@ -1662,11 +1673,11 @@ main > section:not(.hero),
 .hero__title {
   display: grid;
   margin: 0;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   color: #12302a;
 }
 .hero__eyebrow {
-  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
   font-size: clamp(0.8125rem, 0.7rem + 0.5vw, 1.0625rem);
   font-weight: 600;
   letter-spacing: 0.28em;
@@ -1685,7 +1696,7 @@ main > section:not(.hero),
 }
 .hero__sub {
   margin-top: clamp(0.5rem, 1.5vh, 1rem);
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.375rem, min(1.1rem + 1.5vw, 4.6vh), 2.5rem);
   font-weight: 500;
   line-height: 1.15;
@@ -1844,7 +1855,7 @@ main > section:not(.hero),
   text-transform: uppercase;
 }
 .hero__form-title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.625rem;
   font-weight: 700;
   line-height: 1.1;
@@ -1975,7 +1986,7 @@ main > section:not(.hero),
   margin-bottom: 0.4rem;
 }
 .hero-modal__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.625rem, 1.25rem + 1.6vw, 2.25rem);
   font-weight: 700;
   line-height: 1.05;
@@ -2122,7 +2133,7 @@ main > section:not(.hero),
 .overview__title {
   display: grid;
   margin-top: 1.25rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.75rem, 1.6rem + 3.6vw, 4.5rem);
   font-weight: 600;
   line-height: 1.02;
@@ -2324,7 +2335,7 @@ main > section:not(.hero),
 }
 .overview__quote {
   position: relative;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.625rem, 1.2rem + 1.5vw, 2.25rem);
   font-weight: 500;
   line-height: 1.2;
@@ -2423,7 +2434,7 @@ main > section:not(.hero),
   max-width: 32rem;
 }
 .why__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5833333333rem + 0.7407407407vw, 2.25rem);
   font-weight: 700;
   line-height: 1.15;
@@ -2715,7 +2726,7 @@ main > section:not(.hero),
   color: #d9b573;
 }
 .life__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.5833333333rem + 1.8518518519vw, 3.25rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -2802,7 +2813,7 @@ main > section:not(.hero),
   box-shadow: 0 10px 30px -20px rgba(18, 48, 42, 0.45);
 }
 .plan__type {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1;
@@ -2989,7 +3000,7 @@ main > section:not(.hero),
   justify-items: start;
 }
 .reimagined__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.875rem, 1.6666666667rem + 0.9259259259vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -3086,7 +3097,7 @@ main > section:not(.hero),
   color: #d9b573;
 }
 .visit__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.5rem + 1.1111111111vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -3206,7 +3217,7 @@ main > section:not(.hero),
   border-block: 1px solid rgba(31, 38, 36, 0.14);
 }
 .varma__stat-num {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(3rem, 2.5rem + 3vw, 5rem);
   font-weight: 700;
   line-height: 0.9;
@@ -3362,7 +3373,7 @@ main > section:not(.hero),
 }
 .faq .accordion__trigger {
   padding: 0.95rem 0;
-  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
 }
@@ -3414,7 +3425,7 @@ main > section:not(.hero),
   transform: scaleX(-1) rotate(20deg);
 }
 .final-cta__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.75rem, 1.4166666667rem + 1.4814814815vw, 2.75rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -3441,7 +3452,7 @@ main > section:not(.hero),
 }
 .legal__h {
   margin-top: 1rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: #1f2624;
@@ -4487,7 +4498,7 @@ main > section:not(.hero),
   opacity: 0.6;
 }
 .way__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.75rem);
   font-weight: 600;
   line-height: 1;
@@ -4540,7 +4551,7 @@ main > section:not(.hero),
 }
 .way__no {
   grid-row: 1 / span 2;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #8a5a18;
@@ -4549,7 +4560,7 @@ main > section:not(.hero),
   display: none;
 }
 .way__item h3 {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.4rem, 1.15rem + 0.7vw, 1.75rem);
   font-weight: 600;
   line-height: 1.15;
@@ -4648,7 +4659,7 @@ main > section:not(.hero),
   opacity: 0.6;
 }
 .rooms__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.5rem);
   font-weight: 600;
   line-height: 1;
@@ -4694,7 +4705,7 @@ main > section:not(.hero),
   border-radius: 0;
   background: none;
   box-shadow: none;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.25rem, 1rem + 0.7vw, 1.75rem);
   font-weight: 600;
   line-height: 1.1;
@@ -4736,7 +4747,7 @@ main > section:not(.hero),
   height: 3px;
 }
 .rooms .tabs__no {
-  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -4803,7 +4814,7 @@ main > section:not(.hero),
 }
 .rooms .room-visual span {
   position: relative;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 2.6vw, 3.75rem);
   font-style: italic;
   font-weight: 500;
@@ -4839,7 +4850,7 @@ main > section:not(.hero),
   border-top: 1px solid rgba(138, 90, 24, 0.28);
   border-radius: 0;
   background: none;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.4rem, 1.15rem + 0.8vw, 1.85rem);
   font-weight: 600;
   line-height: 1.2;
@@ -4858,7 +4869,7 @@ main > section:not(.hero),
   margin: 0;
   border-radius: 0;
   background: none;
-  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -4942,7 +4953,7 @@ main > section:not(.hero),
   opacity: 0.6;
 }
 .amen__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2.5rem, 1.4rem + 3.6vw, 4.75rem);
   font-weight: 600;
   line-height: 1;
@@ -4990,7 +5001,7 @@ main > section:not(.hero),
   color: #8a5a18;
 }
 .amen__name {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.75rem);
   font-weight: 600;
   line-height: 1.05;
@@ -5183,7 +5194,7 @@ main > section:not(.hero),
   opacity: 0.7;
 }
 .film__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(3rem, 1.6rem + 5vw, 6.25rem);
   font-weight: 600;
   line-height: 0.95;
@@ -5219,14 +5230,14 @@ main > section:not(.hero),
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem);
   font-weight: 600;
   line-height: 1.5;
   color: #fbf8f2;
 }
 .film__themes li span {
-  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -5747,7 +5758,7 @@ main > section[id],
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.35rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.25rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -6232,7 +6243,7 @@ main > section[id],
 }
 .film__inner { flex: 1 1 auto; min-height: 100dvh; align-self: stretch; }
 .film__themes li .film__theme {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.1rem, 0.9rem + 0.7vw, 1.6rem);
   font-weight: 600;
   letter-spacing: 0;
@@ -6240,7 +6251,7 @@ main > section[id],
   color: #fbf8f2;
   line-height: 1.15;
 }
-.film__themes li .film__no { font-family: "Figtree", "Segoe UI", Arial, sans-serif; }
+.film__themes li .film__no { font-family: "Mulish", "Segoe UI", Arial, sans-serif; }
 @media (max-width: 63.99rem) {
   .film__inner { min-height: 0; }
   .film__themes { gap: 1rem 0; }
@@ -6361,7 +6372,7 @@ main > section[id],
 .reimagined__title,
 .visit__title,
 .final-cta__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif !important;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif !important;
   font-size: var(--section-title-size) !important;
   font-weight: 600 !important;
   line-height: 1.08 !important;
@@ -6612,7 +6623,7 @@ main > section[id],
   padding: 0.4rem 1.4rem;
   border-radius: 1.25rem;
   background: #ece6d2;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.4rem, 1rem + 1vh, 1.9rem);
   font-weight: 600;
   color: #12302a;
@@ -6691,7 +6702,7 @@ main > section[id],
   padding: 0.7rem 1rem;
   border-radius: 1.25rem;
   background: rgba(236, 230, 210, 0.75);
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 0.95rem;
   font-style: italic;
   color: #3c4643;
@@ -7170,7 +7181,7 @@ main > section[id],
 }
 .idea__title {
   margin-top: 0.75rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.1;
@@ -7301,7 +7312,7 @@ main > section[id],
   padding-inline: clamp(1.25rem, 6.4vw, 7.8rem);
 }
 .rm__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: var(--section-title-size);
   font-weight: 600;
   line-height: 1.08;
@@ -7353,7 +7364,7 @@ main > section[id],
 .rm__name {
   position: relative;
   padding-bottom: 0.3rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.15rem, 0.9rem + 0.7vw, 1.75rem);
   line-height: 1.15;
   color: #6b7370;
@@ -7456,7 +7467,7 @@ main > section[id],
 }
 .rm__ico svg { width: 50%; height: 50%; }
 .rm__item {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.15rem, 0.9rem + 0.7vw, 1.75rem);
   font-weight: 500;
   color: #12302a;
@@ -7739,7 +7750,7 @@ main > section[id],
   color: #d29a3f;
 }
 .visit-card__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(1.9rem, 1.2rem + 1.7vw, 3rem);
   font-weight: 600;
   line-height: 1.05;
@@ -8009,7 +8020,7 @@ main > section[id],
 .testi__eyebrow::after { content: ""; width: 4.5rem; height: 1px; background: #a8660f; opacity: 0.8; }
 .testi__title {
   margin-top: 0.6rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.1;
@@ -8035,8 +8046,8 @@ main > section[id],
 .testimonials .quote-card__mark { color: #a8660f; font-weight: 700; }
 .quote-card__cite { display: flex; align-items: center; gap: 1rem; }
 .quote-card__avatar { flex: none; width: 3.5rem; height: 3.5rem; border-radius: 50%; }
-.quote-card__who { font-family: "Fraunces", "Georgia", "Times New Roman", serif; font-size: 1.25rem; font-weight: 700; color: #12302a; }
-.quote-card__who small { margin-top: 0.15rem; font-family: "Figtree", "Segoe UI", Arial, sans-serif; font-size: 0.8125rem; font-weight: 400; color: #3c4643; }
+.quote-card__who { font-family: "Marcellus", "Georgia", "Times New Roman", serif; font-size: 1.25rem; font-weight: 700; color: #12302a; }
+.quote-card__who small { margin-top: 0.15rem; font-family: "Mulish", "Segoe UI", Arial, sans-serif; font-size: 0.8125rem; font-weight: 400; color: #3c4643; }
 .testimonials .link-arrow { color: #12302a; font-weight: 600; }
 .testimonials .quote-card::after {
   content: "";
@@ -8141,7 +8152,7 @@ main > section[id],
   left: 0;
   bottom: -0.25em;
   z-index: -1;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(6rem, 22vw, 20rem);
   letter-spacing: 0.3em;
   line-height: 1;
@@ -8163,7 +8174,7 @@ main > section[id],
 }
 .varma__eyebrow::after { content: ""; width: 3.5rem; height: 1px; background: #a8660f; }
 .varma__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.1;
@@ -8181,7 +8192,7 @@ main > section[id],
 .varma .varma__stat-num {
   padding-right: 1.5rem;
   border-right: 1px solid rgba(168, 102, 15, 0.3);
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(3rem, 2rem + 4vw, 6rem);
   font-weight: 500;
   line-height: 1;
@@ -8269,7 +8280,7 @@ main > section[id],
 }
 .gallery__eyebrow::after { content: ""; width: 3.5rem; height: 1px; background: #a8660f; opacity: 0.8; }
 .gallery__title {
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.1;
@@ -8361,7 +8372,7 @@ main > section[id],
 .faq__eyebrow::after { content: ""; width: 3.5rem; height: 1px; background: #a8660f; opacity: 0.8; }
 .faq__title {
   margin-top: 0.6rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem);
   font-weight: 600;
   line-height: 1.05;
@@ -8383,7 +8394,7 @@ main > section[id],
 .faq .accordion__trigger {
   gap: 1rem;
   padding: 0.85rem 1rem;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.2;
@@ -8646,8 +8657,8 @@ main > section[id],
    eyebrow / title / lede / body / card title / small. Montserrat for UI + reading text,
    Cormorant Garamond for display (titles and card titles). */
 :root {
-  --font-display: "Fraunces", "Georgia", "Times New Roman", serif;
-  --font-text: "Figtree", "Segoe UI", Arial, sans-serif;
+  --font-display: "Marcellus", "Georgia", "Times New Roman", serif;
+  --font-text: "Mulish", "Segoe UI", Arial, sans-serif;
   --t-eyebrow: clamp(0.75rem, 0.62rem + 0.25vw, 0.95rem);
   --t-title: clamp(2rem, 1.1rem + 3.4vw, 4.5rem);
   --t-lede: clamp(1rem, 0.8rem + 0.55vw, 1.4rem);
@@ -10544,7 +10555,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .video-shell__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.25rem 0.35rem 0.7rem 0.9rem; }
 .video-shell__title {
   margin: 0;
-  font-family: "Fraunces", "Georgia", "Times New Roman", serif;
+  font-family: "Marcellus", "Georgia", "Times New Roman", serif;
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -10655,7 +10666,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 @media(min-width:80rem){.page-v2 .hero__inner{padding-bottom:3.5rem}}
 @media(min-width:40rem){
 .page-v2 .hero__inner{align-content:end}
-.page-v2 .hero__lede{font-family:"Fraunces","Georgia","Times New Roman",serif;font-size:clamp(1rem,1.45vw,1.4rem);font-weight:500;line-height:1.35}
+.page-v2 .hero__lede{font-family:"Marcellus","Georgia","Times New Roman",serif;font-size:clamp(1rem,1.45vw,1.4rem);font-weight:500;line-height:1.35}
 .page-v2 .hero__lede>span{line-height:inherit}
 }
 @media(min-width:40rem){
@@ -10676,7 +10687,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 .page-v2 .hero__actions{grid-row:2;margin-top:.9rem;flex-direction:row}
 .page-v2 .hero__sub,.page-v2 .hero__lede{grid-column:1;max-width:none;width:100%;border-left:1px solid rgba(255,255,255,.55);padding-left:1rem;border-radius:0;background:none;box-shadow:none;text-shadow:0 2px 12px rgba(0,0,0,.6)}
 .page-v2 .hero__sub{grid-row:3;margin:1.1rem 0 0;padding-bottom:.35rem;font-size:1.3rem;white-space:normal}
-.page-v2 .hero__lede{display:block;grid-row:4;margin:0;font-family:"Fraunces","Georgia","Times New Roman",serif;font-size:1.0625rem;font-weight:500;line-height:1.35;color:#fff !important}
+.page-v2 .hero__lede{display:block;grid-row:4;margin:0;font-family:"Marcellus","Georgia","Times New Roman",serif;font-size:1.0625rem;font-weight:500;line-height:1.35;color:#fff !important}
 .page-v2 .hero__lede>span{background:none;box-shadow:none;padding:0;color:#fff !important;line-height:inherit}
 }
 @media(max-width:39.99rem){
@@ -10701,7 +10712,7 @@ html::-webkit-scrollbar-corner { background: #f3ecdc; }
 /* Section title fits its column: each line of "More than a home. / A complete way of life." stays on one line */
 @media(min-width:64rem){
 .page-v2 main section .way__head{container-type:inline-size}
-.page-v2 main section .way__head .way__title{font-size:min(var(--t-title),13.4cqi) !important;white-space:nowrap;line-height:1.08 !important}
+.page-v2 main section .way__head .way__title{font-size:min(var(--t-title),10.3cqi) !important;white-space:nowrap;line-height:1.08 !important}
 }
 main h2,.drawer__title,.hero-modal__title{text-wrap:balance}
 .drawer__title{font-size:1.3rem;white-space:nowrap}
@@ -10714,3 +10725,16 @@ main h2,.drawer__title,.hero-modal__title{text-wrap:balance}
 }
 .video-fallback{margin:.75rem 0 0;font-size:.875rem;text-align:center;color:rgba(255,255,255,.8)}
 .video-fallback a{color:#f3d9a0;text-decoration:underline}
+
+/* Marcellus has no italic: accent words stay upright, the gold colour carries the emphasis */
+h1 em, h2 em, h3 em, .hero__title em, [class*="__title"] em { font-style: normal; }
+
+/* One size for every section title (--t-title). "Life at Praana" no longer shrinks its title to fit a narrow column:
+   the heading spans the left + centre columns and the photo starts below it. */
+main section .overview__title,
+main section .way__title { font-size: var(--t-title) !important; }
+@media (min-width: 64rem) {
+  .page-v2 main section .way__title { white-space: nowrap; line-height: 1.05 !important; }
+  .page-v2 .way__head { grid-column: 1 / 3; grid-row: 1; }
+  .page-v2 .way__figure { grid-row: 2; }
+}
