@@ -114,8 +114,10 @@
   <main id="main">
   <!-- ============ HERO ============ -->
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="hero__bg" aria-hidden="true">
-      <picture><img src="assets/images/hero-main.webp?v=4" width="2400" height="1345" alt="" class="hero__bg-image" fetchpriority="high" decoding="async"></picture>
+    <div class="hero__bg" aria-hidden="true" data-hero-slider>
+      <picture class="hero__slide is-active"><img src="assets/images/hero-main.webp?v=4" width="2400" height="1345" alt="" class="hero__bg-image" fetchpriority="high" decoding="async"></picture>
+      <img class="hero__slide hero__slide--gate hero__bg-image" src="assets/images/hero-gate-1600.webp" srcset="assets/images/hero-gate-800.webp 800w, assets/images/hero-gate-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="" loading="lazy" decoding="async">
+      <img class="hero__slide hero__slide--poster hero__bg-image" src="assets/images/hero-banner-1920.webp" srcset="assets/images/hero-banner-960.webp 960w, assets/images/hero-banner-1920.webp 1920w" sizes="100vw" width="1920" height="701" alt="" loading="lazy" decoding="async">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__leaves" aria-hidden="true" data-leaves></div>
@@ -132,6 +134,25 @@
           <a class="btn btn--ghost" href="https://vimeo.com/1195489553?fl=pl&amp;fe=cm" data-video-open="https://player.vimeo.com/video/1195489553?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-play"/></svg>Watch Video<span class="sr-only"> (opens the video in a new tab)</span></a>
         </div>
       </div>
+    </div>
+    <div class="container hero__inner hero__inner--slide3" aria-hidden="true" data-hero-copy3>
+      <div class="hero__copy">
+        <p class="hero__title" role="heading" aria-level="2">
+          <span class="hero__eyebrow">Retirement</span>
+          <span class="hero__title-main">I Chose Wellage for My Retirement</span>
+        </p>
+        <p class="hero__sub">What about you?</p>
+        <p class="hero__lede"><span>Visit Wellage Praana Experience Centre &mdash; 1 &amp; 2 BHK Luxury Apartments for Senior Living near Cochin International Airport (CIAL), Athani.</span></p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#visit">Schedule a Visit<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#enquire" data-drawer-open data-prefill="I would like to talk to an advisor about Wellage Praana."><svg class="btn__icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Talk to an Advisor</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__dots" role="group" aria-label="Hero images">
+      <button type="button" class="hero__dot-btn is-active" data-hero-dot aria-label="Show image 1" aria-current="true"></button>
+      <button type="button" class="hero__dot-btn" data-hero-dot aria-label="Show image 2" aria-current="false"></button>
+      <button type="button" class="hero__dot-btn" data-hero-dot aria-label="Show image 3" aria-current="false"></button>
     </div>
     <div class="hero__leaves hero__leaves--front" aria-hidden="true" data-leaves-front></div>
   </section>
@@ -892,7 +913,7 @@
     <span>Watch Video</span>
   </button>
   <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
-  <div class="drawer" id="enquire" role="dialog" aria-labelledby="drawer-title" data-drawer data-open-delay="2000" inert>
+  <div class="drawer" id="enquire" role="dialog" aria-labelledby="drawer-title" data-drawer inert>
     <header class="drawer__head">
       <div>
         <h2 class="drawer__title" id="drawer-title">Discover Wellage <span class="drawer__title-accent">Praana</span></h2>

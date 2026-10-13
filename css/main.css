@@ -10841,3 +10841,118 @@ main section .way__title { font-size: var(--t-title) !important; }
   .site-footer__brand .site-footer__divider { height: calc(42 * var(--u)); }
   .site-footer__brand { top: calc(346 * var(--u)); left: calc(70 * var(--u)); }
 }
+
+/* ============ Hero slider: 3 crossfading slides (couple, gate, poster), 2 s each ============ */
+.hero__bg > .hero__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.hero__bg > .hero__slide.is-active { opacity: 1; }
+.hero__bg > picture.hero__slide { display: block; }
+.hero__bg > img.hero__slide { object-fit: cover; }
+.hero__bg > img.hero__slide--gate { object-position: 50% 60%; }
+.hero__bg > img.hero__slide--poster { object-position: 50% 50%; }
+/* the poster slide carries its own headline + offer: hide the hero copy and dark wash while it shows */
+.hero .hero__inner,
+.hero .hero__overlay { transition: opacity 0.5s ease, visibility 0.5s; }
+.hero.is-poster .hero__inner { opacity: 0; visibility: hidden; }
+.hero__dots {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 1.1rem;
+  display: flex;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+}
+.hero__dot-btn {
+  width: 0.65rem;
+  height: 0.65rem;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.hero__dot-btn.is-active { background: #f3d9a0; border-color: #f3d9a0; transform: scale(1.2); }
+.hero__dot-btn:focus-visible { outline: 2px solid #f3d9a0; outline-offset: 3px; }
+@media (max-width: 39.99rem) {
+  /* phone: the poster is shown whole (contain) in the photo area above the dark copy panel */
+  .hero__bg > img.hero__slide--poster { object-fit: contain; object-position: 50% 45%; }
+  .hero__dots { bottom: 5.4rem; }
+}
+@media (min-width: 40rem) and (max-width: 79.99rem) {
+  .hero__dots { bottom: 5.4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg > .hero__slide, .hero .hero__inner, .hero .hero__overlay { transition: none; }
+}
+
+/* ---- third slide: banner; its copy reuses the hero__inner / hero__title / hero__sub / hero__lede classes,
+   so size, position and the mobile rules are identical to slide 1 ---- */
+.hero__bg > img.hero__slide--poster { object-fit: cover; object-position: 85% 50%; }
+.page-v2 .hero.is-poster .hero__overlay {
+  background: linear-gradient(90deg, rgba(8, 28, 23, 0.86) 0%, rgba(8, 28, 23, 0.62) 34%, rgba(8, 28, 23, 0.12) 60%, rgba(8, 28, 23, 0) 100%);
+}
+.hero__inner--slide3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.hero.is-poster .hero__inner:not(.hero__inner--slide3) { opacity: 0; visibility: hidden; }
+.hero.is-poster .hero__inner--slide3 { opacity: 1; visibility: visible; pointer-events: auto; }
+/* the long headline wraps inside the left column at the same size as "Living Well." */
+.page-v2 .hero__inner--slide3 .hero__title-main { white-space: normal; max-width: 9.5em; line-height: 0.98; }
+@media (max-width: 39.99rem) {
+  .hero__bg > img.hero__slide--poster { object-fit: cover; object-position: 74% 50%; }
+  .page-v2 .hero.is-poster .hero__overlay {
+    background: linear-gradient(180deg, rgba(15, 43, 38, 0) 0, rgba(15, 43, 38, 0) calc(min(108vw, 66svh) - 7rem), #0f2b26 min(108vw, 66svh), #0f2b26 100%);
+  }
+  .page-v2 .hero__inner--slide3 { padding-top: 0; }
+  .page-v2 .hero__inner--slide3 .hero__title-main { max-width: none; }
+}
+
+/* ---- slider dots: one vertical column, inset so it never overlaps the side widgets ---- */
+.hero__dots {
+  left: auto;
+  right: 4.75rem;
+  top: 50%;
+  bottom: auto;
+  flex-direction: column;
+  gap: 0.7rem;
+  transform: translateY(-50%);
+}
+@media (max-width: 79.99rem) {
+  .hero__dots { top: 50%; bottom: auto; right: 3.6rem; transform: translateY(-50%); }
+}
+
+/* Slides 1 and 3 share one grid, so title, tagline, description and buttons sit in exactly the same places */
+@media (min-width: 48rem) {
+  .page-v2 .hero__inner { grid-template-columns: minmax(0, 1fr) 12.5rem; }
+}
+@media (min-width: 64rem) {
+  .page-v2 .hero__inner { grid-template-columns: minmax(0, 1fr) 26rem; }
+}
+@media (min-width: 80rem) {
+  .page-v2 .hero__inner { grid-template-columns: minmax(0, 1fr) 33rem; }
+}
+
+/* slide 3 polish */
+.page-v2 .hero__inner--slide3 .hero__actions .btn { min-width: 0; white-space: nowrap; }
+@media (max-width: 39.99rem) {
+  /* phone: dots sit in the photo area (above the headline), left of the side tabs */
+  .hero__dots { top: 27%; bottom: auto; transform: none; }
+}
+
+/* hero slide change: reset the word-rise instantly before replaying it */
+.title-anim.title-snap .tw__i { transition: none !important; }
