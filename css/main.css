@@ -11428,3 +11428,6 @@ main section .visit-card__title {
   .site-footer .social::before { right: calc(100% + 14 * var(--u)); width: calc(756 * var(--u)); }
   .site-footer .social::after { left: calc(100% + 14 * var(--u)); width: calc(732 * var(--u)); }
 }
+
+/* footer: only the social rule separates the logo row from the address (no second line) */
+.site-footer .site-footer__info { border-top: 0 !important; }
