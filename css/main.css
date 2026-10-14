@@ -11431,3 +11431,6 @@ main section .visit-card__title {
 
 /* footer: only the social rule separates the logo row from the address (no second line) */
 .site-footer .site-footer__info { border-top: 0 !important; }
+
+/* footer: no divider after the phone number (the nav keeps its left divider) */
+.site-footer .site-footer__contact { border-right: 0 !important; }
