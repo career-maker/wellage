@@ -11437,3 +11437,8 @@ main section .visit-card__title {
   .site-footer .social { left: calc(33 * var(--u)); top: calc(66 * var(--u)); gap: calc(10 * var(--u)); }
   .site-footer .social__link { width: calc(40 * var(--u)); height: calc(40 * var(--u)); }
 }
+
+/* footer: social icons centred under the logo / nav / phone row */
+@media (min-width: 64rem) {
+  .site-footer .social { left: calc(-450 * var(--u)); }
+}
