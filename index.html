@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/Marcellus.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Mulish-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/images/hero-main.webp?v=4" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero-banner-1920.webp" imagesrcset="assets/images/hero-banner-960.webp 960w, assets/images/hero-banner-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body class="page-home page-v2">
@@ -113,11 +113,11 @@
 
   <main id="main">
   <!-- ============ HERO ============ -->
-  <section class="hero" id="top" aria-labelledby="hero-title">
+  <section class="hero is-poster" id="top" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true" data-hero-slider>
-      <picture class="hero__slide is-active"><img src="assets/images/hero-main.webp?v=4" width="2400" height="1345" alt="" class="hero__bg-image" fetchpriority="high" decoding="async"></picture>
+      <img class="hero__slide is-active hero__slide--poster hero__bg-image" src="assets/images/hero-banner-1920.webp" srcset="assets/images/hero-banner-960.webp 960w, assets/images/hero-banner-1920.webp 1920w" sizes="100vw" width="1920" height="701" alt="" fetchpriority="high" decoding="async">
+      <picture class="hero__slide"><img src="assets/images/hero-main.webp?v=4" width="2400" height="1345" alt="" class="hero__bg-image" loading="lazy" decoding="async"></picture>
       <img class="hero__slide hero__slide--gate hero__bg-image" src="assets/images/hero-gate-1600.webp" srcset="assets/images/hero-gate-800.webp 800w, assets/images/hero-gate-1600.webp 1600w" sizes="100vw" width="1600" height="900" alt="" loading="lazy" decoding="async">
-      <img class="hero__slide hero__slide--poster hero__bg-image" src="assets/images/hero-banner-1920.webp" srcset="assets/images/hero-banner-960.webp 960w, assets/images/hero-banner-1920.webp 1920w" sizes="100vw" width="1920" height="701" alt="" loading="lazy" decoding="async">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__leaves" aria-hidden="true" data-leaves></div>
@@ -127,8 +127,6 @@
           <span class="hero__eyebrow">A New Way of</span>
           <span class="hero__title-main">Living Well<span class="hero__dot">.</span></span>
         </h1>
-        <p class="hero__sub">A New Way of Growing Older.</p>
-        <p class="hero__lede"><span>Premium senior living residences near Cochin International Airport, designed for comfort, wellness, independence and meaningful community living.</span></p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#visit">Schedule a Visit<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--ghost" href="https://vimeo.com/1195489553?fl=pl&amp;fe=cm" data-video-open="https://player.vimeo.com/video/1195489553?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-play"/></svg>Watch Video<span class="sr-only"> (opens the video in a new tab)</span></a>
@@ -138,17 +136,17 @@
     <div class="container hero__inner hero__inner--slide3" aria-hidden="true" data-hero-copy3>
       <div class="hero__copy">
         <p class="hero__title" role="heading" aria-level="2">
-          <span class="hero__eyebrow">Retirement</span>
+          <span class="hero__eyebrow">KS Chithra, Singer</span>
           <span class="hero__title-main">I Chose Wellage for My Retirement</span>
+          <span class="hero__ask">What About You?</span>
         </p>
-        <p class="hero__sub">What about you?</p>
-        <p class="hero__lede"><span>Visit Wellage Praana Experience Centre &mdash; 1 &amp; 2 BHK Luxury Apartments for Senior Living near Cochin International Airport (CIAL), Athani.</span></p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#visit">Schedule a Visit<svg class="btn__icon btn__icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--ghost" href="#enquire" data-drawer-open data-prefill="I would like to talk to an advisor about Wellage Praana."><svg class="btn__icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Talk to an Advisor</span></a>
         </div>
       </div>
     </div>
+    <p class="hero__near" aria-hidden="true"><svg class="hero__near-pin" aria-hidden="true"><use href="#i-pin"/></svg><span class="hero__near-txt"><strong>Near</strong>Cochin International Airport (CIAL), Athani.</span></p>
     <div class="hero__dots" role="group" aria-label="Hero images">
       <button type="button" class="hero__dot-btn is-active" data-hero-dot aria-label="Show image 1" aria-current="true"></button>
       <button type="button" class="hero__dot-btn" data-hero-dot aria-label="Show image 2" aria-current="false"></button>

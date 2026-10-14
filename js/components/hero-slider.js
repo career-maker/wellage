@@ -12,7 +12,7 @@
   var DELAY = 4000;
   var index = 0;
   var timer = null;
-  var shownPoster = false;
+  var shownPoster = hero.classList.contains("is-poster");
   // reduced-motion visitors still get the slides (the crossfade and title animation are switched off in CSS)
 
   function show(i) {
@@ -47,6 +47,8 @@
     d.addEventListener("click", function () { show(n); stop(); play(); });
   });
   document.addEventListener("visibilitychange", function () { document.hidden ? stop() : play(); });
+  hero.addEventListener("mouseenter", stop); // hovering the hero pauses the slideshow
+  hero.addEventListener("mouseleave", play);
   hero.addEventListener("focusin", stop);
   hero.addEventListener("focusout", play);
 

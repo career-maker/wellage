@@ -1543,7 +1543,7 @@ window.PRAANA_CONFIG = {
   if (every > 0 && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     var at = 0;
     var timer = null;
-  var shownPoster = false;
+  var shownPoster = hero.classList.contains("is-poster");
     var seen = false;
     var held = false;
     var done = false;
@@ -1747,6 +1747,8 @@ window.PRAANA_CONFIG = {
     d.addEventListener("click", function () { show(n); stop(); play(); });
   });
   document.addEventListener("visibilitychange", function () { document.hidden ? stop() : play(); });
+  hero.addEventListener("mouseenter", stop); // hovering the hero pauses the slideshow
+  hero.addEventListener("mouseleave", play);
   hero.addEventListener("focusin", stop);
   hero.addEventListener("focusout", play);
 

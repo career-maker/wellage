@@ -11344,3 +11344,13 @@ main section .visit-card__title {
 @media (max-width: 47.99rem) {
   .final-cta::before { background: rgba(8, 36, 29, 0.84); }
 }
+
+/* banner slide: speaker line, "What About You?" and the landmark note bottom right */
+.hero__ask { display: block; margin: 0.9rem 0 0; font-family: "Marcellus", Georgia, serif; font-style: italic; font-size: clamp(1.15rem, 1.9vw, 1.9rem); line-height: 1.2; color: #e9c46a; text-shadow: 0 2px 12px rgba(0,0,0,.55); }
+.hero__near { display: none; position: absolute; z-index: 4; right: clamp(4.5rem, 7vw, 7.5rem); bottom: clamp(1.75rem, 4vh, 3rem); margin: 0; max-width: 22rem; gap: 0.75rem; align-items: flex-start; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.6); opacity: 0; transition: opacity .6s ease .3s; }
+.hero__near-pin { flex: none; width: 1.9rem; height: 1.9rem; color: #e9c46a; }
+.hero__near-txt { display: block; border-left: 1px solid rgba(255,255,255,.6); padding-left: 0.85rem; font-size: clamp(.9rem, 1.05vw, 1.0625rem); line-height: 1.4; }
+.hero__near-txt strong { display: block; font-family: "Marcellus", Georgia, serif; font-size: 1.25em; font-weight: 500; margin-bottom: 0.15rem; }
+.hero__near { opacity: 1; }
+.hero:not(.is-poster) .hero__ask { display: none; }
+@media (min-width: 40rem) { .hero__near { display: flex; } }
