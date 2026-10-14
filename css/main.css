@@ -11313,8 +11313,34 @@ main section .visit-card__title {
 .vcards.is-dragging .vcard__btn { pointer-events: none; }
 .vcard__img { -webkit-user-drag: none; user-select: none; }
 
-/* Ready to experience Wellage?: plain dark green, no leaf / border frame artwork */
+/* Ready to experience Wellage?: landscaped-garden photo behind the copy, with a dark green overlay for legibility (no leaf frame) */
 .final-cta { background: #0c3027; }
-.final-cta__bg { display: none; }
-.final-cta::before,
+.final-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
+.final-cta::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: auto;
+  height: auto;
+  aspect-ratio: auto;
+  opacity: 1;
+  transform: none;
+  background:
+    linear-gradient(90deg, rgba(8, 36, 29, 0.93) 0%, rgba(8, 36, 29, 0.82) 45%, rgba(8, 36, 29, 0.55) 100%),
+    rgba(8, 36, 29, 0.25);
+}
 .final-cta::after { content: none; display: none; }
+@media (max-width: 47.99rem) {
+  .final-cta::before { background: rgba(8, 36, 29, 0.84); }
+}
