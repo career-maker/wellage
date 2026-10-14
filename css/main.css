@@ -11306,3 +11306,15 @@ main section .visit-card__title {
 .vcard { filter: drop-shadow(0 12px 12px rgba(18, 48, 42, 0.16)); }
 .vcards { padding: 2rem 1.5rem 3.25rem; margin-inline: -1.25rem; }
 @media (max-width: 63.99rem) { .vcards { margin-inline: -1.25rem; padding-inline: 1.25rem; } }
+
+/* video testimonials: click-and-drag with the mouse */
+.vcards { cursor: grab; }
+.vcards.is-dragging { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; user-select: none; }
+.vcards.is-dragging .vcard__btn { pointer-events: none; }
+.vcard__img { -webkit-user-drag: none; user-select: none; }
+
+/* Ready to experience Wellage?: plain dark green, no leaf / border frame artwork */
+.final-cta { background: #0c3027; }
+.final-cta__bg { display: none; }
+.final-cta::before,
+.final-cta::after { content: none; display: none; }

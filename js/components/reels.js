@@ -79,4 +79,37 @@
     var by = card ? card.getBoundingClientRect().width + gap : rail.clientWidth * 0.5;
     rail.scrollBy({ left: by, behavior: motionOk ? "smooth" : "auto" });
   }, 1000);
+
+  // mouse drag-to-scroll (touch already scrolls natively): hold and drag the cards sideways; a drag never counts as a click on a card
+  var drag = { on: false, x: 0, left: 0, moved: false };
+  rail.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "mouse" || e.button !== 0 || e.target.closest(".vcard__player")) return;
+    drag.on = true;
+    drag.moved = false;
+    drag.x = e.clientX;
+    drag.left = rail.scrollLeft;
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!drag.on) return;
+    var dx = e.clientX - drag.x;
+    if (!drag.moved && Math.abs(dx) < 5) return;
+    drag.moved = true;
+    rail.classList.add("is-dragging"); // no snapping or smoothing while the pointer holds the rail
+    rail.scrollLeft = drag.left - dx;
+  });
+  function endDrag() {
+    if (!drag.on) return;
+    drag.on = false;
+    rail.classList.remove("is-dragging"); // scroll-snap settles on the nearest card
+  }
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", endDrag);
+  rail.addEventListener("click", function (e) {
+    if (drag.moved) {
+      e.stopPropagation();
+      e.preventDefault();
+      drag.moved = false;
+    }
+  }, true);
+  rail.addEventListener("dragstart", function (e) { e.preventDefault(); });
 })();
