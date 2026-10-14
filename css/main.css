@@ -11354,3 +11354,7 @@ main section .visit-card__title {
 .hero__near { opacity: 1; }
 .hero:not(.is-poster) .hero__ask { display: none; }
 @media (min-width: 40rem) { .hero__near { display: flex; } }
+
+/* FAQ: plain background, no leaf frame */
+.faq__bg, .faq__blob { display: none !important; }
+.faq { background: #fbf6ea; }
