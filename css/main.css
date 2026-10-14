@@ -11443,3 +11443,9 @@ main section .visit-card__title {
   .hero__near-txt strong { font-size: 1.1em; }
 }
 @media (max-width: 39.99rem) { .hero__near { text-shadow: 0 1px 3px rgba(0,0,0,.8), 0 2px 14px rgba(0,0,0,.6); } }
+
+/* phones: dark pill behind the landmark note so it reads on any photo */
+@media (max-width: 47.99rem) {
+  .hero__near { top: 0.85rem; left: 1rem; align-items: center; max-width: calc(100vw - 4.5rem); padding: 0.5rem 0.8rem 0.5rem 0.65rem; border-radius: 0.9rem; background: rgba(8, 36, 29, 0.72); text-shadow: none; }
+  .hero__near-txt { font-size: 0.78rem; line-height: 1.3; }
+}
