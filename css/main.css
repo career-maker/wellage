@@ -11442,3 +11442,10 @@ main section .visit-card__title {
 @media (min-width: 64rem) {
   .site-footer .social { left: calc(-450 * var(--u)); }
 }
+
+/* FAQ desktop: both columns start on the same line with the same rhythm; photo flows under the intro text */
+@media (min-width: 64rem) {
+  .faq .faq__col:nth-child(1), .faq .faq__col:nth-child(2) { margin-top: calc(52 * var(--u)); gap: calc(14 * var(--u)); }
+  .faq .faq__col:nth-child(2) .accordion__trigger { height: calc(85 * var(--u)); }
+  .faq__photo { position: static; width: 100%; height: auto; aspect-ratio: 4 / 3; margin-top: calc(44 * var(--u)); border-radius: calc(24 * var(--u)); }
+}
