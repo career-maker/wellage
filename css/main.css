@@ -11457,13 +11457,3 @@ main section .visit-card__title {
   .hero__near-txt strong { text-shadow: inherit; }
   .hero__near-pin { filter: drop-shadow(0 1px 3px rgba(0,0,0,.8)); }
 }
-
-/* phones: soft-edged dark glow behind the landmark note instead of a text stroke */
-@media (max-width: 47.99rem) {
-  .hero__near-txt, .hero__near-txt strong { text-shadow: none; font-weight: 500; }
-  .hero__near-pin { filter: none; }
-  .hero__near::before {
-    content: ""; position: absolute; z-index: -1; inset: -1.1rem -1.6rem; pointer-events: none;
-    background: radial-gradient(ellipse at center, rgba(6, 30, 24, 0.78) 0%, rgba(6, 30, 24, 0.6) 45%, rgba(6, 30, 24, 0) 78%);
-  }
-}
