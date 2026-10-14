@@ -49,6 +49,8 @@ window.PRAANA_CONFIG = {
           if (other !== trigger) setOpen(other, false);
         });
         setOpen(trigger, willOpen);
+        // one answer is always open: closing it opens the next question
+        if (!willOpen) setOpen(items[(index + 1) % items.length], true);
       });
 
       trigger.addEventListener("keydown", function (e) {

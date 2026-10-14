@@ -11421,3 +11421,10 @@ main section .visit-card__title {
 .expert__btn svg { color: #fff; }
 .expert__call:hover, .expert__btn:hover { background: #17824a; }
 .expert__btn img { filter: brightness(0) invert(1); }
+
+/* footer: social icons centred on a thin dark rule that breaks around them */
+@media (min-width: 64rem) {
+  .site-footer .social::before, .site-footer .social::after { content: ""; position: absolute; top: 50%; height: 1px; background: #1b1b1b; }
+  .site-footer .social::before { right: calc(100% + 14 * var(--u)); width: calc(756 * var(--u)); }
+  .site-footer .social::after { left: calc(100% + 14 * var(--u)); width: calc(732 * var(--u)); }
+}
