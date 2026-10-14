@@ -11383,7 +11383,7 @@ main section .visit-card__title {
   border-radius: 1.5rem;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.08) 38%, rgba(255, 255, 255, 0.02) 62%, rgba(255, 255, 255, 0.2) 100%),
-    rgba(14, 44, 37, 0.62);
+    rgba(14, 44, 37, 0.86);
   -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
   backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
   box-shadow:
@@ -11419,4 +11419,21 @@ main section .visit-card__title {
   .site-footer .social__link { width: calc(40 * var(--u)); height: calc(40 * var(--u)); top: 0; }
   .site-footer .social__link .icon { width: calc(22 * var(--u)); height: calc(22 * var(--u)); }
   .site-footer .social__wa-img { width: calc(26 * var(--u)); height: calc(26 * var(--u)); }
+}
+
+/* phones: hero dots in a row, bottom right of the hero */
+@media (max-width: 39.99rem) {
+  .hero__dots { top: auto; bottom: 1.1rem; right: 1.1rem; left: auto; flex-direction: row; transform: none; gap: 0.6rem; }
+}
+
+/* FAQ photo sits right under the intro text (no gap) */
+@media (min-width: 64rem) {
+  .faq__photo { top: calc(300 * var(--u)); height: calc(400 * var(--u)); }
+}
+
+/* footer: social icons on their own row under the phone number */
+@media (min-width: 64rem) {
+  .site-footer .site-footer__contact { left: calc(1290 * var(--u)); width: calc(297 * var(--u)); overflow: visible; }
+  .site-footer .social { left: calc(33 * var(--u)); top: calc(66 * var(--u)); gap: calc(10 * var(--u)); }
+  .site-footer .social__link { width: calc(40 * var(--u)); height: calc(40 * var(--u)); }
 }
