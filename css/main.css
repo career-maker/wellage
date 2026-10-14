@@ -11367,3 +11367,12 @@ main section .visit-card__title {
   .site-footer .social__link .icon { width: calc(25 * var(--u)); height: calc(25 * var(--u)); }
   .site-footer .social__wa-img { width: calc(30 * var(--u)); height: calc(30 * var(--u)); }
 }
+
+/* floating expert bar: short "Book Now" label */
+.expert__text { font-size: 1.15rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
+
+/* FAQ: photo under the intro text fills the empty left column */
+.faq__photo { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; margin-top: 1.5rem; border-radius: 1.25rem; box-shadow: 0 18px 40px -20px rgba(18, 48, 42, 0.45); }
+@media (min-width: 64rem) {
+  .faq__photo { position: absolute; left: calc(83 * var(--u)); top: calc(375 * var(--u)); width: calc(440 * var(--u)); height: calc(330 * var(--u)); margin: 0; aspect-ratio: auto; border-radius: calc(24 * var(--u)); }
+}
