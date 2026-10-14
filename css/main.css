@@ -11377,40 +11377,6 @@ main section .visit-card__title {
   .faq__photo { position: absolute; left: calc(83 * var(--u)); top: calc(375 * var(--u)); width: calc(440 * var(--u)); height: calc(330 * var(--u)); margin: 0; aspect-ratio: auto; border-radius: calc(24 * var(--u)); }
 }
 
-/* floating expert bar: liquid-glass (glassmorphic) look */
-.expert {
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  border-radius: 1.5rem;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.08) 38%, rgba(255, 255, 255, 0.02) 62%, rgba(255, 255, 255, 0.2) 100%),
-    rgba(14, 44, 37, 0.86);
-  -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
-  backdrop-filter: blur(22px) saturate(180%) brightness(1.05);
-  box-shadow:
-    0 20px 44px -18px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.12),
-    inset 0 0 22px rgba(255, 255, 255, 0.1);
-}
-.expert__text { color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35); }
-.expert__call {
-  border-color: rgba(255, 255, 255, 0.5);
-  border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-}
-.expert__btn {
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
-  box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.45), inset 0 1px 0 #fff;
-}
-.expert__btn:hover { background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.86)); }
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .expert { background: rgba(18, 48, 42, 0.92); }
-}
 
 /* footer: five social icons */
 @media (min-width: 64rem) {
@@ -11449,3 +11415,9 @@ main section .visit-card__title {
   .faq .faq__col:nth-child(2) .accordion__trigger { height: calc(85 * var(--u)); }
   .faq__photo { position: static; width: 100%; height: auto; aspect-ratio: 4 / 3; margin-top: calc(44 * var(--u)); border-radius: calc(24 * var(--u)); }
 }
+
+/* floating expert bar: solid dark green bar with green buttons */
+.expert__call, .expert__btn { border: 0; border-radius: 0.65rem; background: #1f9d55; color: #fff; box-shadow: none; }
+.expert__btn svg { color: #fff; }
+.expert__call:hover, .expert__btn:hover { background: #17824a; }
+.expert__btn img { filter: brightness(0) invert(1); }
