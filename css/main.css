@@ -11434,3 +11434,12 @@ main section .visit-card__title {
 
 /* footer: no divider after the phone number (the nav keeps its left divider) */
 .site-footer .site-footer__contact { border-right: 0 !important; }
+
+/* phones: landmark note sits top left of the hero, clear of the headline, side tabs and dots */
+@media (max-width: 39.99rem) {
+  .hero__near { display: flex; right: auto; left: 1.25rem; bottom: auto; top: 1rem; max-width: 62vw; gap: 0.55rem; }
+  .hero__near-pin { width: 1.5rem; height: 1.5rem; }
+  .hero__near-txt { font-size: 0.8rem; padding-left: 0.6rem; }
+  .hero__near-txt strong { font-size: 1.1em; }
+}
+@media (max-width: 39.99rem) { .hero__near { text-shadow: 0 1px 3px rgba(0,0,0,.8), 0 2px 14px rgba(0,0,0,.6); } }
