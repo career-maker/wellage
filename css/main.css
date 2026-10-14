@@ -11358,3 +11358,12 @@ main section .visit-card__title {
 /* FAQ: plain background, no leaf frame */
 .faq__bg, .faq__blob { display: none !important; }
 .faq { background: #fbf6ea; }
+
+/* footer: four social icons (WhatsApp, Facebook, Instagram, YouTube) need a wider contact block */
+@media (min-width: 64rem) {
+  .site-footer .site-footer__contact { left: calc(1290 * var(--u)); width: calc(530 * var(--u)); }
+  .site-footer .social { left: calc(300 * var(--u)); top: calc(5 * var(--u)); gap: calc(11 * var(--u)); }
+  .site-footer .social__link { width: calc(46 * var(--u)); height: calc(46 * var(--u)); }
+  .site-footer .social__link .icon { width: calc(25 * var(--u)); height: calc(25 * var(--u)); }
+  .site-footer .social__wa-img { width: calc(30 * var(--u)); height: calc(30 * var(--u)); }
+}
